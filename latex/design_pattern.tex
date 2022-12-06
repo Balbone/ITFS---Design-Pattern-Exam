@@ -3,6 +3,7 @@
 % pacchetti 
 \usepackage[italian]{babel}
 \usepackage{graphicx}
+\usepackage{svg}
 
 % set images path 
 \graphicspath{ {./images/} }
@@ -154,23 +155,33 @@ La progettazione e lo sviluppo almeno parziale dei \textbf{moduli ``pilota"}, st
 \end{itemize}
 }
 
-Uno {\em use case} è un possibile scenario di utilizzo dell'applicazione.
-Diagramma degli use case (“interfaccia” astratta della nostra app/software)
+L'{\em UC diagram} è una “interfaccia” astratta della nostra applicazione, che descrive un possibile {\em use case}, ossia un possibile scenario di utilizzo dell'applicazione.
 
-- Gli attori principali sono quelli che utilizzano direttamente l’applicazione per uno specifico use case (sono i fruitori dell’app, e.g. un cliente, un impiegato).
--	Gli attori secondari sono sistemi esterni (tipicamente software) che integriamo all’interno dell’app (sono API che inseriamo per implementare il tutto e su cui non abbiamo controllo).
--	Gli attori fuori scena sono entità che non usano direttamente l’app, ma che ne possono trarre benefici o ci danno dei vincoli da rispettare (l’università è l’attore fuori scena che beneficia di Moodle, la legge con il GDPR).
-
-
-Casi d'uso:
 \begin{itemize}
-    \item Voglio comprare un vestito online,
-    \item Voglio far riparare il vestito
+    \item Gli \textbf{attori principali} sono quelli che utilizzano direttamente l’applicazione per uno specifico use case (sono i fruitori dell’app, e.g. un cliente, un impiegato).
+    \item Gli \textbf{attori secondari} sono sistemi esterni (tipicamente software) che integriamo all’interno dell’app (sono API che inseriamo per implementare il tutto e su cui non abbiamo controllo).
+    \item Gli \textbf{attori fuori scena} sono entità che non usano direttamente l’app, ma che ne possono trarre benefici o ci danno dei vincoli da rispettare (l’università è l’attore fuori scena che beneficia di Moodle, la legge con il GDPR).
 \end{itemize}
 
-\section{Design Patterns utilizzati nell'applicazione}
+
+Casi d'uso ipotizzati a lezione:
+\begin{itemize}
+    \item Voglio comprare un vestito online,
+    \item Voglio accedere al magazzino snello. 
+\end{itemize}
+
+\section{Design Patterns utilizzati}
 
 \andrea{Obbligatorio il design pattern {\em Composite} con almeno tre livelli che restituisca, e.g. le componenti di abbigliamento che formano l'outfit. Più siamo fantasiosi nel trovare un'applicazione tra le nostre idee, meglio verrà valutato.}
+
+
+\begin{figure}[h]
+  \centering
+   \makebox[\textwidth][c]{\includesvg[width= 1.4\linewidth]{UC_diagram.svg}}
+  \caption{Esempio di UC diagram relativo all'applicazione del negozio online.}
+  \label{fig:UC_diagram}
+\end{figure}
+
 
 
 \end{document}
