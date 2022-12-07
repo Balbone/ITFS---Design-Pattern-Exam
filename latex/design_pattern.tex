@@ -1,9 +1,25 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 
 % pacchetti 
 \usepackage[italian]{babel}
 \usepackage{graphicx}
 \usepackage{svg}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ left=25mm,
+ top=25mm,
+ }
+ 
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=blue,
+    linkcolor=blue,
+    urlcolor=blue
+}
 
 % set images path 
 \graphicspath{ {./images/} }
@@ -45,9 +61,11 @@
 \newpage
 
 \tableofcontents
+
 \newpage
 
 \listoffigures
+
 \newpage
 
 \abstract{}
@@ -59,7 +77,7 @@ In questo documento \'e proposto il lavoro relativo alla realizzazione di un \te
 \newpage
 
 % capitoli 
-\section{Elicitazione dei Requisiti}
+\section{Elicitazione dei requisiti}
 Questo capitolo raccoglie i requisiti che andranno poi analizzati, modellati e specificati nella fase di \textbf{Analisi dei Requisiti}. 
 \\
 \\
@@ -70,13 +88,15 @@ I problemi comuni da evitare in questa fase iniziale, per uno sviluppo florido d
 	\item \textbf{Volatilit\'a}: i requisiti possono cambiare, non essere completi all'inizio dello sviluppo ed evolvere nel tempo; \'e quindi necessario definirli con quanta pi\'u perizia possibile in questa fase del processo
 \end{enumerate}
 
+\davide{\textbf{[TODO]} Ampliare la parte sugli strumenti utilizzati per fare la requirement elicitation.}
+
 Si rende quindi necessaria una stretta comunicazione con il cliente, rappresentato dalla Professoressa Bono, per giungere ad un insieme di conoscenze che permetta di superare i problemi esposti poco sopra. \\
 La strategia adottata \'e quella dell'\textbf{intervista}, alla quale siamo giunti dopo un \textit{brainstorming} che ci ha visto partecipi in un'iniziale definizione delle caratteristiche che, a nostro parere, dovrebbero appartenere ad un \textit{e-shop innovativo}.
 \\
 \\
 Le nostre riflessioni sono sintetizzate nella sezione successiva. 
 
-\subsection{Analisi di Mercato e Proposta di Prodotto} 
+\subsection{Analisi di mercato e idee di prodotto} 
 In questa fase abbiamo tratteggiato i contorni, ancora sfumati, dell'applicazione. Servono più informazioni possibili per avere una \textbf{visione ampia del mercato} in cui il prodotto richiesto si collocherà, ma anche idee originali a cui ispirarsi, che non devono necessariamente venire dal mondo dell'abbigliamento. Bisogna guardare al di là del {\em main stream}, l'applicazione dovrebbe creare l'effetto wow!
 Un'analisi di mercato approfondita ci ha permesso di individuare e confrontare le caratteristiche dei competitors e di pensare a possibili \textbf{soluzioni innovative} non ancora presenti sul mercato da proporre al committente.
 \\
@@ -86,7 +106,7 @@ Un'analisi di mercato approfondita ci ha permesso di individuare e confrontare l
 
  
  
-\subsection{Intervista e Risultati}
+\subsection{L'intervista}
 ...
 \\
 \\
@@ -122,12 +142,14 @@ L'intervista al committente dell'applicazione segue l'iniziale fase di analisi d
 \textbf{Brainstorming}: in questa fase abbiamo proposto idee al cliente sulla base di quanto raccolto nelle domande precedenti dell'intervista. Le idee proposte sono state avvalorate da una precedente analisi di mercato e dalle conoscenza del nostro esperto di dominio. L'insieme delle idee raccolte è poi stato ridiscusso con il cliente e suddiviso in gruppi, come presente nei risultati.
 \\
 
-I \textbf{risultati} dell'intervista possono essere suddivisi in tre macro gruppi.
+\subsection{I risultati}
+
+I risultati dell'intervista possono essere suddivisi in tre macro gruppi.
 Le idee che per motivi strategici o di tempo non vengono ulteriormente sviluppate sono finite nel gruppo dei moduli attualmente non presi in considerazione, e di seguito non presentati.
 
 La progettazione e lo sviluppo completo dei \textbf{moduli ``core"}, strategici per raggiungere gli obiettivi del cliente e contribuire al tasso di innovazione dell'applicazione. L'investimento del cliente e le forze in gioco del team rendono questi obiettivi realistici e realizzabili.
 \\
-\piaget{Qui ci sono i moduli da associare a qualche design pattern.}
+\piaget{\textbf{[NOTA]} Qui ci sono i moduli da associare a qualche design pattern.}
 \begin{itemize}
     \item {\em ``Popup Stores"}: non molti negozi fisici, ma spot stores temporanei, localizzati dove sono concentrati la maggior parte dei clienti. La creazione di una rete di aziende amiche che condividono gli stessi ideali di sostenibilità permette numerosi vantaggi. {\em Atelier Splendor} ospiterà virtualmente i capi di queste aziende nel suo futuro negozio virtuale, queste aziende ospiteranno mostre temporanee dei nostri capi nei loro negozi fisici. La scelta delle città in cui organizzare le mostre verrà suggerita dai dati raccolti.
     \item {\em ``Vestirsi con la realtà aumentata"}: Algoritmo di realtà aumentata stile Ikea che consente di vestirsi virtualmente per provare i vestiti e trovare la propria taglia. Ciò sorride all'ambiente e fa l'occhiolino al consumatore consapevole perché permetterà di ridurre il numero dei resi. Cliente soddisfatto e ambiente pure. 
@@ -143,19 +165,13 @@ La progettazione e lo sviluppo almeno parziale dei \textbf{moduli ``pilota"}, st
     \item {\em ``Sartoria dedicata e confezionamento su misura"}: la sartoria interna potrà essere ulteriormente allargata introducendo due nuovi servizi al cliente. Primo, i vestiti che necessiteranno di manutenzione (orli, pence, sostituzione cerniere, rattoppi, ...) potranno essere spediti alla sede centrale per essere aggiustati. Due, la sartoria offrirà la possibilità di avere abiti confezionati su misura.
 \end{itemize}
 
-\davide{Rivedere e aggiungere informazioni nelle risposte. Scegliere bene i nomi dei moduli, che potrebbero poi essere utilizzati nello sviluppo dei design patterns.}
+\davide{\textbf{[TODO]} Rivedere e aggiungere informazioni nelle risposte. Scegliere bene i nomi dei moduli, che potrebbero poi essere utilizzati nello sviluppo dei design pattern.}
 
-\section{Attori, Obiettivi e Casi d'Uso}
+\section{Analisi dei requisiti}
 
-\davide{
-\begin{itemize}
-    \item Lista degli attori (principali, secondari, fuori scena) dei loro obiettivi,
-    \item Lista dei casi d’uso e UC-diagram (use case diagram),
-    \item Dettagliare i casi d’uso con l’aggiunta dei requisiti funzionali e non funzionali.
-\end{itemize}
-}
+In questa sezione riportiamo i requisiti che la nostra applicazione dovrà rispettare e seguire nello sviluppo...
 
-L'{\em UC diagram} è una “interfaccia” astratta della nostra applicazione, che descrive un possibile {\em use case}, ossia un possibile scenario di utilizzo dell'applicazione.
+\subsection{Gli attori e i loro Obiettivi}
 
 \begin{itemize}
     \item Gli \textbf{attori principali} sono quelli che utilizzano direttamente l’applicazione per uno specifico use case (sono i fruitori dell’app, e.g. un cliente, un impiegato).
@@ -164,24 +180,57 @@ L'{\em UC diagram} è una “interfaccia” astratta della nostra applicazione, 
 \end{itemize}
 
 
+\davide{\textbf{[TODO]} Elencare gli attori (principali, secondari, fuori scena) e i loro obiettivi.}
+
+\subsection{I casi d'uso}
+\label{subsec:UC}
+
+L'{\em UC diagram} è una “interfaccia” astratta della nostra applicazione, che descrive un possibile {\em caso d'uso}, ossia un possibile scenario di utilizzo dell'applicazione, fig. \ref{fig:UC_diagram}.
+
 Casi d'uso ipotizzati a lezione:
 \begin{itemize}
     \item Voglio comprare un vestito online,
-    \item Voglio accedere al magazzino snello. 
+    \item Voglio accedere al magazzino snello,
+    \item ...
 \end{itemize}
 
-\section{Design Patterns utilizzati}
+I {\em requisiti funzionali} riguardano ciò che il sistema fa e sono i moduli da implementare o integrare per lo sviluppo dell’applicazione.
+I {\em requisiti non funzionali} riguardano com’è fatto il sistema. Esempi di requisiti non funzinali sono i tool che scelgo, il linguaggio di programmazione che uso, data base che scelgo, ...
+\\
 
-\andrea{Obbligatorio il design pattern {\em Composite} con almeno tre livelli che restituisca, e.g. le componenti di abbigliamento che formano l'outfit. Più siamo fantasiosi nel trovare un'applicazione tra le nostre idee, meglio verrà valutato.}
+\davide{\textbf{[TODO]} Elencare i casi d’uso che abbiamo scelto. Dettagliare ciascun caso d'uso e specificare per ognuno sia i requisiti funzionali, che quelli non funzionali.}
 
-
+\vspace{1em}
 \begin{figure}[h]
   \centering
-   \makebox[\textwidth][c]{\includesvg[width= 1.4\linewidth]{UC_diagram.svg}}
-  \caption{Esempio di UC diagram relativo all'applicazione del negozio online.}
+   \makebox[\textwidth][c]{\includesvg[width= 1.1\linewidth]{UC_diagram.svg}}
+  \caption{Esempio di UC diagram relativo all'applicazione del negozio online. All'interno delle {\em system boundaries} sono posizionati i casi d'uso esaminati in questa sezione. Gli attori principali (azzurro), quelli secondari (verde) e quelli fuori scena (giallo) sono rappresentati dalle figure al di fuori del {\em system} e sono collegati ai relativi casi d'uso. Una più approfondita analisi del diagramma è presentata in sezione \ref{subsec:UC}}
   \label{fig:UC_diagram}
 \end{figure}
 
+\subsection{Glossario degli attori}
+
+...
+
+\section{Il documento di vision}
+
+
+\section{Design Patterns utilizzati}
+
+Un {\em pattern} è una soluzione generale ad un problema ricorrente, che va opportunamente adattato al problema in esame. Un Pattern può essere riassunto in: problema, soluzione, pro e contro della soluzione ed esempi d’uso. I Design pattern visti a lezione sono i \textbf{GoF Design Pattern} e permettono di sfruttare al massimo le caratteristiche object oriented di Java. Essi costituiscono di fatto una mappa per scrivere codice Java.
+
+In questa sezione riportiamo sottoforma di micro-prototipi le implementazioni dei design pattern applicati ai casi d'uso della nostra applicazione.
+
+\begin{itemize}
+    \item Con riferimento al caso d'uso dell'acquisto abito sull'applicazione. Un impiegato dell'atelier può anche essere un cliente e utilizzare l'applicazione con due scopi differenti.
+    Abbiamo quindi pensato di modellare la figura dell' impiegato-cliente tramite due pattern alternativi: il \textbf{pattern Decorator} e il \textbf{pattern Strategy}. Ciò ci ha permesso di confrontare e discutere i vantaggi/svantaggi dei due patterns.
+    \item Riferimento al caso d'uso dell'accesso al magazzino snello, possiamo ricollegarci al modulo sull'approccio human-driven per implementare il \textbf{pattern Composite}. Lato tecnico usiamo il pattern composite. Lato umano, i sottoinsiemi generati dal composite verranno filtrati dall'umano esperto.
+    Alternativamente, il pattern composite potrebbe essere applicato semplicemente al caso d'uso dell'accedere al magazzino snello con riferimento al modulo del {\em magazzino snello}.
+\end{itemize}
+
+\andrea{\textbf{[NOTA]} Obbligatorio il design pattern {\em Composite} con almeno tre livelli che restituisca, e.g. le componenti di abbigliamento che formano l'outfit. Più siamo fantasiosi nel trovare un'applicazione tra le nostre idee, meglio verrà valutato.}
+
+\davide{\textbf{[TODO]} Aggiungere la bibliografia con i testi e documenti riportati su moodle.}
 
 
 \end{document}
