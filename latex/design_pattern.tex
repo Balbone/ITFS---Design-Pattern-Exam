@@ -21,6 +21,11 @@
     urlcolor=blue
 }
 
+%bibliography
+\usepackage[sorting=none,isbn=false,url=false,eprint=false]{biblatex}
+\addbibresource{bibliography.bib}
+
+
 % set images path 
 \graphicspath{ {./images/} }
 % specify different fonts for headings 
@@ -201,7 +206,7 @@ I {\em requisiti non funzionali} riguardano com’è fatto il sistema. Esempi di
 \davide{\textbf{[TODO]} Elencare i casi d’uso che abbiamo scelto. Dettagliare ciascun caso d'uso e specificare per ognuno sia i requisiti funzionali, che quelli non funzionali.}
 
 \vspace{1em}
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
    \makebox[\textwidth][c]{\includesvg[width= 1.1\linewidth]{UC_diagram.svg}}
   \caption{Esempio di UC diagram relativo all'applicazione del negozio online. All'interno delle {\em system boundaries} sono posizionati i casi d'uso esaminati in questa sezione. Gli attori principali (azzurro), quelli secondari (verde) e quelli fuori scena (giallo) sono rappresentati dalle figure al di fuori del {\em system} e sono collegati ai relativi casi d'uso. Una più approfondita analisi del diagramma è presentata in sezione \ref{subsec:UC}}
@@ -231,6 +236,13 @@ In questa sezione riportiamo sottoforma di micro-prototipi le implementazioni de
 \andrea{\textbf{[NOTA]} Obbligatorio il design pattern {\em Composite} con almeno tre livelli che restituisca, e.g. le componenti di abbigliamento che formano l'outfit. Più siamo fantasiosi nel trovare un'applicazione tra le nostre idee, meglio verrà valutato.}
 
 \davide{\textbf{[TODO]} Aggiungere la bibliografia con i testi e documenti riportati su moodle.}
+
+\davide{Materiale da citare: \cite{gof_riferimento}, \cite{up-riferimento}, \cite{uml_riferimento}, \cite{elicitation_tools}, \cite{gof_sunt}.}
+
+\newpage
+
+%Prints the bibliography
+\printbibliography
 
 
 \end{document}
