@@ -1,5 +1,8 @@
 # Default ignored files
 /shelf/
 /workspace.xml
-../.idea
-*.class
+./
+../EsempiDesignPattern/Decorator/*.class
+../EsempiDesignPattern/Strategy/*.class
+../java/*.class
+../ITFS---Design-Pattern-Exam.iml
