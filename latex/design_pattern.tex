@@ -262,11 +262,19 @@ I {\em requisiti non funzionali} riguardano com’è fatto il sistema. Esempi di
   \label{fig:UC_diagram}
 \end{figure}
 
+
 \subsection{Glossario degli attori}
+
+\davide{\textbf{[TODO]} Elaborare il contenuto e scrivere questa sezione.}
 
 ...
 
+
 \section{Il documento di vision}
+
+\davide{\textbf{[TODO]} Elaborare il contenuto e scrivere questa sezione.}
+
+...
 
 
 \section{Design Patterns utilizzati}
@@ -287,18 +295,21 @@ In questa sezione riportiamo sottoforma di micro-prototipi le implementazioni de
 
 \davide{\textbf{[TODO]} Aggiungere la bibliografia con i testi e documenti riportati su moodle.}
 
-\davide{Materiale da citare: \cite{gof_riferimento}, \cite{up-riferimento}, \cite{uml_riferimento}, \cite{elicitation_tools}, \cite{gof_sunt} \cite{github}.}
+\davide{Materiale da citare: \cite{gof_riferimento}, \cite{up-riferimento}, \cite{uml_riferimento}, \cite{elicitation_tools}, \cite{gof_sunt}, \cite{github}.}
 
 
 \subsection{Pattern Decorator}
 
 Il {\em pattern Decorator} permette di aggiungere dinamicamente responsabilità addizionali ad un oggetto. In questo modo si possono estendere le funzionalità di oggetti particolari senza coinvolgere intere classi \cite{gof_sunt}.
-Con riferimento al caso d'uso dell'acquisto di un abito sull'applicazione, si pensi ad un modello di oggetti che rappresenti gli impiegati dell'atelier Splendor. Un impiegato può diventare un cliente interessato a comprare un abito sulla piattaforma. Nasce così l'esigenza di modellare la figura dell'\textbf{impiegato-cliente}, il quale in aggiunta alle operazioni definite per gli impiegati, definisce anche quelle relative ai clienti.
+Con riferimento al caso d'uso dell'acquisto di un abito sull'applicazione, si pensi ad un modello di oggetti che rappresenti gli impiegati dell'atelier Splendor. Un impiegato può diventare un cliente interessato a comprare un abito sulla piattaforma. Nasce così l'esigenza di modellare la figura dell'\textbf{cliente-dipendente}, il quale in aggiunta alle operazioni definite per gli impiegati, definisce anche quelle relative ai clienti.
 
 Il pattern suggerisce la creazione di {\em wrapper classes} (Decorator) che racchiudono gli oggetti ai quali si vuole aggiungere le nuove responsabilità. Questi ultimi oggetti, insieme ai Decorator devono implementare una interfaccia comune, in modo che l’applicazione possa continuare ad interagire con gli oggetti decorati \cite{gof_sunt}.
 Per una stessa interfaccia possono esserci più Decorator, ma in questo caso ne considereremo solo uno.
 
-...
+\davide{\textbf{[TODO]} Il codice del decorator va completamente rivisto e ampliato.}
+
+\lstinputlisting[label={list:esempio}, caption={\small ClienteDipendente.java -- Implementazione del pattern Decorator nel caso d'uso dell'acquisto online.}]
+{code/ClienteDipendente.java}
 
 
 \subsection{Pattern Strategy}
@@ -313,9 +324,6 @@ particolare algoritmo, in apposite classi, dette {\em ConcreteStrategy}, le qual
 
 \davide{\textbf{[TODO]} Sviluppare il microprototipo del pattern Composite per il caso studio del magazzino snello.}
 
-
-\lstinputlisting[label={list:esempio}, caption={\small esempio.java -- Esempio di utilizzo di codice su Latex.}]
-{code/esempio.java}
 
 
 \newpage

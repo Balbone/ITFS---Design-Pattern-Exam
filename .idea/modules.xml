@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/EsempiDesignPattern/EsempiDesignPattern.iml" filepath="$PROJECT_DIR$/EsempiDesignPattern/EsempiDesignPattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/ITFS---Design-Pattern-Exam.iml" filepath="$PROJECT_DIR$/ITFS---Design-Pattern-Exam.iml" />
+      <module fileurl="file://$PROJECT_DIR$/latex/latex.iml" filepath="$PROJECT_DIR$/latex/latex.iml" />
     </modules>
   </component>
 </project>
