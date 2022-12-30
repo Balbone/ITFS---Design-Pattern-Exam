@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class AnimalShelter { 
+public class AnimalShelter {
     private List<Animal> animals;
 
     public AnimalShelter() { 
@@ -89,7 +89,7 @@ The Dog and Cat classes extend the Animal class and represent specific types of 
 
 Example of use: 
  */
-
+/*
 AnimalShelter shelter = new AnimalShelter();
 
 Animal dog1 = new Dog("Buddy", "Labrador", 6); 
@@ -108,3 +108,5 @@ for (Animal animal : animals) {
 shelter.adoptAnimal(cat1); 
 
 animals = shelter.getAnimals();
+
+ */
