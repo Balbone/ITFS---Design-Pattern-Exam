@@ -225,6 +225,8 @@ La progettazione e lo sviluppo almeno parziale dei \textbf{moduli ``pilota"}, st
 
 In questa sezione riportiamo i requisiti che la nostra applicazione dovrà rispettare e seguire nello sviluppo...
 
+\andrea{\textbf{TO DO} Accorpare sezione di attori e casi d'uso, visto che la tassonomia proposta e' in funzione del contesto.}
+
 \subsection{Gli attori e i loro obiettivi}
 
 \begin{itemize}
@@ -241,18 +243,62 @@ In questa sezione riportiamo i requisiti che la nostra applicazione dovrà rispe
 
 L'{\em UC diagram} è una “interfaccia” astratta della nostra applicazione, che descrive un possibile {\em caso d'uso}, ossia un possibile scenario di utilizzo dell'applicazione, figura \ref{fig:UC_diagram}.
 
+
+\andrea{\textbf{TO DO} terzo UC3 = POP-UP STORE = aggiorna sezione sotto}
+
+
 Casi d'uso ipotizzati a lezione:
 \begin{itemize}
     \item Voglio comprare un vestito online,
     \item Voglio accedere al magazzino snello,
-    \item ...
+    \item Pop-Up store  
+\end{itemize}
+
+Attori e ruoli:
+\begin{itemize}
+	\item UC1
+		\begin{itemize}
+		\item attore principale: cliente - dipendente  
+		\item attore secondario: metodi di pagamento 
+		\item fuori scena: corriere (pacchi, beneficia del mio indotto)
+		\end{itemize}
+	\item UC2
+		\begin{itemize}
+		\item attore principale: sarto (fa abito e gestisce) - utente/avatar 
+		\item attore secondario: algoritmo/gestionale
+		\item fuori scena: fornitori materie prime/tessuto 
+		\end{itemize}
+	\item UC3
+		\begin{itemize}
+		\item attore principale: cliente - dipendente/cliente 
+		\item attore secondario: database collegato a software tramite API per andare a salvare i vari utenti che lasciano email e autorizzazioni per la newsletter 
+		\item fuori scena: GDPR - software per crittografare 
+		\end{itemize}
 \end{itemize}
 
 I {\em requisiti funzionali} riguardano ciò che il sistema fa e sono i moduli da implementare o integrare per lo sviluppo dell’applicazione.
-I {\em requisiti non funzionali} riguardano com’è fatto il sistema. Esempi di requisiti non funzinali sono i tool che scelgo, il linguaggio di programmazione che uso, data base che scelgo, ...
+I {\em requisiti non funzionali} riguardano com’è fatto il sistema. Esempi di requisiti non funzionali sono i tool che scelgo, il linguaggio di programmazione che uso, data base che scelgo, ...
 \\
+\\
+Requisiti:
+\begin{itemize}
+	\item UC1
+		\begin{itemize}
+		\item funzionali: voglio permettere all'utente di accedere al mio sito web e alla mia applicazione, visualizzare l'elenco degli articoli a mia disposizione, fargli scegliere quelli che pi\'u lo aggradano, inserirli nel carrello, pagare e completare l'ordine. Voglio permettere al dipendente di visualizzare gli ordini 
+		\item non funzionali: tools Java (pattern decorator + strategy), html+javascript+css (front-end), Oracle. 
+		\end{itemize}
+	\item UC2
+		\begin{itemize}
+		\item funzionali: voglio permettere all'utente di gestirsi (eventualmente) l'avatar, tramite cui provera' le diverse combinazioni di capi. I dati immagazzinati serviranno al sarto per una gestione pi\'u lean del magazzino (vedi anche ordini con i fornitori di materie prime)
+		\item non funzionali: Oracle, Java (pattern Composite), three-js (libreria js sul browser per realt\'a aumentata)/ webGL (grafica 3D)
+		\end{itemize}
+	\item UC3
+		\begin{itemize}
+		\item funzionali: voglio permettere ai miei "iscritti" di ricevere info riguardanti i prossimi eventi pop-up store nella zona geografica di competenza 
+		\item non funzionali: Oracle, Java (pattern Observer), client mail, API di geolocalizzazione
+		\end{itemize}
+\end{itemize}
 
-\davide{\textbf{[TODO]} Elencare i casi d’uso che abbiamo scelto. Dettagliare ciascun caso d'uso e specificare per ognuno sia i requisiti funzionali, che quelli non funzionali.}
 
 \vspace{1em}
 \begin{figure}[ht]
@@ -265,12 +311,16 @@ I {\em requisiti non funzionali} riguardano com’è fatto il sistema. Esempi di
 
 \subsection{Glossario degli attori}
 
+\andrea{\texbf{TODO} Termini di informatichese per il cliente che non ne sa nulla. Prendi termini "difficili" di sezione precedente e definiscili.}
+
 \davide{\textbf{[TODO]} Elaborare il contenuto e scrivere questa sezione.}
 
 ...
 
 
 \section{Il documento di vision}
+
+\edoardo{\textbf{TODO} Elabora}
 
 \davide{\textbf{[TODO]} Elaborare il contenuto e scrivere questa sezione.}
 
@@ -316,7 +366,7 @@ Per una stessa interfaccia possono esserci più Decorator, ma in questo caso ne 
 
 Il {\em pattern Strategy} serve a definire una famiglia di algoritmi simili tra loro e dunque \textbf{intercambiabili}. In particolare, è tipica della situazione in cui vogliamo isolare l’algoritmo che svolge un certo compito, per farlo variare in modo indipendente dal resto dell’implementazione della classe.
 
-Questo pattern suggerisce l’incapsulazione della logica di ogni
+Questo pattern suggerisce l’incapsulamento della logica di ogni
 particolare algoritmo, in apposite classi, dette {\em ConcreteStrategy}, le quali implementano l’interfaccia che consente agli oggetti di interagire con loro. Questa interfaccia deve fornire un accesso efficiente ai dati del Context, richiesti da ogni ConcreteStrategy, e viceversa \cite{gof_sunt}.
 
 
@@ -324,6 +374,9 @@ particolare algoritmo, in apposite classi, dette {\em ConcreteStrategy}, le qual
 
 \davide{\textbf{[TODO]} Sviluppare il microprototipo del pattern Composite per il caso studio del magazzino snello.}
 
+\subsection{Pattern Observer}
+
+\andrea{\textbf{TODO} A codice ultimato, scrivi sezione}
 
 
 \newpage

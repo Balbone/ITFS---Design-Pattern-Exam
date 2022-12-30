@@ -1,9 +1,11 @@
+package patter_strategy;
+
 interface Ruolo {
    void print();
 }
 
-/* La classe UtenteApplicazione è il Context che mantiene al suo interno le carattetistiche
-La particolare modalità di stampa rimane a carico di oggetti che implementano l’interfaccia Utente.
+/* La classe pattern_decorator.UtenteApplicazione è il Context che mantiene al suo interno le carattetistiche
+La particolare modalità di stampa rimane a carico di oggetti che implementano l’interfaccia pattern_decorator.patter_strategy.Utente.
 Il particolare oggetto che incapsula la procedura di stampa scelta, viene settato tramite il metodo setRole,
 intanto che la procedura stessa di stampa viene invocata tramite il metodo display.
 */
@@ -49,12 +51,12 @@ class Cliente implements Ruolo {
 public class ClienteDipendenteStrategy{
    public static void main (String[] arg) {
 
-      Utente u = new Utente( "Davide" , "Marietti", 10 );
+      pattern_decorator.Utente u = new pattern_decorator.Utente( "Davide" , "Marietti", 10 );
 
-      u.setRuolo( new Cliente() );
+      u.setRuolo( new pattern_decorator.Cliente() );
       u.display();
 
-      u.setRuolo( new Dipendente() );
+      u.setRuolo( new pattern_decorator.Dipendente() );
       u.display();
    }
 }

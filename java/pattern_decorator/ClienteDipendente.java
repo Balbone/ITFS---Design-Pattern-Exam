@@ -1,5 +1,7 @@
+package pattern_decorator;
+
 /*
- La classe Utente è la Component del Decorator. Specifica l’interfaccia degli oggetti che avranno caratteristiche aggiunte dinamicamente.
+ La classe pattern_decorator.Utente è la Component del Decorator. Specifica l’interfaccia degli oggetti che avranno caratteristiche aggiunte dinamicamente.
 */
 interface Utente {
    String getName();
@@ -11,7 +13,7 @@ interface Utente {
 
 
 /*
-La classe UtenteBase è la ConcreteComponent del Decorator. Implementa l’oggetto in cui si possono aggiungere nuove responsabilità.
+La classe pattern_decorator.UtenteBase è la ConcreteComponent del Decorator. Implementa l’oggetto in cui si possono aggiungere nuove responsabilità.
 */
 class UtenteBase implements Utente {
    private String nome;
@@ -39,8 +41,8 @@ class UtenteBase implements Utente {
    }
 }
 
-/* La classe UtenteApplicazione è il Decorator. Contiene il codice necessario per immagazzinare l’oggetto decorato (Component), e mappa verso di lui le operazioni richieste.
-Si noti come implementi l'interfaccia Utente.
+/* La classe pattern_decorator.UtenteApplicazione è il Decorator. Contiene il codice necessario per immagazzinare l’oggetto decorato (Component), e mappa verso di lui le operazioni richieste.
+Si noti come implementi l'interfaccia pattern_decorator.Utente.
 */
 class UtenteApplicazione implements Utente {
    private Utente utente;
@@ -63,9 +65,9 @@ class UtenteApplicazione implements Utente {
 }
 
 /*
-La caratteristiche tipiche del dipendete sono codificate nella classe Dipendente.
+La caratteristiche tipiche del dipendete sono codificate nella classe pattern_decorator.Dipendente.
 Questa classe estende le funzioni del Decorator, in particolare aggiungendo l’operazione sayIamDipendete, che viene chiamata come parte della ridefinizione del metodo whoIs.
-Inoltre ridefinisce il metodo print e aggiunge all'UtenteApplicazione l'attributo stipendio.
+Inoltre ridefinisce il metodo print e aggiunge all'pattern_decorator.UtenteApplicazione l'attributo stipendio.
 */
 class Dipendente extends UtenteApplicazione {
    private int stipendio;
@@ -86,7 +88,7 @@ class Dipendente extends UtenteApplicazione {
 }
 
 /*
-Come sopra, ridefinisce il metodo print e aggiunge all'UtenteApplicazione l'attributo carrello.
+Come sopra, ridefinisce il metodo print e aggiunge all'pattern_decorator.UtenteApplicazione l'attributo carrello.
  */
 class Cliente extends UtenteApplicazione {
    private String carrello;
@@ -103,7 +105,7 @@ class Cliente extends UtenteApplicazione {
 }
 
 /*
-Creo un Utente che è sia dipendente, che cliente.
+Creo un pattern_decorator.Utente che è sia dipendente, che cliente.
 */
 public class ClienteDipendente {
    public static void main(String[] args) {
