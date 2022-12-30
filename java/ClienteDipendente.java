@@ -11,7 +11,7 @@ interface Utente {
 
 
 /*
-La classe Engineer è la ConcreteComponent del Decorator. Implementa l’oggetto in cui si possono aggiungere nuove responsabilità.
+La classe UtenteBase è la ConcreteComponent del Decorator. Implementa l’oggetto in cui si possono aggiungere nuove responsabilità.
 */
 class UtenteBase implements Utente {
    private String nome;
