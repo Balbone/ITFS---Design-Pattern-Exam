@@ -1,5 +1,5 @@
 public class Main {
-  public static void main(String[] args) {
-    System.out.println("This is a placeholder");
-  }
+   public static void main(String[] args) {
+      System.out.println("This is a placeholder");
+   }
 }
