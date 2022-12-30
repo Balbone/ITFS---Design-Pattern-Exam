@@ -4,6 +4,7 @@
 \usepackage[italian]{babel}
 \usepackage{graphicx}
 \usepackage{svg}
+\usepackage{url}
 
 \usepackage{geometry}
  \geometry{
@@ -227,60 +228,57 @@ In questa sezione riportiamo i requisiti che la nostra applicazione dovrà rispe
 
 \andrea{\textbf{TO DO} Accorpare sezione di attori e casi d'uso, visto che la tassonomia proposta e' in funzione del contesto.}
 
-\subsection{Gli attori e i loro obiettivi}
+\subsection{Attori, obiettivi e Casi d'Uso}
+\label{subsec:UC}
 
+L'applicazione e tutto il sistema che traduce deve essere pensata per essere sfruttata da una serie di attori, umani o meno, che, con le loro attivit\'a, determinano come essa sar\'a sviluppata. Possiamo classificare gli attori nella tassonomia seguente:
 \begin{itemize}
     \item Gli \textbf{attori principali} sono quelli che utilizzano direttamente l’applicazione per uno specifico use case (sono i fruitori dell’app, e.g. un cliente, un impiegato).
     \item Gli \textbf{attori secondari} sono sistemi esterni (tipicamente software) che integriamo all’interno dell’app (sono API che inseriamo per implementare il tutto e su cui non abbiamo controllo).
     \item Gli \textbf{attori fuori scena} sono entità che non usano direttamente l’app, ma che ne possono trarre benefici o ci danno dei vincoli da rispettare (l’università è l’attore fuori scena che beneficia di Moodle, la legge con il GDPR).
 \end{itemize}
 
-
-\davide{\textbf{[TODO]} Elencare gli attori (principali, secondari, fuori scena) e i loro obiettivi.}
-
-\subsection{I casi d'uso}
-\label{subsec:UC}
-
-L'{\em UC diagram} è una “interfaccia” astratta della nostra applicazione, che descrive un possibile {\em caso d'uso}, ossia un possibile scenario di utilizzo dell'applicazione, figura \ref{fig:UC_diagram}.
-
-
-\andrea{\textbf{TO DO} terzo UC3 = POP-UP STORE = aggiorna sezione sotto}
-
-
-Casi d'uso ipotizzati a lezione:
+I Casi d'Uso, invece, descrivono i possibili scenari di utilizzo dell'applicazione, il macro-contesto all'interno del quale si muovono gli attori di cui sopra. Una comune rappresentazione grafica di un Caso d'Uso (od \textbf{UC}) \'e ravvisabile nell'{\em UC diagram}, ovvero un'\textit{interfaccia} astratta della nostra applicazione (cfr. fig. \ref{fig:UC_diagram}, p.\pageref{fig:UC_diagram}).
+\\
+\\
+La definizione degli attori deriva da quella degli UC, pertanto ci aggingiamo ad elencare quelli che saranno di nostro interesse progettuale:
 \begin{itemize}
-    \item Voglio comprare un vestito online,
-    \item Voglio accedere al magazzino snello,
-    \item Pop-Up store  
+    \item Acquisto di capi di vestiario online (\textit{UC1})
+    \item Accesso al magazzino snello (\textit{UC2})
+    \item Aggiornamento dei clienti rispetto all'installazione temporanea di Pop-Up store (\textit{UC3})
 \end{itemize}
 
-Attori e ruoli:
+A questo punto possiamo enunciare gli attori, a pi\'u livelli, che entreranno in contatto con gli UC che abbiamo appena definito. In particolare:
 \begin{itemize}
-	\item UC1
+	\item \textbf{UC1}
 		\begin{itemize}
-		\item attore principale: cliente - dipendente  
-		\item attore secondario: metodi di pagamento 
-		\item fuori scena: corriere (pacchi, beneficia del mio indotto)
+		\item Principali: Cliente che vuole acquistare - Dipendente che monitora acquisti 
+		\item Secondari: Metodi di pagamento
+		\item Fuori scena: Compagnia di trasporti 
 		\end{itemize}
-	\item UC2
+	\item \textbf{UC2}
 		\begin{itemize}
-		\item attore principale: sarto (fa abito e gestisce) - utente/avatar 
-		\item attore secondario: algoritmo/gestionale
-		\item fuori scena: fornitori materie prime/tessuto 
+		\item Principali: Cliente nella sua forma di avatar - Dipendente sarto che gestisce il proprio lavoro rispetto al traffico degli avatar 
+		\item Secondari: Algoritmo che coadiuva i dipendenti nella gestione del magazzino
+		\item Fuori scena: Fornitori di materie prime 
 		\end{itemize}
-	\item UC3
+	\item \textbf{UC3}
 		\begin{itemize}
-		\item attore principale: cliente - dipendente/cliente 
-		\item attore secondario: database collegato a software tramite API per andare a salvare i vari utenti che lasciano email e autorizzazioni per la newsletter 
-		\item fuori scena: GDPR - software per crittografare 
+		\item Principali: Cliente che vuole essere aggiornato rispetto alle attivit\'a della Compagnia 
+		\item Secondari: Database collegato a software tramite API per gestire informazioni di contatto dei clienti interessati alla newsletter 
+		\item Fuori scena: GDPR
 		\end{itemize}
 \end{itemize}
 
-I {\em requisiti funzionali} riguardano ciò che il sistema fa e sono i moduli da implementare o integrare per lo sviluppo dell’applicazione.
-I {\em requisiti non funzionali} riguardano com’è fatto il sistema. Esempi di requisiti non funzionali sono i tool che scelgo, il linguaggio di programmazione che uso, data base che scelgo, ...
-\\
-\\
-Requisiti:
+\subsection{Requisiti}
+
+Con \textit{requisiti} intendiamo caratteristiche del sistema, da un punto di vista puramente logico o da un punto di vista tecnico. Pi\'u nello specifico, distinguiamo: 
+\begin{itemize}
+	\item \textbf{requisiti funzionali}, che riguardano ciò che il sistema fa e sono i moduli da implementare o integrare per lo sviluppo dell’applicazione;
+	\item \textbf{requisiti non funzionali}, che riguardano come \'e fatto il sistema (riferendoci ad esempi quali i tools che vengono utilizzati per la sua realizzazione, il linguaggio di programmazione con cui \'e scritto, il database a cui si appoggia, ...)
+\end{itemize}
+
+Descriviamo quindi i requisiti che abbiamo intercettato relativamente agli UC individuati nella sezione precedente: 
 \begin{itemize}
 	\item UC1
 		\begin{itemize}
@@ -310,6 +308,16 @@ Requisiti:
 
 
 \subsection{Glossario degli attori}
+
+Viene fornito al lettore un glossario dei termini tecnici utilizzati nelle sezioni precedenti;
+\begin{itemize}
+	\item API
+	\item Client (mail)
+	\item Database (Oracle)
+	\item Libreria (Three-js)
+	\item Linguaggio di programmazione (html - css - javascript - java)
+	\item Pattern 
+\end{itemize}
 
 \andrea{\texbf{TODO} Termini di informatichese per il cliente che non ne sa nulla. Prendi termini "difficili" di sezione precedente e definiscili.}
 
