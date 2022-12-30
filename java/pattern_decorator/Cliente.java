@@ -1,13 +1,19 @@
-
+/*
+La responsabilità particolare di un utente con il ruolo di cliente sono codificate nell’obj Cliente.
+Questa classe estende le funzioni del Decorator, particolarmente aggiungendo...
+*/
 public class Cliente extends Ruolo {
+
    public Cliente( User userC ) {
       super( userC );
    }
+
    public void whoIs() {
-      sayIamBoss();
+      sayIamClient();
       super.whoIs();
    }
-   private void sayIamBoss(){
-      System.out.print( "I am a boss." );
+
+   private void sayIamClient(){
+      System.out.print( "I am a client." );
    }
 }

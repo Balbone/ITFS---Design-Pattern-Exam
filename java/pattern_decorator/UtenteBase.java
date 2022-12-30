@@ -4,23 +4,28 @@ Questa componente del pattern Decorator è detta "ConcreteComponent".
  */
 
 public class UtenteBase implements User {
-   private String name, office;
 
-   public UtenteBase(String name, String office) {
-      this.name = name;
-      this.office = office;
+   private String username, email, pwd;
+
+   public UtenteBase(String username, String email, String pwd) {
+      this.username = username;
+      this.email = email;
+      this.pwd = pwd;
    }
 
-   public String getName() {
-      return name;
+   public String getUsername() {
+      return username;
    }
 
-   public String getOffice() {
-      return office;
+   public String getEmail() {
+      return email;
+   }
+
+   public String getPwd() {
+      return pwd;
    }
 
    public void whoIs() {
-      System.out.println("I am " + getName() + ", and I am with the "
-              + getOffice() + ".");
+      System.out.println("Username: " + getUsername() + ", Email: " + getEmail());
    }
 }

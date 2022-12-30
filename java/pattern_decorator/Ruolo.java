@@ -6,17 +6,26 @@ e al suo interno utilizza questa stessa interfaccia per comunicare con il Compon
  */
 
 abstract class Ruolo implements User {
-   protected User responsible;
+
+   protected User appUser;
+
    public Ruolo(User user) {
-      responsible = user;
+      appUser = user;
    }
-   public String getName() {
-      return responsible.getName();
+
+   public String getUsername() {
+      return appUser.getUsername();
    }
-   public String getOffice() {
-      return responsible.getOffice();
+
+   public String getEmail() {
+      return appUser.getEmail();
    }
+
+   public String getPwd() {
+      return appUser.getPwd();
+   }
+
    public void whoIs() {
-      responsible.whoIs();
+      appUser.whoIs();
    }
 }

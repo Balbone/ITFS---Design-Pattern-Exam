@@ -4,7 +4,12 @@ Tutti le componenti del pattern Decorator implementano l’interfaccia User, det
 */
 
 public interface User {
-   public String getName();
-   public String getOffice();
+
+   public String getUsername();
+
+   public String getEmail();
+
+   public String getPwd();
+
    public void whoIs();
 }
