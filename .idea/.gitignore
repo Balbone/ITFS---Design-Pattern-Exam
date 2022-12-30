@@ -1,6 +1,6 @@
 # Default ignored files
 /shelf/
 /workspace.xml
-./java/*/*.class
+./java/pattern_decorator/*.class
 ./*/*.iml
 ../EsempiDesignPattern/
