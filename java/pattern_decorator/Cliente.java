@@ -1,7 +1,7 @@
 
-public class AdministrativeManager extends ResponsibleWorker {
-   public AdministrativeManager( Employee empl ) {
-      super( empl );
+public class Cliente extends Ruolo {
+   public Cliente( User userC ) {
+      super( userC );
    }
    public void whoIs() {
       sayIamBoss();

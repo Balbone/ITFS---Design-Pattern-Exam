@@ -1,8 +1,8 @@
 
-public class ProjectManager extends ResponsibleWorker {
+public class Dipendente extends Ruolo {
    private String project;
-   public ProjectManager( Employee empl, String proj ) {
-      super( empl );
+   public Dipendente( User userD, String proj ) {
+      super( userD );
       project = proj;
    }
    public void whoIs() {
