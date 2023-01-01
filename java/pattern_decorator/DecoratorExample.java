@@ -6,7 +6,7 @@ public class DecoratorExample {
       System.out.println("Who are you?");
       pippo.userInfo();
 
-      // Test example for the client user
+      // Test example for the CLIENT user
       pippo = new Cliente(pippo);
       System.out.println("Who are you now?");
       pippo.userInfo();
@@ -31,8 +31,8 @@ public class DecoratorExample {
       System.out.println(pippo);
 
 
-      // Test example for the employee user
-      User pluto = new UtenteBase("pluto.dePlutis", "pluto@me.it", "pollo123");
+      // Test example for the EMPLOYEE user
+      User pluto = new UtenteBase("pluto.dePlutopolis", "pluto@me.it", "pollo123");
       System.out.println("Who are you?");
       pluto.userInfo();
 
@@ -40,10 +40,9 @@ public class DecoratorExample {
       System.out.println("Who are you now?");
       pluto.userInfo();
 
-      // Test example for the client-employee user
+      // Test example for the CLIENT-EMPLOYEE user
       pippo = new Dipendente(pippo, "EveryoneLoggedToInternet Explorer");
       System.out.println("Who are you now?");
       pippo.userInfo();
-
    }
 }

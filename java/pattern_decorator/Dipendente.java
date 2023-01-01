@@ -4,7 +4,7 @@ dell’oggetto decorato, e modifica il comportamento dell’oggetto ...
 */
 
 /*
-Il dipendente deve poter controllare gli ordini effettuati dai clienti
+Il dipendente deve poter controllare gli ordini effettuati dai clienti e avere accesso alla gestione del magazzino.
  */
 
 public class Dipendente extends Ruolo {
