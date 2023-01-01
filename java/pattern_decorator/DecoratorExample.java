@@ -11,16 +11,21 @@ public class DecoratorExample {
       pippo.userInfo();
 
       System.out.println("Cestino degli acquisti:\n");
-      pippo.addToChart("matita", 3, 1);
-      pippo.addToChart("biro", 1, 2);
-      pippo.addToChart("colla", 2, 3);
-      pippo.addToChart("diario", 5, 1);
+      pippo.addToChart("t-shirt", 33, 3);
+      pippo.addToChart("cappello", 100, 1);
+      pippo.addToChart("scarpe", 200, 1);
+      pippo.addToChart("jeans", 90, 2);
       System.out.println(pippo);
 
       System.out.println("Rimuovo matita");
       pippo.removeFromChart("matita");
       System.out.println(pippo);
-      System.out.println("Aggiungo diario (ma c'e' gia'): successo = " + pippo.addToChart("diario", 3, 1));
+      System.out.println("Aggiungo una t-shirt (che e' gia' presente): successo = " + pippo.addToChart("t-shirt", 33, 1));
+      System.out.println("Aggiungo una camicia (che non e' ancora presente): successo = " + pippo.addToChart("camicia", 110, 1));
+
+      System.out.println(pippo);
+
+      pippo.pay();
       System.out.println(pippo);
 
 

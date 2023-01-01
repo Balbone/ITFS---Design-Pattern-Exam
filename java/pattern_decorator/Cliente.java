@@ -33,13 +33,17 @@ public class Cliente extends Ruolo {
    }
 
    public String toString() {
-      String s = "Num. items = " + numItems + "\n ";
+      String s = "Carrello:\n";
 
       int i = 0;
+      int items_counter = 0;
       while (i < numItems) {
+         items_counter += cart[i].getQuantity();
          s = s + cart[i].toString() + "\n";
          ++i;
       }
+      s += "Numero totale di items: " + items_counter + "\n";
+
       return s;
    }
 
@@ -62,7 +66,11 @@ public class Cliente extends Ruolo {
    }
 
    public boolean addToChart(String n, int p, int q) {
-      if (present(n)) return false;
+      if (present(n)) {
+         int old_quantity = cart[findIndex(n)].getQuantity();
+         cart[findIndex(n)].setQuantity(old_quantity + q);
+         return true;
+      }
       if (fullChart()) return false;
       cart[numItems] = new Item(n, p, q);
       ++numItems;
@@ -75,5 +83,25 @@ public class Cliente extends Ruolo {
       --numItems;
       cart[i] = cart[numItems];
       return true;
+   }
+
+   public boolean pay() {
+      if (numItems == 0) {
+         System.out.println("Cestino vuoto, pagamento non andato a buon fine.");
+         return false;
+      } else {
+
+         int i = 0;
+         int bill = 0;
+         while (i < numItems) {
+            bill += cart[i].getQuantity() * cart[i].getPrice();
+            ++i;
+         }
+
+         System.out.println("Prodotti acquistati:\n" + this + "Saldo totale pagato: " + bill + "$");
+         this.numItems = 0;
+         this.cart = new Item[10];
+         return true;
+      }
    }
 }

@@ -16,4 +16,6 @@ public interface User {
    public boolean addToChart(String n, int p, int q);
 
    public boolean removeFromChart(String n);
+
+   public boolean pay();
 }

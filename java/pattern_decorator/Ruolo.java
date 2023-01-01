@@ -36,4 +36,8 @@ abstract class Ruolo implements User {
    public boolean removeFromChart(String n) {
       return false;
    }
+
+   public boolean pay(){
+      return false;
+   }
 }

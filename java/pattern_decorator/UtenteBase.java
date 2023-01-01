@@ -36,4 +36,8 @@ public class UtenteBase implements User {
    public boolean removeFromChart(String n){
       return false;
    }
+
+   public boolean pay(){
+      return false;
+   }
 }
