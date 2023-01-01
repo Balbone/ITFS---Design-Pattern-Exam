@@ -25,7 +25,7 @@ public class UtenteBase implements User {
       return pwd;
    }
 
-   public void whoIs() {
+   public void userInfo() {
       System.out.println("Username: " + getUsername() + ", Email: " + getEmail());
    }
 }

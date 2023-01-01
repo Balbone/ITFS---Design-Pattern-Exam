@@ -25,7 +25,7 @@ abstract class Ruolo implements User {
       return appUser.getPwd();
    }
 
-   public void whoIs() {
-      appUser.whoIs();
+   public void userInfo() {
+      appUser.userInfo();
    }
 }

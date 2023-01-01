@@ -12,8 +12,13 @@ public class Dipendente extends Ruolo {
       project = proj;
    }
 
-   public void whoIs() {
-      super.whoIs();
+   public void userInfo() {
+      sayIamEmployee();
+      super.userInfo();
       System.out.println( "I am the Manager of the Project:" + project );
+   }
+
+   private void sayIamEmployee(){
+      System.out.print( "I am a employee." );
    }
 }

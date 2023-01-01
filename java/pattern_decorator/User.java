@@ -11,5 +11,5 @@ public interface User {
 
    public String getPwd();
 
-   public void whoIs();
+   public void userInfo();
 }

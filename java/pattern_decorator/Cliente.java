@@ -8,9 +8,9 @@ public class Cliente extends Ruolo {
       super( userC );
    }
 
-   public void whoIs() {
+   public void userInfo() {
       sayIamClient();
-      super.whoIs();
+      super.userInfo();
    }
 
    private void sayIamClient(){
