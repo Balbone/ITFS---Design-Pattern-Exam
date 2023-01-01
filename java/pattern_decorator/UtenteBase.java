@@ -28,4 +28,12 @@ public class UtenteBase implements User {
    public void userInfo() {
       System.out.println("Username: " + getUsername() + ", Email: " + getEmail());
    }
+
+   public boolean addToChart(String n, int p, int q){
+      return false;
+   }
+
+   public boolean removeFromChart(String n){
+      return false;
+   }
 }

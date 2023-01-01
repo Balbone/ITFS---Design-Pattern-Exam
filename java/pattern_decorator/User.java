@@ -12,4 +12,8 @@ public interface User {
    public String getPwd();
 
    public void userInfo();
+
+   public boolean addToChart(String n, int p, int q);
+
+   public boolean removeFromChart(String n);
 }

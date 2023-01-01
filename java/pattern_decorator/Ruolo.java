@@ -28,4 +28,12 @@ abstract class Ruolo implements User {
    public void userInfo() {
       appUser.userInfo();
    }
+
+   public boolean addToChart(String n, int p, int q) {
+      return false;
+   }
+
+   public boolean removeFromChart(String n) {
+      return false;
+   }
 }
