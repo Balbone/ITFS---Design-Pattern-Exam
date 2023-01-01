@@ -2,10 +2,11 @@
 public class DecoratorExample {
    public static void main(String arg[]) {
 
-      User pippo = new UtenteBase("William Gateway", "Programming Department", "pollo123");
+      User pippo = new UtenteBase("pippo.dePippis", "pippo@me.it", "pollo123");
       System.out.println("Who are you?");
       pippo.userInfo();
 
+      // Test example for the client user
       pippo = new Cliente(pippo);
       System.out.println("Who are you now?");
       pippo.userInfo();
@@ -26,13 +27,20 @@ public class DecoratorExample {
       System.out.println(pippo);
 
       pippo.pay();
+
       System.out.println(pippo);
 
 
-      pippo = new Dipendente(pippo, "D.O.S.- Doors Operating System");
-      System.out.println("Who are you now?");
-      pippo.userInfo();
+      // Test example for the employee user
+      User pluto = new UtenteBase("pluto.dePlutis", "pluto@me.it", "pollo123");
+      System.out.println("Who are you?");
+      pluto.userInfo();
 
+      pluto = new Dipendente(pluto, "D.O.S.- Doors Operating System");
+      System.out.println("Who are you now?");
+      pluto.userInfo();
+
+      // Test example for the client-employee user
       pippo = new Dipendente(pippo, "EveryoneLoggedToInternet Explorer");
       System.out.println("Who are you now?");
       pippo.userInfo();
