@@ -3,7 +3,11 @@ Definisce l’obj UtenteBase implementando l'interfaccia User, a cui si possono 
 Questa componente del pattern Decorator è detta "ConcreteComponent".
  */
 
+import java.util.Scanner;
+
 public class UtenteBase implements User {
+
+   private static Scanner tastiera = new Scanner(System.in);
 
    private String username, email, pwd;
 
@@ -25,19 +29,31 @@ public class UtenteBase implements User {
       return pwd;
    }
 
+   public void login(){
+      System.out.println( "username: " );
+      this.username = tastiera.nextLine();
+      System.out.println( "email: " );
+      this.email = tastiera.nextLine();
+      System.out.println( "password: " );
+      this.pwd = tastiera.nextLine();
+      tastiera.nextLine();
+   }
+
+   public void assignJob(){}
+
    public void userInfo() {
       System.out.println("Username: " + getUsername() + ", Email: " + getEmail());
    }
 
-   public boolean addToChart(String n, int p, int q){
+   public boolean addToChart(Magazzino m, String n, int q) {
       return false;
    }
 
-   public boolean removeFromChart(String n){
+   public boolean removeFromChart(String n) {
       return false;
    }
 
-   public boolean pay(){
+   public boolean pay() {
       return false;
    }
 }

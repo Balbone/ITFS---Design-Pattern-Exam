@@ -21,11 +21,11 @@ public class Cliente extends Ruolo {
    public void userInfo() {
       sayIamClient();
       super.userInfo();
-      System.out.println("Number of items in the cart: " + getNumItems());
+      System.out.println("Numero di items nel carrello: " + getNumItems());
    }
 
    private void sayIamClient() {
-      System.out.print("I am a client. ");
+      System.out.print("Sono un cliente. ");
    }
 
    public int getNumItems() {
@@ -39,7 +39,7 @@ public class Cliente extends Ruolo {
       int items_counter = 0;
       while (i < numItems) {
          items_counter += cart[i].getQuantity();
-         s = s + cart[i].toString() + "\n";
+         s = s + cart[i].toString();
          ++i;
       }
       s += "Numero totale di items: " + items_counter + "\n";
@@ -57,24 +57,23 @@ public class Cliente extends Ruolo {
       return numItems;
    }
 
-   public boolean present(String n) {
-      return (findIndex(n) < numItems);
-   }
-
    public boolean fullChart() {
       return (numItems == cart.length);
    }
 
-   public boolean addToChart(String n, int p, int q) {
-      if (present(n)) {
-         int old_quantity = cart[findIndex(n)].getQuantity();
-         cart[findIndex(n)].setQuantity(old_quantity + q);
-         return true;
-      }
+   public boolean addToChart(Magazzino m, String n, int q) {
       if (fullChart()) return false;
-      cart[numItems] = new Item(n, p, q);
-      ++numItems;
-      return true;
+      if (m.isPresent(n)) {
+         if (q < m.checkAvailability(n)) {
+            cart[numItems] = m.sell(n, q);
+            ++numItems;
+            return true;
+         } else {
+            return false;
+         }
+      } else {
+         return false;
+      }
    }
 
    public boolean removeFromChart(String n) {

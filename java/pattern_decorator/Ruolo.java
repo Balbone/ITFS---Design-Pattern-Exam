@@ -13,6 +13,12 @@ abstract class Ruolo implements User {
       appUser = user;
    }
 
+   public void login() {
+   }
+
+   public void assignJob() {
+   }
+
    public String getUsername() {
       return appUser.getUsername();
    }
@@ -29,7 +35,7 @@ abstract class Ruolo implements User {
       appUser.userInfo();
    }
 
-   public boolean addToChart(String n, int p, int q) {
+   public boolean addToChart(Magazzino m, String n, int q) {
       return false;
    }
 
@@ -37,7 +43,7 @@ abstract class Ruolo implements User {
       return false;
    }
 
-   public boolean pay(){
+   public boolean pay() {
       return false;
    }
 }

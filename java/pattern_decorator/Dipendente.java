@@ -4,26 +4,33 @@ dell’oggetto decorato, e modifica il comportamento dell’oggetto ...
 */
 
 /*
-Il dipendente deve poter controllare gli ordini effettuati dai clienti
+Il dipendente deve poter controllare gli ordini effettuati dai clienti e avere accesso alla gestione del magazzino.
  */
+
+import java.util.Scanner;
 
 public class Dipendente extends Ruolo {
 
-   private String project;
+   private static Scanner tastiera = new Scanner(System.in);
 
-   public Dipendente(User userD, String proj) {
+   private String job;
+
+   public Dipendente(User userD, String job) {
       super(userD);
-      project = proj;
+      this.job = job;
+   }
+
+   public void assignJob(){
+      System.out.println( "mansione: " );
+      this.job = tastiera.nextLine();
    }
 
    public void userInfo() {
       sayIamEmployee();
       super.userInfo();
-      System.out.println("I am the Manager of the Project:" + project);
    }
 
    private void sayIamEmployee() {
-      System.out.print("I am a employee. ");
+      System.out.print("Sono un dipendente con la mansione di " + job + ". ");
    }
-
 }
