@@ -8,6 +8,16 @@ Il cliente deve poter scegliere i propri vestiti, aggiungerli ad un carrello e a
  */
 
 
+/*
+La responsabilità particolare di un utente con il ruolo di cliente sono codificate nell’obj Cliente.
+Questa classe estende le funzioni del Decorator, particolarmente aggiungendo...
+*/
+
+/*
+Il cliente deve poter scegliere i propri vestiti, aggiungerli ad un carrello e acquistarli tramite pagamento online.
+ */
+
+
 public class Cliente extends Ruolo {
 
    private int numItems = 0;
