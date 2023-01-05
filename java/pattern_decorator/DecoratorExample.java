@@ -2,72 +2,48 @@
 public class DecoratorExample {
    public static void main(String arg[]) {
 
-      // Inizializzo il magazzino
+      User pippo = new UtenteBase("pippo.dePippis", "pippo@me.it", "pollo123");
+      System.out.println("Who are you?");
+      pippo.userInfo();
 
-      Magazzino ilMioMagazzino = new Magazzino();
-
-      System.out.println(ilMioMagazzino);
-
-      ilMioMagazzino.initMagazzino("t-shirt", 33, 30);
-      ilMioMagazzino.initMagazzino("polo", 67, 20);
-      ilMioMagazzino.initMagazzino("camicia", 90, 40);
-      ilMioMagazzino.initMagazzino("giacca", 256, 10);
-      ilMioMagazzino.initMagazzino("jeans", 80, 65);
-
-      System.out.println(ilMioMagazzino);
-
-
-      // Inizializzo uno user
-
-      //System.out.println("SIGN UP per accedere all'applicazione dell'Atelier Splendor.");
-      User anonymous = new UtenteBase("davide.marietti", "davide.marietti@me.it", "pollo123");
-      //anonymous.login();
-
-      //System.out.println("Informazioni sull'utente:");
-      //anonymous.userInfo();
-
-      // Test example for the CLIENT user
-      anonymous = new Cliente(anonymous);
-      //System.out.println("Informazioni sull'utente con ruolo di utente:");
-      anonymous.userInfo();
+      // Test example for the client user
+      pippo = new Cliente(pippo);
+      System.out.println("Who are you now?");
+      pippo.userInfo();
 
       System.out.println("Cestino degli acquisti:\n");
-      anonymous.addToChart(ilMioMagazzino, "t-shirt", 3);
-      anonymous.addToChart(ilMioMagazzino,"giacca", 1);
-      anonymous.addToChart(ilMioMagazzino,"jeans", 1);
-      anonymous.addToChart(ilMioMagazzino,"camici",2);
-
-      System.out.println(anonymous);
-      System.out.println(ilMioMagazzino);
-
-      /*
+      pippo.addToChart("t-shirt", 33, 3);
+      pippo.addToChart("cappello", 100, 1);
+      pippo.addToChart("scarpe", 200, 1);
+      pippo.addToChart("jeans", 90, 2);
+      System.out.println(pippo);
 
       System.out.println("Rimuovo matita");
-      anonymous.removeFromChart("matita");
-      System.out.println(anonymous);
-      System.out.println("Aggiungo una t-shirt (che e' gia' presente): successo = " + anonymous.addToChart("t-shirt", 33, 1));
-      System.out.println("Aggiungo una camicia (che non e' ancora presente): successo = " + anonymous.addToChart("camicia", 110, 1));
+      pippo.removeFromChart("matita");
+      System.out.println(pippo);
+      System.out.println("Aggiungo una t-shirt (che e' gia' presente): successo = " + pippo.addToChart("t-shirt", 33, 1));
+      System.out.println("Aggiungo una camicia (che non e' ancora presente): successo = " + pippo.addToChart("camicia", 110, 1));
 
-      System.out.println(anonymous);
+      System.out.println(pippo);
 
-      anonymous.pay();
+      pippo.pay();
 
-      System.out.println(anonymous);
+      System.out.println(pippo);
 
 
-      // Test example for the EMPLOYEE user
-      User pluto = new UtenteBase("pluto.dePlutopolis", "pluto@me.it", "pollo123");
-      System.out.println("Informazioni sull'utente:");
+      // Test example for the employee user
+      User pluto = new UtenteBase("pluto.dePlutis", "pluto@me.it", "pollo123");
+      System.out.println("Who are you?");
       pluto.userInfo();
 
-      pluto = new Dipendente(pluto, "");
-      pluto.assignJob();
-      System.out.println("Informazioni sull'utente:");
+      pluto = new Dipendente(pluto, "D.O.S.- Doors Operating System");
+      System.out.println("Who are you now?");
       pluto.userInfo();
 
-      // Test example for the CLIENT-EMPLOYEE user
-      anonymous = new Dipendente(anonymous, "");
-      System.out.println("Informazioni sull'utente:");
-      anonymous.userInfo();*/
+      // Test example for the client-employee user
+      pippo = new Dipendente(pippo, "EveryoneLoggedToInternet Explorer");
+      System.out.println("Who are you now?");
+      pippo.userInfo();
+
    }
 }
