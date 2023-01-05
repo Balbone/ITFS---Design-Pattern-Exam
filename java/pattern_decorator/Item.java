@@ -26,6 +26,6 @@ public class Item {
    }
 
    public String toString() {
-      return " - item: " + name + ", price: " + price + "$, quantity: " + quantity + "\n";
+      return "item: " + name + ", price: " + price + "$, quantity: " + quantity + "\n";
    }
 }

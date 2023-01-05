@@ -43,7 +43,9 @@ abstract class Ruolo implements User {
       return false;
    }
 
-   public boolean pay() {
+   public boolean pay(Magazzino m) {
       return false;
    }
+
+   public void checkOrders(Magazzino m){}
 }

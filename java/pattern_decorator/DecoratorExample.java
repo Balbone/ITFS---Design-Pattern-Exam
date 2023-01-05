@@ -3,9 +3,7 @@ public class DecoratorExample {
    public static void main(String arg[]) {
 
       // Inizializzo il magazzino
-
       Magazzino ilMioMagazzino = new Magazzino();
-
       System.out.println(ilMioMagazzino);
 
       ilMioMagazzino.initMagazzino("t-shirt", 33, 30);
@@ -33,15 +31,15 @@ public class DecoratorExample {
 
       System.out.println("Cestino degli acquisti:\n");
       anonymous.addToChart(ilMioMagazzino, "t-shirt", 3);
-      anonymous.addToChart(ilMioMagazzino,"giacca", 1);
-      anonymous.addToChart(ilMioMagazzino,"jeans", 1);
-      anonymous.addToChart(ilMioMagazzino,"camici",2);
+      anonymous.addToChart(ilMioMagazzino, "giacca", 1);
+      anonymous.addToChart(ilMioMagazzino, "jeans", 1);
+      anonymous.addToChart(ilMioMagazzino, "camicia", 2);
 
       System.out.println(anonymous);
       System.out.println(ilMioMagazzino);
 
-      /*
 
+      /*
       System.out.println("Rimuovo matita");
       anonymous.removeFromChart("matita");
       System.out.println(anonymous);
@@ -49,8 +47,9 @@ public class DecoratorExample {
       System.out.println("Aggiungo una camicia (che non e' ancora presente): successo = " + anonymous.addToChart("camicia", 110, 1));
 
       System.out.println(anonymous);
+      */
 
-      anonymous.pay();
+      anonymous.pay(ilMioMagazzino);
 
       System.out.println(anonymous);
 
@@ -61,13 +60,16 @@ public class DecoratorExample {
       pluto.userInfo();
 
       pluto = new Dipendente(pluto, "");
-      pluto.assignJob();
+      //pluto.assignJob();
       System.out.println("Informazioni sull'utente:");
       pluto.userInfo();
+      pluto.checkOrders(ilMioMagazzino);
 
+      /*
       // Test example for the CLIENT-EMPLOYEE user
       anonymous = new Dipendente(anonymous, "");
       System.out.println("Informazioni sull'utente:");
-      anonymous.userInfo();*/
+      anonymous.userInfo();
+      */
    }
 }

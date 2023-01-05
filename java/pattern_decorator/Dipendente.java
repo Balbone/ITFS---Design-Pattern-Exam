@@ -33,4 +33,12 @@ public class Dipendente extends Ruolo {
    private void sayIamEmployee() {
       System.out.print("Sono un dipendente con la mansione di " + job + ". ");
    }
+
+   public void checkOrders(Magazzino m){
+      if (m.isOrder()) {
+         System.out.println(m.getOrders());
+      } else {
+         System.out.println("Nessun ordine presente.");
+      }
+   }
 }

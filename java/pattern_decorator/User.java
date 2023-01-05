@@ -21,5 +21,7 @@ public interface User {
 
    public boolean removeFromChart(String n);
 
-   public boolean pay();
+   public boolean pay(Magazzino m);
+
+   public void checkOrders(Magazzino m);
 }
