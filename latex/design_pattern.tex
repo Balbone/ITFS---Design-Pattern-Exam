@@ -98,7 +98,7 @@
 \begin{center}
     Andrea Balbo Mossetti \\
     Davide Marietti \\
-    Piaget Bouka \\
+    Piaget Bouaka \\
     Edoardo Pastori
 \end{center}
 
@@ -378,8 +378,16 @@ particolare algoritmo, in apposite classi, dette {\em ConcreteStrategy}, le qual
 
 
 \subsection{Pattern Composite}
+Questo pattern ci consente di construire una gerarchie di oggetti composti. Gli oggetti composti possono essere formati da oggetti singoli, oppure da altri oggetti composti. è utile nei casi in cui si vuole rappresentare gerarchie di oggetti tutto-parte, essere in grado di ignorare le differenze tra oggetti singoli e oggetti composti. 
+Il pattern viene usato nel nostro caso perché si può rappresentare il nostro magazzino come segue:
 
-\davide{\textbf{[TODO]} Sviluppare il microprototipo del pattern Composite per il caso studio del magazzino snello.}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{images/Composite.jpg}
+\end{figure}
+
+\lstinputlisting[label={list:esempio}, caption={\small Composite.java -- Implementazione del pattern Composite nel caso d'uso dell'acquisto Magazzino snello.}]
+{code/Composite.java}
 
 \subsection{Pattern Observer}
 
