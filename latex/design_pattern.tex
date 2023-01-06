@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+
 
 % pacchetti 
 \usepackage[italian]{babel}
@@ -21,6 +21,9 @@
     linkcolor=blue,
     urlcolor=blue
 }
+
+\usepackage{tikz}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
 
 %bibliography
 \usepackage[sorting=none, isbn=false, eprint=false]{biblatex}
@@ -127,7 +130,7 @@ Master IT Full Stack Design and Development, a.a. 2022/2023
 \abstract{}
 In questo documento \'e proposto il lavoro relativo alla realizzazione di un \textit{e-shop} di abbigliamento \textit{innovativo}. Una definizione pi\'u precisa di questo aggettivo ha richiesto una fase convergente, legata alla presa di coscienza delle caratteristiche proprie di quelli che sarebbero diventati i nostri \textit{competitors}, nonch\'e una fase divergente, attraverso la quale ci siamo soffermati sulle caratteristiche in linea con quella che iniziava a delinearsi con la nostra definizione di \textit{innovativo} mutuate da domini non appartenenti al mondo dell'\textit{e-shop} e dell'abbigliamento. 
 \\
-...
+\davide{[TODO] Da AMPLIARE completandolo.}
 
 \newpage
 
@@ -147,25 +150,40 @@ I problemi comuni da evitare in questa fase iniziale, per uno sviluppo florido d
 
 Si rende quindi necessaria una stretta comunicazione con il cliente, rappresentato dalla Professoressa Bono, per giungere ad un insieme di conoscenze che permetta di superare i problemi esposti poco sopra. \\
 La strategia adottata \'e quella dell'\textbf{intervista}, alla quale siamo giunti dopo un \textit{brainstorming} che ci ha visto partecipi in un'iniziale definizione delle caratteristiche che, a nostro parere, dovrebbero appartenere ad un \textit{e-shop innovativo}.
-\\
-\\
+
 Le nostre riflessioni sono sintetizzate nella sezione successiva. 
 
 \subsection{Analisi di mercato e idee di prodotto} 
 In questa fase abbiamo tratteggiato i contorni, ancora sfumati, dell'applicazione. Servono più informazioni possibili per avere una \textbf{visione ampia del mercato} in cui il prodotto richiesto si collocherà, ma anche idee originali a cui ispirarsi, che non devono necessariamente venire dal mondo dell'abbigliamento. Bisogna guardare al di là del {\em main stream}, l'applicazione dovrebbe creare l'effetto wow!
 Un'analisi di mercato approfondita ci ha permesso di individuare e confrontare le caratteristiche dei competitors e di pensare a possibili \textbf{soluzioni innovative} non ancora presenti sul mercato da proporre al committente.
 \\
-\\
-...
-\\
+\davide{[TODO] Da ampliare e aggiungere TABELLA della comparativa con i competitors trovati cercando su internet. Ampliando, fare riferimento alla tabella.}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c c c c c c|} 
+ \hline
+  & Sost. Ambientale & Sost. Sociale & Eco. Circolare & Linea Green & ... \rule[-2ex]{0pt}{6ex} \\
+ \hline\hline
+ YOOX & & & & & ... \rule[1ex]{0pt}{3ex}\\ 
+ Net a Porter & & & & & ... \rule[1ex]{0pt}{3ex}\\
+ Patagonia & \checkmark & \checkmark & & & \rule[1ex]{0pt}{3ex}\\
+ SSENSE & & & & & \rule[1ex]{0pt}{3ex}\\
+ Garment Workshop & \checkmark & & & & ... \rule[1ex]{0pt}{3ex}\\
+ ... & & & & & ... \rule[-2ex]{0pt}{6ex}\\
+ \hline
+\end{tabular}
+\caption{Tabella comparativa risultato dell'analisi di mercato. \davide{[TODO] Completare la tabella con i dati presenti sul file world ed editarla stilisticamente.}}
+\label{table:analisi_mercato}
+\end{table}
 
  
  
 \subsection{L'intervista}
-...
-\\
-\\
+
 L'intervista al committente dell'applicazione segue l'iniziale fase di analisi di mercato e di individualizzazione di possibili sviluppi innovativi, la quale è stata essenziale per \textbf{strutturare l'intervista} e raccogliere le idee innovative da proporre al committente. Le informazione raccolte nell'intervista serviranno a definire chiaramente i contorni dell'applicazione e a selezionare i moduli innovativi da sviluppare. L'intervista è stata strutturata nel seguente forma a macro blocchi:
+
+\davide{[TODO] Ampliare e abbellire le risposte della prof alle domande fatte a lezione. Io ho scritto quello che mi ricordavo, Edoardo, completa con quello che ti ricordi tu.}
 
 \textbf{Chi:} in questa prima fase conoscitiva abbiamo voluto inquadrare meglio la figura del committente. Abbiamo chiesto:
 \begin{itemize}
@@ -177,14 +195,8 @@ L'intervista al committente dell'applicazione segue l'iniziale fase di analisi d
 \textbf{Che cosa}: in questa seconda fase sempre conoscitiva abbiamo voluto inquadrare meglio le esigenze del committente. Abbiamo voluto carpire qual'è la sua idea di applicazione finale e le caratteristiche salienti che dovrebbero essere imprescindibili. La raccolta di queste informazioni è stata essenziale per capire il contesto in cui si opera e per selezionare le idee innovative (inizialmente pensate nella fase di analisi di mercato) da proporre al cliente.
 \begin{itemize}
     \item {\em Cosa motiva lei e gli stakeholders? Quali sono i vostri valori? In particolare, quali le aspettative in merito al prodotto?} Non vogliamo l’{\em hype} ({\em e.g.} Supreme, vuole la sostanza e la consapevolezza (per se stessi e per l'ambiente). Il cliente dell'{\em Atelier Splendor} sceglie un vestito per dire chi è, non lascia decidere alla massa cosa dovrebbe indossare, chi dovrebbe essere. Questa azienda promuove la cultura dello slow e della consapevolezza. Rifiutando i canoni della GDO, vuole sbarcare sul mercato online seguendo il proprio paradigma.
-    \\
-    ...
     \item {\em Quali sono gli obiettivi dell’azienda? L’obiettivo principale, gli obiettivi a breve, medio e lungo termine (possibilmente in ordine di importanza)?} L'obiettivo a breve termine è di espandersi attraverso l'apertura di un negozio online. L'obiettivo a medio termine è di farsi conoscere sul mercato.
-    \\
-    ...
     \item {\em Quali sono i criteri di successo del prodotto? Quali potrebbero essere gli indicatori da monitorare durante il progetto e quale sarebbe un indicatore chiave per stabilire che l'applicazione ha avuto successo?} L'indicatore chiave, tornasole del successo, sarebbe l'impiego di nuovo personale nella sartoria, almeno due nuove sarte.
-    \\
-    ...
 \end{itemize}
 
 \textbf{Quando}: in questa terza fase sempre conoscitiva abbiamo voluto inquadrare meglio le tempistiche relative alla finalizzazione del progetto. Lo scopo di queste domande è di carpire quali/quante idee innovative selezione nella (successiva) fase di brainstorming con il cliente. Il tempo a disposizione determina una selezione che andrà discussa con il cliente e una ripartizione delle idee di valore in moduli ``core", moduli ``pilota" e moduli non presi in considerazione in questa fase.
@@ -220,7 +232,6 @@ La progettazione e lo sviluppo almeno parziale dei \textbf{moduli ``pilota"}, st
     \item {\em ``Sartoria dedicata e confezionamento su misura"}: la sartoria interna potrà essere ulteriormente allargata introducendo due nuovi servizi al cliente. Primo, i vestiti che necessiteranno di manutenzione (orli, pence, sostituzione cerniere, rattoppi, ...) potranno essere spediti alla sede centrale per essere aggiustati. Due, la sartoria offrirà la possibilità di avere abiti confezionati su misura.
 \end{itemize}
 
-\davide{\textbf{[TODO]} Rivedere e aggiungere informazioni nelle risposte. Scegliere bene i nomi dei moduli, che potrebbero poi essere utilizzati nello sviluppo dei design pattern.}
 
 \section{Analisi dei requisiti}
 
@@ -318,18 +329,10 @@ Viene fornito al lettore un glossario dei termini tecnici utilizzati nelle sezio
 	\item Pattern (\textit{Design Pattern}): modello logico a cui si ricorre per proporre una soluzione ad un problema che riguarda l'architettura e la progettazione del programma. 
 \end{itemize}
 
-\davide{\textbf{[TODO]} Elaborare il contenuto e scrivere questa sezione.}
-
-...
-
 
 \section{Il documento di vision}
 
-\edoardo{\textbf{TODO} Elabora}
-
-\davide{\textbf{[TODO]} Elaborare il contenuto e scrivere questa sezione.}
-
-...
+\davide{\textbf{TODO} Da elaborare!}
 
 
 \section{Design Patterns utilizzati}
@@ -348,7 +351,6 @@ In questa sezione riportiamo sottoforma di micro-prototipi le implementazioni de
 
 \andrea{\textbf{[NOTA]} Obbligatorio il design pattern {\em Composite} con almeno tre livelli che restituisca, e.g. le componenti di abbigliamento che formano l'outfit. Più siamo fantasiosi nel trovare un'applicazione tra le nostre idee, meglio verrà valutato.}
 
-\davide{\textbf{[TODO]} Aggiungere la bibliografia con i testi e documenti riportati su moodle.}
 
 \davide{Materiale da citare: \cite{gof_riferimento}, \cite{up-riferimento}, \cite{uml_riferimento}, \cite{elicitation_tools}, \cite{gof_sunt}, \cite{github}.}
 
@@ -360,8 +362,6 @@ Con riferimento al caso d'uso dell'acquisto di un abito sull'applicazione, si pe
 
 Il pattern suggerisce la creazione di {\em wrapper classes} (Decorator) che racchiudono gli oggetti ai quali si vuole aggiungere le nuove responsabilità. Questi ultimi oggetti, insieme ai Decorator devono implementare una interfaccia comune, in modo che l’applicazione possa continuare ad interagire con gli oggetti decorati \cite{gof_sunt}.
 Per una stessa interfaccia possono esserci più Decorator, ma in questo caso ne considereremo solo uno.
-
-\davide{\textbf{[TODO]} Il codice del decorator va completamente rivisto e ampliato.}
 
 \lstinputlisting[label={list:esempio}, caption={\small ClienteDipendente.java -- Implementazione del pattern Decorator nel caso d'uso dell'acquisto online.}]
 {code/ClienteDipendente.java}
