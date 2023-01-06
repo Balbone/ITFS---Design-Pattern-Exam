@@ -399,6 +399,140 @@ Questo comportamento implica quindi, accettando il fatto di non voler creare dip
 \\
 \\
 Nel nostro caso specifico, essendoci immaginati, oltre allo store on-line per la vendita dei nostri prodotti, anche l'allestimento di PopUp-Store temporanei in diverse citt\'a, l'idea che gli utenti iscritti al nostro sito per effettuare acquisti potessero essere interessati ad aggiornamenti relativi alla nostra presenza fisica sul territorio, per poter toccare direttamente con mano i capi che forniamo loro, ha portato alla presa di coscienza della necessit\'a di allestire una \textit{newsletter} che li potesse aggiornare in tal senso. Essi saranno aggiornati rispetto ad informazioni chiave quali la citt\'a ed il negozio entro cui il PopUp-Store verr\'a allestito, nonch\'e gli orari. 
+\\
+\\
+Procediamo ora con il commento del codice utilizzato. \\
+L'implementazione prevede la creazione di:
+\begin{itemize}
+	\item Un \textit{subject} (fornisce un'interfaccia che permette di aggiungere, rimuovere e notificare gli osservatori)
+	\item Un \textit{concreteSubject} (notifica gli osservatori circa i cambiamenti del proprio stato e modifica quest'ultimo all'occorrenza)
+	\item Un (...n) \textit{observer} (fornisce un'interfaccia per aggiornare gli osservatori rispetto ai cambi di stato del soggetto)
+	\item Un (...n) \textit{concreteObserver} (viene informato dei cambi di stato avvenuti sul concreteSubject e usa le informazioni ottenute per aggiornarsi appropriatamente rispetto ad esso)
+\end{itemize}
+
+\begin{lstlisting}
+// The Subject interface 
+interface Subject {
+    void registerObserver(Observer o); 
+    void removeObserver(Observer o); 
+    void notifyObservers();
+}
+
+// The Observer interface 
+interface Observer {
+    void update(String location, String store, Date openingdate, Date closingdate, float openingtime, float closingtime); 
+}
+\end{lstlisting}
+
+Come abbiamo detto precedentemente, queste due interfacce permettono, rispettivamente:
+\begin{itemize}
+	\item SI:
+		\begin{itemize}
+		\item aggiungere un osservatore 
+		\item rimuovere un osservatore 
+		\item notificare agli osservatori i cambi di stato
+		\end{itemize}
+	\item OI:
+		\begin{itemize}
+		\item essere aggiornati rispetto ai cambi di stato del soggetto
+		\end{itemize}
+\end{itemize}
+
+Ribadiamo che abbiamo definito i seguenti cambi rispetto ai quali i clienti dovranno essere aggiornati:
+\begin{itemize}
+	\item citt\'a entro cui si svolger\'a il PopUp-Store 
+	\item il negozio che lo ospiter\'a
+	\item la data di apertura e quella di chiusura
+	\item l'orario entro cui esso si potr\'a trovare all'interno del negozio sopracitato
+\end{itemize}
+
+Possiamo ora passare al \textit{ConcreteSubject} e al \textit{ConcreteObserver}:
+
+\begin{lstlisting}
+
+// The PopUpStore class is the ConcreteSubject 
+class PopUpStore implements Subject {
+
+    private List<Observer> observers; 
+    private String location;
+    private String store;
+    private Date openingdate;
+    private Date closingdate;
+    private float openingtime;
+    private float closingtime;
+
+    public PopUpStore() {
+    observers = new ArrayList<Observer>();
+    }
+
+    public void registerObserver(Observer o) { 
+        observers.add(o);
+    }
+
+    public void removeObserver(Observer o) { 
+        int i = observers.indexOf(o);
+        if (i >= 0) {
+            observers.remove(i); 
+        }
+    }
+
+    public void notifyObservers() {
+        for (Observer observer : observers) {
+            observer.update(location, store, openingdate, closingdate, openingtime, closingtime); 
+        }
+    }
+
+    public void measurementsChanged() { 
+        notifyObservers();
+    }
+
+    public void setMeasurements(String location, String store, Date openingdate, Date closingdate, float openingtime, float closingtime) { 
+        this.location = location;
+        this.store = store;
+        this.openingdate = openingdate;
+        this.closingdate = closingdate;
+        this.openingtime = openingtime;
+        this.closingtime = closingtime;
+        measurementsChanged(); 
+    }
+}
+
+
+// The ConcreteObserver class
+class CurrentConditionsDisplay implements Observer, DisplayElement {
+    private float temperature; 
+    private float humidity; 
+    private Subject PopUpStore;
+    
+    public CurrentConditionsDisplay(Subject PopUpStore) { 
+        this.PopUpStore = PopUpStore; 
+        PopUpStore.registerObserver(this);
+    }
+    
+    public void update(String location, String store, Date openingdate, Date closingdate, float openingtime, float closingtime) { 
+        this.location = location;
+        this.store = store;
+        this.openingdate = openingdate;
+        this.closingdate = closingdate;
+        this.openingtime = openingtime;
+        this.closingtime = closingtime;
+        display();
+    }
+    public void display() {
+    System.out.println("We look forward to seeing you at our new Pop-Up store in " + location + ", kindly hosted by  " + store + 
+    ", on the following dates: " + openingdate + " - " + closingdate + ", at the following times:" + openingtime + " - " + closingtime);
+    } 
+}
+
+\end{lstlisting}
+
+Commentando questa parte di codice, notiamo che il \textit{ConcreteSubject} \'e rappresentato dal PopUp-Store che, come anticipato, pu\'o aggiungere, rimuovere e notificare gli \textit{Observers}, andando ad aggiornare i dati relativi ai campi che definiscono il nostro PopUp-Store (tramite la comunicazione diretta con l'interfaccia \textit{Observer}). Vi \'e poi un metodo per settare questi dati. 
+\\
+\\
+Passando invece al \textit{ConcreteObserver}, vediamo che esso ha modo di registrarsi al \textit{Subject} di nostro interesse, di aggiornare le informazioni a sua disposizione relativamente ai campi che definiscono il PopUp-Store, nonch\'e averle a disposizione tramite il suo metodo \textit{display}. 
+\\
+\\
+Il resto del codice \'e disponibile in appendice.
 
 
 \newpage
