@@ -385,7 +385,9 @@ Mentre gli \textbf{svantaggi} più evidenti sono:
     \item Questo pattern genera tanti ``piccoli'' oggetti simili tra di loro. Tali oggetti differiscono solo dal modo in cui sono interconnessi, non dalla classe o dal valore delle loro variabili. Seppur semplici da customizzare per chi li ha creati, risultano \textbf{difficili da comprendere e debuggare} da terzi \cite{gof_riferimento}.
 \end{itemize}
 
-Per implementare il patter Decorator abbiamo bisogno di (cfr.\cite{gof_sunt}, p.65):
+\davide{[todo] Aggiungere il diagramma UML + commentare i files di codice prendendo spunto dagli accorgimenti.}
+
+Per implementare il patter Decorator abbiamo bisogno delle seguenti componenti (cfr.\cite{gof_sunt}, p.65):
 \begin{itemize}
     \item Un {\em Component} ({\tt User}): definisce l'interfaccia per gli oggetti a cui verranno aggiunte proprietà in modo dinamico.
     \item Un {\em ConcreteComponent} ({\tt UtenteBase}): definisce l'oggeto su cui verranno dinamicamente aggiunte le proprietà.
@@ -414,7 +416,7 @@ Nell'implementazione del decorator devo tenere conto di alcuni accorgimenti:
 \lstinputlisting[label={list:dipendente}, caption={\small Dipendente.java -- Primo ConcreteDecorator del pattern Decorator \cite{gof_sunt}.}]
 {code/decorator/Dipendente.java}
 
-\lstinputlisting[label={list:cliente}, caption={\small liente.java -- Secondo ConcreteDecorator del pattern Decorator \cite{gof_sunt}.}]
+\lstinputlisting[label={list:cliente}, caption={\small Cliente.java -- Secondo ConcreteDecorator del pattern Decorator \cite{gof_sunt}.}]
 {code/decorator/Cliente.java}
 
 
