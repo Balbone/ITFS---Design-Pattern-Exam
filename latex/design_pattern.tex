@@ -215,8 +215,7 @@ I risultati dell'intervista possono essere suddivisi in tre macro gruppi.
 Le idee che per motivi strategici o di tempo non vengono ulteriormente sviluppate sono finite nel gruppo dei moduli attualmente non presi in considerazione, e di seguito non presentati.
 
 La progettazione e lo sviluppo completo dei \textbf{moduli ``core"}, strategici per raggiungere gli obiettivi del cliente e contribuire al tasso di innovazione dell'applicazione. L'investimento del cliente e le forze in gioco del team rendono questi obiettivi realistici e realizzabili.
-\\
-\piaget{\textbf{[NOTA]} Qui ci sono i moduli da associare a qualche design pattern.}
+
 \begin{itemize}
     \item {\em ``Popup Stores"}: non molti negozi fisici, ma spot stores temporanei, localizzati dove sono concentrati la maggior parte dei clienti. La creazione di una rete di aziende amiche che condividono gli stessi ideali di sostenibilità permette numerosi vantaggi. {\em Atelier Splendor} ospiterà virtualmente i capi di queste aziende nel suo futuro negozio virtuale, queste aziende ospiteranno mostre temporanee dei nostri capi nei loro negozi fisici. La scelta delle città in cui organizzare le mostre verrà suggerita dai dati raccolti.
     \item {\em ``Vestirsi con la realtà aumentata"}: Algoritmo di realtà aumentata stile Ikea che consente di vestirsi virtualmente per provare i vestiti e trovare la propria taglia. Ciò sorride all'ambiente e fa l'occhiolino al consumatore consapevole perché permetterà di ridurre il numero dei resi. Cliente soddisfatto e ambiente pure. 
@@ -392,13 +391,31 @@ Per implementare il patter Decorator abbiamo bisogno di (cfr.\cite{gof_sunt}, p.
     \item Un {\em Component} ({\tt User}): definisce l'interfaccia per gli oggetti a cui verranno aggiunte proprietà in modo dinamico.
     \item Un {\em ConcreteComponent} ({\tt UtenteBase}): definisce l'oggeto su cui verranno dinamicamente aggiunte le proprietà.
     \item Un {\em Decorator} ({\tt Ruolo}): mantine una referenza al {\em Component} e definisce un'interfaccia conforme a quella del {\em Component}.
-    \item Un o più {\em ConcreteDecorator} ({\tt Dipendente, Cliente}): aggiunce le responsabilità al {\em Component}.
+    \item Uno o più {\em ConcreteDecorator} ({\tt Dipendente, Cliente}): aggiunce le responsabilità al {\em Component}.
 \end{itemize}
+
+Nell'implementazione del decorator devo tenere conto di alcuni accorgimenti:
+\begin{itemize}
+    \item La conformità delle interfacce: l'interfaccia di un oggetto decorato deve essere conforme all'interfaccia del {\em Component} che decora. Di conseguenza, la classe {\em ConcreteDecorator} deve ereditare da una classe comune.
+    \item Posso non definere la classe \textbf{astratta} {\em Decorator} se devo aggiungere una sola responsabilità, ma basta includere le responsabilità aggiuntive del {\em Decorator} nel {\em ConcreteDecorator}. Questa situazione è tipica di quando ho a che fare con una gerarchia di classi già definita, piuttosto che una nuova da definire.
+    \item è importante mantenere la classe {\em Component} ``leggera'', ossia: il suo scopo è la definizione di una interfaccia conforme, non deve contenere altri dati. La definizione dei dati rappresentativi è competenza delle sottoclassi, altrimenti la complessità della classe {\em Component} rende i {\em decorators} troppo pesanti per essere applicati ricorsivamente. Mettere troppe funzionalità nella classe {\em Component} aumenta la possibilità che le sottoclassi {\em concrete} paghino per caratteristiche di cui non hanno bisogno.
+    \item Cambiare la pelle di un oggetto, non le viscere. Possiamo pensare al Decorator come a una pelle che ricopre l'oggetto e che ne cambia il comportamento. Se desideriamo un cambiamento più viscerale, la scelta giusta è il \textbf{pattern Strategy}.
+\end{itemize}
+
+
 
 
 \lstinputlisting[label={list:esempio}, caption={\small ClienteDipendente.java -- Implementazione del pattern Decorator nel caso d'uso dell'acquisto online.}]
 {code/ClienteDipendente.java}
 
+
+\subsubsection{Comparativa Decorator vs Strategy}
+Il pattern Decorator e il pattern Strategy costuiscono due modi alternativi per cambiare il comportamento di un oggetto.
+
+Rispetto al Decorator, il patter Strategy è la scelta giusta quando la classe {\em Component} è contenutisticamente ``pesante'' (vedi commetti sopra), e quindi rende il patter Decorator troppo costoso da applicare.
+Nel patter Strategy il {\em component} passa alcune delle sue caratteristiche a un oggetto {\em Strategy} separato \cite{3}.
+La differenza principale rispetto il decorator è che ci permette di alterare/estendere le responsabilità andando a sostituire l'oggetto {\em strategy} (cfr.\cite{gof_riferimento}, p.201).
+Proseguire con riferimento al libro.
 
 \subsection{Pattern Strategy}
 
@@ -406,6 +423,7 @@ Il {\em pattern Strategy} serve a definire una famiglia di algoritmi simili tra 
 
 Questo pattern suggerisce l’incapsulamento della logica di ogni
 particolare algoritmo, in apposite classi, dette {\em ConcreteStrategy}, le quali implementano l’interfaccia che consente agli oggetti di interagire con loro. Questa interfaccia deve fornire un accesso efficiente ai dati del Context, richiesti da ogni ConcreteStrategy, e viceversa \cite{gof_sunt}.
+
 
 
 \subsection{Pattern Composite}
