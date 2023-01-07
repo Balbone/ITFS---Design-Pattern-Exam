@@ -387,7 +387,7 @@ particolare algoritmo, in apposite classi, dette {\em ConcreteStrategy}, le qual
 
 
 \subsection{Pattern Composite}
-Questo pattern ci consente di construire una gerarchie di oggetti composti. Gli oggetti composti possono essere formati da oggetti singoli, oppure da altri oggetti composti. è utile nei casi in cui si vuole rappresentare gerarchie di oggetti tutto-parte, essere in grado di ignorare le differenze tra oggetti singoli e oggetti composti. 
+Questo pattern ci consente di construire una gerarchie di oggetti composti. Gli oggetti composti possono essere formati da oggetti singoli, oppure da altri oggetti composti. è utile nei casi in cui si vuole rappresentare gerarchie di oggetti tutto-parte, essere in grado di ignorare le differenze tra oggetti singoli e oggetti composti. Il fatto che Splendor mostra il desiderio di vendere articoli di altri brand abbiamo visto molto opportuno propore il composite perche nell'architectura potra aggiungere gli articoli suoi e altri brand il modo facile e molto sepatato
 Il pattern viene usato nel nostro caso perché si può rappresentare il nostro magazzino come segue:
 
 \begin{figure}
@@ -395,9 +395,100 @@ Il pattern viene usato nel nostro caso perché si può rappresentare il nostro m
     \includegraphics[width=1\linewidth]{images/Composite.jpg}
 \end{figure}
 
-\lstinputlisting[label={list:esempio}, caption={\small Composite.java -- Implementazione del pattern Composite nel caso d'uso dell'acquisto Magazzino snello.}]
-{code/Composite.java}
+Per implementare il pattern abbiamo bisogno di :
+\begin{itemize}
+	\item Un \textit{Item} (è una classe astratta che fornisce le operazione base del nostro magazzino/articolo)
+	\item Un \textit{CompoundItem} (La classe estende Item e si comporta sia come una parte del magazzino o come il magazzino intero a secondo di come è usato)
+	\item Un \textit{SaleableItem} (Questa classe è l'articolo proprio, estende Item e ha un costruttore piu completo di CompoundItem anh )
+	\item Un  \textit{SaleableItemException} (Per gestire un' \textit{exception} quando l'utente prova ad aggiungere in un \textit{SaleableItem} un \textit{Item})
+\end{itemize}
+\begin{lstlisting}
+// The Item abstract class 
+public abstract class Item {
+	protected String name;
 
+	public Item(String name) {
+		this.name = name;
+	}
+
+	public abstract void describe();
+
+	public void addItem(Item c) throws SaleableItemException {
+		if (this instanceof SaleableItem)
+			throw new SaleableItemException();
+	}
+
+	public void removeItem(Item c) throws SaleableItemException {
+		if (this instanceof SaleableItem)
+			throw new SaleableItemException();
+	}
+
+	public Item getItem(int n) {
+		return null;
+	}
+}
+
+//CompoundItem class
+public class CompoundItem extends Item {
+	private ArrayList<Item> items;
+
+	public CompoundItem(String name) {
+		super(name);
+		items = new ArrayList<Item>();
+	}
+
+	@Override
+	public void describe() {
+		System.out.println(name);
+		System.out.println("\tComposed by:");
+		System.out.println("\t\t{");
+		items.forEach(Item::describe);
+		System.out.println("}");
+	}
+
+	public void addItem(Item c) throws SaleableItemException {
+		items.add(c);
+	}
+
+	public void removeItem(Item c) throws SaleableItemException {
+		items.remove(c);
+	}
+
+	public Item getItem(int n) {
+		if (n<0 || n>items.size()) return null;
+		return (Item) items.get(n);
+	}
+}
+
+// SaleableItem class
+public class SaleableItem extends Item{
+	private double weight;
+	private String type;
+	private double price;
+	private String size;
+	
+	public SaleableItem(String name,String type, double weight, double price,String size) {
+		super(name);
+		this.weight = weight;
+		this.price = price;
+		this.type = type;
+		this.size = size;
+	}
+
+	@Override
+	public void describe() {
+		 System.out.println( "SaleableItem: " + name  +", type: "+type +", weight: "+weight +"kg"+", price: "+price +"€" +", size:" + size); 
+		
+	}
+ }
+
+ // SaleableItemException class
+ public class SaleableItemException extends Exception {
+	public SaleableItemException() {
+		super("Not supported method, you cant add Item on SaleableItem");
+	}
+}
+\end{lstlisting}
 \subsection{Pattern Observer}
 
 Il pattern \textit{Observer} (noto anche come \textit{Publish-Subscribe}) \'e un pattern TIPOPATTERNEDEFINIZIONE, che "\textit{definisce una relazione uno-a-molti tra oggetti, in modo tale che, quando un oggetto cambia stato, tutti i suoi dipendenti siano notificati e aggiornati automaticamente}" (\cite{gof_riferimento}, p.326). 
