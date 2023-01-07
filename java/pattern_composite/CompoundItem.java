@@ -1,13 +1,13 @@
 package designpattern.composite;
 
-import java.util.Vector;
+import java.util.ArrayList;
 
 public class CompoundItem extends Item {
-	private Vector<Item> item;
+	private ArrayList<Item> items;
 
 	public CompoundItem(String name) {
 		super(name);
-		item = new Vector<Item>();
+		items = new ArrayList<Item>();
 	}
 
 	@Override
@@ -15,23 +15,20 @@ public class CompoundItem extends Item {
 		System.out.println(name);
 		System.out.println("\tComposed by:");
 		System.out.println("\t\t{");
-		int vLength = item.size();
-		for (int i = 0; i < vLength; i++) {
-			Item c = (Item) item.get(i);
-			c.describe();
-		}
+		items.forEach(Item::describe);
 		System.out.println("}");
 	}
 
 	public void addItem(Item c) throws SaleableItemException {
-		item.addElement(c);
+		items.add(c);
 	}
 
 	public void removeItem(Item c) throws SaleableItemException {
-		item.removeElement(c);
+		items.remove(c);
 	}
 
 	public Item getItem(int n) {
-		return (Item) item.elementAt(n);
+		if (n<0 || n>items.size()) return null;
+		return (Item) items.get(n);
 	}
 }

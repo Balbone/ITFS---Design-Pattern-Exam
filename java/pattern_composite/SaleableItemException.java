@@ -1,9 +1,7 @@
 package designpattern.composite;
 
 public class SaleableItemException extends Exception {
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 
 	public SaleableItemException() {
