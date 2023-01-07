@@ -4,7 +4,8 @@ dell’oggetto decorato, e modifica il comportamento dell’oggetto ...
 */
 
 /*
-Il dipendente deve poter controllare gli ordini effettuati dai clienti e avere accesso alla gestione del magazzino.
+Il dipendente deve poter controllare gli ordini effettuati dai clienti e
+avere accesso alla gestione del magazzino.
  */
 
 import java.util.Scanner;
@@ -20,8 +21,8 @@ public class Dipendente extends Ruolo {
       this.job = job;
    }
 
-   public void assignJob(){
-      System.out.println( "mansione: " );
+   public void assignJob() {
+      System.out.println("Mansione: ");
       this.job = tastiera.nextLine();
    }
 
@@ -31,11 +32,16 @@ public class Dipendente extends Ruolo {
    }
 
    private void sayIamEmployee() {
-      System.out.print("Sono un dipendente con la mansione di " + job + ". ");
+      System.out.print("Sono un utente dipendente con la mansione di " + job + ". ");
    }
 
-   public void checkOrders(Magazzino m){
-      if (m.isOrder()) {
+   /*
+   La responsabilità aggiuntiva principale assegnata a un dipendente è quella
+   di controllare gli ordini di vendita
+   */
+   public void checkOrders(Magazzino m) {
+      if (m.hasOrders()) {
+         System.out.println("Ordini presenti:\n");
          System.out.println(m.getOrders());
       } else {
          System.out.println("Nessun ordine presente.");

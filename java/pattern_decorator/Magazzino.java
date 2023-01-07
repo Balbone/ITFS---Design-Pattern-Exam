@@ -1,10 +1,12 @@
 public class Magazzino {
 
    private int numItemsMag;
+
    private int numItemsOrd;
 
-   private Item[] magazzino;
-   private Ordine[] ordini;
+   private Item[] magazzino; // Un magazzino contiene Items sottoforma di array di objs
+
+   private Ordine[] ordini; // Un magazzino contiene gli ordini sottoforma di array di Ordini
 
    public Magazzino() {
       numItemsMag = 0;
@@ -50,19 +52,14 @@ public class Magazzino {
       else return 0;
    }
 
-   public boolean full() {
-      return (numItemsMag == magazzino.length);
-   }
-
-
+   // Inizializzo il magazzino con una serie di oggetti che contiene nizialmente
    public boolean initMagazzino(String n, int p, int q) {
       magazzino[numItemsMag] = new Item(n, p, q);
       ++numItemsMag;
       return true;
    }
 
-
-   public Item sell(String n, int q){
+   public Item sell(String n, int q) {
       int i = 0;
 
       while (i < numItemsMag) {
@@ -82,7 +79,7 @@ public class Magazzino {
       return true;
    }
 
-   public boolean isOrder() {
+   public boolean hasOrders() {
       return (numItemsOrd > 0);
    }
 

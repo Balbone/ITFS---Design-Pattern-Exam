@@ -4,14 +4,16 @@ Questa classe estende le funzioni del Decorator, particolarmente aggiungendo...
 */
 
 /*
-Il cliente deve poter scegliere i propri vestiti, aggiungerli ad un carrello e acquistarli tramite pagamento online.
+Il cliente deve poter scegliere i propri vestiti, aggiungerli ad un carrello e
+acquistarli tramite pagamento online.
  */
 
 
 public class Cliente extends Ruolo {
 
    private int numItems = 0;
-   private Item[] cart; // Il carrello è definito come un array di objs (Items)
+
+   private Item[] cart; // Il carrello è definito come un array di oggetti Item
 
    public Cliente(User userC) {
       super(userC);
@@ -25,9 +27,10 @@ public class Cliente extends Ruolo {
    }
 
    private void sayIamClient() {
-      System.out.print("Sono un cliente. ");
+      System.out.print("Sono un utente cliente. ");
    }
 
+   // Ridefinizione del metodo toString() come visto nel corso di Java base
    public String toString() {
       String s = "Carrello:\n";
 
@@ -43,7 +46,7 @@ public class Cliente extends Ruolo {
       return s;
    }
 
-   public int getNumItems() {
+   private int getNumItems() {
       return numItems;
    }
 
@@ -57,10 +60,14 @@ public class Cliente extends Ruolo {
       return numItems;
    }
 
-   public boolean chartIsFull() {
+   private boolean chartIsFull() {
       return (numItems == cart.length);
    }
 
+   /*
+  La responsabilità aggiuntiva principale assegnata a un cliente è quella
+  dipoter aggiungere o o togliere vestiti dal carrello.
+  */
    public boolean addToChart(Magazzino m, String n, int q) {
       if (chartIsFull()) return false;
       if (m.isPresent(n)) {
@@ -84,6 +91,9 @@ public class Cliente extends Ruolo {
       return true;
    }
 
+   /*
+  Un utente decorato con il ruolo di cliente può anche ordinare la merce scelta pagando
+  */
    public boolean pay(Magazzino m) {
       if (numItems == 0) {
          System.out.println("Cestino vuoto, pagamento non andato a buon fine.");

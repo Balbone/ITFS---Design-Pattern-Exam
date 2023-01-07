@@ -29,17 +29,18 @@ public class UtenteBase implements User {
       return pwd;
    }
 
-   public void login(){
-      System.out.println( "username: " );
+   public void login() {
+      System.out.println("username: ");
       this.username = tastiera.nextLine();
-      System.out.println( "email: " );
+      System.out.println("email: ");
       this.email = tastiera.nextLine();
-      System.out.println( "password: " );
+      System.out.println("password: ");
       this.pwd = tastiera.nextLine();
       tastiera.nextLine();
    }
 
-   public void assignJob(){}
+   public void assignJob() {
+   }
 
    public void userInfo() {
       System.out.println("Username: " + getUsername() + ", Email: " + getEmail());
@@ -57,6 +58,6 @@ public class UtenteBase implements User {
       return false;
    }
 
-   public void checkOrders(Magazzino m){
+   public void checkOrders(Magazzino m) {
    }
 }

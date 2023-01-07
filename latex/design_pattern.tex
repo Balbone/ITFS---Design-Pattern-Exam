@@ -9,7 +9,6 @@
 \usepackage{geometry}
  \geometry{
  a4paper,
- left=25mm,
  top=25mm,
  }
  
@@ -293,7 +292,7 @@ Descriviamo quindi i requisiti che abbiamo intercettato relativamente agli UC in
 	\item UC1
 		\begin{itemize}
 		\item funzionali: voglio permettere all'utente di accedere al mio sito web e alla mia applicazione, visualizzare l'elenco degli articoli a mia disposizione, fargli scegliere quelli che pi\'u lo aggradano, inserirli nel carrello, pagare e completare l'ordine. Voglio permettere al dipendente di visualizzare gli ordini 
-		\item non funzionali: tools Java (pattern decorator + strategy), html+javascript+css (front-end), Oracle. 
+		\item non funzionali: tools Java (pattern decorator + strategy), html + javascript + css (front-end), Oracle. 
 		\end{itemize}
 	\item UC2
 		\begin{itemize}
@@ -307,11 +306,11 @@ Descriviamo quindi i requisiti che abbiamo intercettato relativamente agli UC in
 		\end{itemize}
 \end{itemize}
 
-
-\vspace{1em}
-\begin{figure}[ht]
+\vspace{0.5cm}
+\begin{figure}[t]
   \centering
-   \makebox[\textwidth][c]{\includesvg[width= 1.1\linewidth]{UC_diagram.svg}}
+   \makebox[\textwidth][c]{\includesvg[width= 1.05\linewidth]{UC_diagram.svg}}
+   \vspace{0.5cm}
   \caption{\small Esempio di UC diagram relativo all'applicazione del negozio online. All'interno delle {\em system boundaries} sono posizionati i casi d'uso esaminati in questa sezione. Gli attori principali (azzurro), quelli secondari (verde) e quelli fuori scena (giallo) sono rappresentati dalle figure al di fuori del {\em system} e sono collegati ai relativi casi d'uso. Una più approfondita analisi del diagramma è presentata in sezione \ref{subsec:UC}}
   \label{fig:UC_diagram}
 \end{figure}
@@ -359,7 +358,7 @@ In questa sezione riportiamo sottoforma di micro-prototipi le implementazioni de
 
 \subsection{Pattern Decorator}
 
-Il {\em pattern Decorator}, noto anche come {\em Wrapper}, permette di aggiungere dinamicamente responsabilità addizionali ad un oggetto individuale. In questo modo si possono estendere le funzionalità di oggetti particolari senza coinvolgere intere classi (cfr.\cite{gof_sunt}, p.65).
+Il {\em pattern Decorator}, noto anche come {\em Wrapper}, è un design pattern \textbf{strutturale} che permette di aggiungere dinamicamente responsabilità addizionali ad un oggetto individuale. In questo modo si possono estendere le funzionalità di oggetti particolari senza coinvolgere intere classi (cfr.\cite{gof_sunt}, p.65).
 \\
 \\
 Un modo per aggiungere responsabilità ad un oggetto potrebbe essere tramite la semplice {\em ereditarietà}. Ciò consente una certa flessibilità, tuttavia rimane una certa staticità dovuta al fatto che il client non può controllare quanto e come aggiungere tale proprietà all'oggetto.
@@ -403,10 +402,20 @@ Nell'implementazione del decorator devo tenere conto di alcuni accorgimenti:
 \end{itemize}
 
 
+\lstinputlisting[label={list:user}, caption={\small User.java -- Component del pattern Decorator \cite{gof_sunt}.}]
+{code/decorator/User.java}
 
+\lstinputlisting[label={list:utenteBase}, caption={\small UtenteBase.java -- ConcreteComponent del pattern Decorator \cite{gof_sunt}.}]
+{code/decorator/UtenteBase.java}
 
-\lstinputlisting[label={list:esempio}, caption={\small ClienteDipendente.java -- Implementazione del pattern Decorator nel caso d'uso dell'acquisto online.}]
-{code/ClienteDipendente.java}
+\lstinputlisting[label={list:ruolo}, caption={\small Ruolo.java -- Decorator del pattern Decorator \cite{gof_sunt}.}]
+{code/decorator/Ruolo.java}
+
+\lstinputlisting[label={list:dipendente}, caption={\small Dipendente.java -- Primo ConcreteDecorator del pattern Decorator \cite{gof_sunt}.}]
+{code/decorator/Dipendente.java}
+
+\lstinputlisting[label={list:cliente}, caption={\small liente.java -- Secondo ConcreteDecorator del pattern Decorator \cite{gof_sunt}.}]
+{code/decorator/Cliente.java}
 
 
 \subsubsection{Comparativa Decorator vs Strategy}
@@ -432,7 +441,9 @@ Il pattern viene usato nel nostro caso perché si può rappresentare il nostro m
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\linewidth]{images/Composite.jpg}
+    \includegraphics[width=1.1\linewidth]{images/Composite.jpg}
+  \caption{\small ...}
+  \label{fig:diagram_composite}
 \end{figure}
 
 Per implementare il pattern abbiamo bisogno di :

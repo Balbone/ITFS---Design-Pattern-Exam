@@ -1,3 +1,6 @@
+/*
+Client per testare il micro prototipo.
+*/
 
 public class DecoratorExample {
    public static void main(String arg[]) {

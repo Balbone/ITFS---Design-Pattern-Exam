@@ -1,6 +1,7 @@
 public class Item {
 
    private String name;
+
    private int price, quantity;
 
    public Item(String name, int price, int quantity) {
