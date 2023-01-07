@@ -365,14 +365,35 @@ Il {\em pattern Decorator}, noto anche come {\em Wrapper}, permette di aggiunger
 \\
 Un modo per aggiungere responsabilità ad un oggetto potrebbe essere tramite la semplice {\em ereditarietà}. Ciò consente una certa flessibilità, tuttavia rimane una certa staticità dovuta al fatto che il client non può controllare quanto e come aggiungere tale proprietà all'oggetto.
 Un approccio più flessibile è dato dall'includere l'oggetto che si vuole decorate in una {\em wrapper classes} (il {\em Decorator}) che aggiunge la nuova responsabilità voluta. Gli oggetti decorati assieme al Decorator devono sottostare a una interfaccia comune, che rende la sua presenza {\em trasparente} e permette all’applicazione di continuare ad interagire con gli oggetti decorati \cite{gof_sunt}. Tale proprietà di trasparenza rende iterativa e potenzialmente illimitata l'applicazione di responsabilità aggiuntive tramite nuovi Decorators.
-
+La proprietà di trasparenza permette inoltre ai decorators di apparire ovunque l'oggetto da decorare possa apparire, in modo che i clients non siano in grado di distinguere un oggetto decorato da uno che non lo sia \cite{gof_riferimento}.
+\\
+\\
 Un esempio illuminante di possibile utilizzo ci è proposto dalla {\em Gang of Four} (cfr.\cite{gof_riferimento}, p.197):
 Supponiamo di avere un oggetto TextView che mostra del testo in una finestra. Di default, la TextView non ha scroll bar, perchè non sempre ne abbiamo bisogno. Quando necessario possiamo ``decorare'' la TextView con una scroll bar. Supponiamo di volere anche un bordo più spesso attorno alla finestra. Possiamo ``decorare'' l'oggetto TextView anche con quello e con tutte le altre caratteristiche aggiuntive fino a ottenere il risultato voluto.
 
 Con riferimento invece al caso d'uso dell'acquisto di un abito sull'applicazione, si pensi ad un modello di oggetti che rappresenti i dipendenti dell'Atelier Splendor. Un impiegato può essere un cliente interessato a comprare un abito sulla piattaforma. Nasce così l'esigenza di modellare la figura dell'\textbf{dipendente-cliente}, il quale in aggiunta alle operazioni definite per i dipendenti, definisce anche quelle relative ai clienti.
+\\
+\\
+Il pattern Decorator ha i seguenti \textbf{vantaggi} evidenti:
+\begin{itemize}
+    \item Il pattern Decorator è più \textbf{flessibile} dell'ereditarietà statica (multipla). Con il Decorator le responsabilità possono essere infatti aggiunte/tolte dinamicamente a {\em run time}, semplicemente attaccando o staccando il Decorator. Mentre utilizzando l'ereditarietà servirebbe creare una nuova classe per ciascuna nuova responsabilità addizionale, con il conseguente proliferare di classi che aggiungo complessità al sistema. Inoltre, con il Decorator avrei il vantaggio di poter combinare liberamente tra loro le varie responsabilità. Infine, il Decorator rende più semplice e meno prono ad erri l'aggiungere più volte una stessa proprietà a un dato oggetto (e.g. nel caso della TextView, di aggiungere due volte il bordo) \cite{gof_riferimento}.
+    \item Evita che classi ricche di caratteristiche scalino la gerarchia. Il Decorator offre infatti un \textbf{approccio ``pay-as-you-go''} all'aggiunta di responsabilità: invece di cercare di gestire tutte le caratteristiche di un oggetto in un'unica classe grande e complessa, possiamo definire una classe semplice e aggiungerci le caratteristiche in modo \textbf{incrementale} con gli oggetti Decorator. Le funzionalità vengono composte da pezzi piccoli e semplici.
+    Come risultato un'applicazione non deve ``pagare'' per caratteristiche che non usa \cite{gof_riferimento}.
+    Questo approccio semplifica anche la definizione di nuove caratteristiche che non erano state pensate o incluse in partenza, evitando che l'estensione di una classe complessa possa esporre dettagli non connessi alle responsabilità che vogliamo aggiungere.
+\end{itemize}
+Mentre gli \textbf{svantaggi} più evidenti sono:
+\begin{itemize}
+    \item Un Decorator e i suoi {\em component} \textbf{non sono identici (==)}. Esso si comporta come un ``contenitore trasparente'', ma da un punto di vista dell'identità tra oggetti, un oggetto decorato non è uguale all'oggetto stesso non decorato. Quindi, non bisogna fare affidamento sull'identità tra oggetti (==) quando si usa questo pattern \cite{gof_sunt}.
+    \item Questo pattern genera tanti ``piccoli'' oggetti simili tra di loro. Tali oggetti differiscono solo dal modo in cui sono interconnessi, non dalla classe o dal valore delle loro variabili. Seppur semplici da customizzare per chi li ha creati, risultano \textbf{difficili da comprendere e debuggare} da terzi \cite{gof_riferimento}.
+\end{itemize}
 
-
-
+Per implementare il patter Decorator abbiamo bisogno di (cfr.\cite{gof_sunt}, p.65):
+\begin{itemize}
+    \item \textbf{Component} ({\tt User}): definisce l'interfaccia per gli oggetti a cui verranno aggiunte proprietà in modo dinamico.
+    \item \textbf{ConcreteComponent} ({\tt UtenteBase}): definisce l'oggeto su cui verranno dinamicamente aggiunte le proprietà.
+    \item \textbf{Decorator}({\tt Ruolo}): mantine una referenza al {\em Component} e definisce un'interfaccia conforme a quella del {\em Component}.
+    \item \textbf{ConcreteDEcorator} ({\tt Dipendente, Cliente}): aggiunce le responsabilità al {\em Component}.
+\end{itemize}
 
 \lstinputlisting[label={list:esempio}, caption={\small ClienteDipendente.java -- Implementazione del pattern Decorator nel caso d'uso dell'acquisto online.}]
 {code/ClienteDipendente.java}
@@ -494,6 +515,8 @@ Come detto prima, la classe \textit{CompoundItem} può rappresentare l'intero ma
 La classe \textit{SaleableItem} rappresenta l'articolo venduto con tutto le caratterische possibile, ogni volta che si vuole aggiungere un articolo (\textit{SaleableItem}) si chiama la \textit{addItem} sul Magazzino (\textit{CompoundItem})
 \\
 \textbf{NB}: Chiamando la addItem o removeItem su \textit{SaleableItem} lancierà la \textit{SaleableItemException}
+
+
 \subsection{Pattern Observer}
 
 Il pattern \textit{Observer} (noto anche come \textit{Publish-Subscribe}) \'e un pattern TIPOPATTERNEDEFINIZIONE, che "\textit{definisce una relazione uno-a-molti tra oggetti, in modo tale che, quando un oggetto cambia stato, tutti i suoi dipendenti siano notificati e aggiornati automaticamente}" (\cite{gof_riferimento}, p.326). 
