@@ -1,4 +1,4 @@
-
+\documentclass[12pt]{article}
 
 % pacchetti 
 \usepackage[italian]{babel}
@@ -235,7 +235,9 @@ La progettazione e lo sviluppo almeno parziale dei \textbf{moduli ``pilota"}, st
 
 \section{Analisi dei requisiti}
 
-In questa sezione riportiamo i requisiti che la nostra applicazione dovrà rispettare e seguire nello sviluppo...
+In questa sezione riportiamo i requisiti che la nostra applicazione dovrà rispettare e seguire nello sviluppo.
+
+\davide{\textbf{[TODO]} Ampliare questa parte introduttiva.}
 
 \subsection{Attori, obiettivi e Casi d'Uso}
 \label{subsec:UC}
@@ -250,7 +252,7 @@ L'applicazione e tutto il sistema che traduce deve essere pensata per essere sfr
 I Casi d'Uso, invece, descrivono i possibili scenari di utilizzo dell'applicazione, il macro-contesto all'interno del quale si muovono gli attori di cui sopra. Una comune rappresentazione grafica di un Caso d'Uso (od \textbf{UC}) \'e ravvisabile nell'{\em UC diagram}, ovvero un'\textit{interfaccia} astratta della nostra applicazione (cfr. fig. \ref{fig:UC_diagram}, p.\pageref{fig:UC_diagram}).
 \\
 \\
-La definizione degli attori deriva da quella degli UC, pertanto ci aggingiamo ad elencare quelli che saranno di nostro interesse progettuale:
+La definizione degli attori deriva da quella degli UC, pertanto ci aggiungiamo ad elencare quelli che saranno di nostro interesse progettuale:
 \begin{itemize}
     \item Acquisto di capi di vestiario online (\textit{UC1})
     \item Accesso al magazzino snello (\textit{UC2})
@@ -297,7 +299,7 @@ Descriviamo quindi i requisiti che abbiamo intercettato relativamente agli UC in
 	\item UC2
 		\begin{itemize}
 		\item funzionali: voglio permettere all'utente di gestirsi (eventualmente) l'avatar, tramite cui provera' le diverse combinazioni di capi. I dati immagazzinati serviranno al sarto per una gestione pi\'u lean del magazzino (vedi anche ordini con i fornitori di materie prime)
-		\item non funzionali: Oracle, Java (pattern Composite), three-js (libreria js sul browser per realt\'a aumentata)/ webGL (grafica 3D)
+		\item non funzionali: Oracle, Java (pattern Composite), Three-js (libreria js sul browser per realt\'a aumentata)/ webGL (grafica 3D)
 		\end{itemize}
 	\item UC3
 		\begin{itemize}
@@ -318,9 +320,9 @@ Descriviamo quindi i requisiti che abbiamo intercettato relativamente agli UC in
 
 \subsection{Glossario degli attori}
 
-Viene fornito al lettore un glossario dei termini tecnici utilizzati nelle sezioni precedenti;
+Viene fornito al lettore un glossario dei termini tecnici utilizzati nelle sezioni precedenti:
 \begin{itemize}
-	\item API: \textit{"le API sono meccanismi che consentono a due componenti software di comunicare tra loro usando una serie di definizioni e protocolli. Ad esempio, il sistema software dell'ufficio metereologico contiene dati metereologici giornalieri. L'app del meteo sul cellulare "parla" con questo sistema tramite API e mostra gli aggiornamenti metereologici quotidiani sul telefono"} (cfr. \cite{bworld})
+	\item API: \textit{``le API sono meccanismi che consentono a due componenti software di comunicare tra loro usando una serie di definizioni e protocolli. Ad esempio, il sistema software dell'ufficio metereologico contiene dati metereologici giornalieri. L'app del meteo sul cellulare ``parla'' con questo sistema tramite API e mostra gli aggiornamenti metereologici quotidiani sul telefono''} (cfr. \cite{bworld})
 	\item Client mail: un programma che permette di gestire il servizio di posta elettronica 
 	\item Database: \textit{un database \'e una collezione organizzata e strutturata di dati. Il database \'e controllato da un Database Management System (DMBS), che funge da interfaccia tra l'utente che vuole avere accesso ai dati e il pc su cui questi dati sono salvati} (cfr. \cite{database}); un celebre esempio di DBMS e' Oracle. 
 	\item Libreria: insieme di funzioni e strutture dati che permette allo sviluppatore di avere a propria disposizione codice gi\'a pronto alle proprie necessit\'a
@@ -337,15 +339,16 @@ Viene fornito al lettore un glossario dei termini tecnici utilizzati nelle sezio
 
 \section{Design Patterns utilizzati}
 
-Un {\em pattern} è una soluzione generale ad un problema ricorrente, che va opportunamente adattato al problema in esame. Un Pattern può essere riassunto in: problema, soluzione, pro e contro della soluzione ed esempi d’uso. I Design pattern visti a lezione sono i \textbf{GoF Design Pattern} e permettono di sfruttare al massimo le caratteristiche object oriented di Java. Essi costituiscono di fatto una mappa per scrivere codice Java.
+Un {\em pattern} è una soluzione generale ad un problema ricorrente, che va opportunamente adattato al problema in esame (cfr.\cite{gof_riferimento}, p.12). Un Pattern può essere riassunto in: problema, soluzione, pro e contro della soluzione ed esempi d’uso. I Design pattern visti a lezione sono i \textbf{GoF Design Pattern} e permettono di sfruttare al massimo le caratteristiche object oriented di Java. Essi costituiscono di fatto una mappa per scrivere codice Java \cite{gof_sunt}.
 
 In questa sezione riportiamo sottoforma di micro-prototipi le implementazioni dei design pattern applicati ai casi d'uso della nostra applicazione.
 
 \begin{itemize}
-    \item Con riferimento al caso d'uso dell'acquisto abito sull'applicazione. Un impiegato dell'atelier può anche essere un cliente e utilizzare l'applicazione con due scopi differenti.
-    Abbiamo quindi pensato di modellare la figura dell' impiegato-cliente tramite due pattern alternativi: il \textbf{pattern Decorator} e il \textbf{pattern Strategy}. Ciò ci ha permesso di confrontare e discutere i vantaggi/svantaggi dei due patterns.
-    \item Riferimento al caso d'uso dell'accesso al magazzino snello, possiamo ricollegarci al modulo sull'approccio human-driven per implementare il \textbf{pattern Composite}. Lato tecnico usiamo il pattern composite. Lato umano, i sottoinsiemi generati dal composite verranno filtrati dall'umano esperto.
+    \item Con riferimento al caso d'uso dell'acquisto di capi di vestiario online, un dipendente dell'atelier può anche essere un cliente e utilizzare l'applicazione con due scopi differenti: per controllare gli ordini da evadere o per acquistare capi sullo store online.
+    Abbiamo quindi pensato di modellare la figura del {\em dipendente-cliente} tramite due pattern alternativi: il \textbf{pattern Decorator} (cfr.\cite{gof_riferimento}, p.196) e il \textbf{pattern Strategy} (cfr.\cite{gof_riferimento}, p.349). Ciò ci ha permesso di confrontare e discutere i vantaggi/svantaggi di questi due patterns.
+    \item Con riferimento al caso d'uso dell'accesso al magazzino snello, possiamo ricollegarci al modulo sull'approccio human-driven per implementare il \textbf{pattern Composite} (cfr.\cite{gof_riferimento}, p.183). Lato tecnico usiamo il pattern composite. Lato umano, i sottoinsiemi generati dal composite verranno filtrati dall'umano esperto.
     Alternativamente, il pattern composite potrebbe essere applicato semplicemente al caso d'uso dell'accedere al magazzino snello con riferimento al modulo del {\em magazzino snello}.
+    \item Con riferimento al caso d'uso dell'aggiornare i clienti rispetto all'installazione di Pop-Up stores temporanei, l’idea di allestire una newsletter ci ha indirizzati nell'implementazione del \textbf{pattern Observer} (cfr.\cite{gof_riferimento}, p.326).
 \end{itemize}
 
 
@@ -357,11 +360,19 @@ In questa sezione riportiamo sottoforma di micro-prototipi le implementazioni de
 
 \subsection{Pattern Decorator}
 
-Il {\em pattern Decorator} permette di aggiungere dinamicamente responsabilità addizionali ad un oggetto. In questo modo si possono estendere le funzionalità di oggetti particolari senza coinvolgere intere classi \cite{gof_sunt}.
-Con riferimento al caso d'uso dell'acquisto di un abito sull'applicazione, si pensi ad un modello di oggetti che rappresenti gli impiegati dell'atelier Splendor. Un impiegato può diventare un cliente interessato a comprare un abito sulla piattaforma. Nasce così l'esigenza di modellare la figura dell'\textbf{cliente-dipendente}, il quale in aggiunta alle operazioni definite per gli impiegati, definisce anche quelle relative ai clienti.
+Il {\em pattern Decorator}, noto anche come {\em Wrapper}, permette di aggiungere dinamicamente responsabilità addizionali ad un oggetto individuale. In questo modo si possono estendere le funzionalità di oggetti particolari senza coinvolgere intere classi (cfr.\cite{gof_sunt}, p.65).
+\\
+\\
+Un modo per aggiungere responsabilità ad un oggetto potrebbe essere tramite la semplice {\em ereditarietà}. Ciò consente una certa flessibilità, tuttavia rimane una certa staticità dovuta al fatto che il client non può controllare quanto e come aggiungere tale proprietà all'oggetto.
+Un approccio più flessibile è dato dall'includere l'oggetto che si vuole decorate in una {\em wrapper classes} (il {\em Decorator}) che aggiunge la nuova responsabilità voluta. Gli oggetti decorati assieme al Decorator devono sottostare a una interfaccia comune, che rende la sua presenza {\em trasparente} e permette all’applicazione di continuare ad interagire con gli oggetti decorati \cite{gof_sunt}. Tale proprietà di trasparenza rende iterativa e potenzialmente illimitata l'applicazione di responsabilità aggiuntive tramite nuovi Decorators.
 
-Il pattern suggerisce la creazione di {\em wrapper classes} (Decorator) che racchiudono gli oggetti ai quali si vuole aggiungere le nuove responsabilità. Questi ultimi oggetti, insieme ai Decorator devono implementare una interfaccia comune, in modo che l’applicazione possa continuare ad interagire con gli oggetti decorati \cite{gof_sunt}.
-Per una stessa interfaccia possono esserci più Decorator, ma in questo caso ne considereremo solo uno.
+Un esempio illuminante di possibile utilizzo ci è proposto dalla {\em Gang of Four} (cfr.\cite{gof_riferimento}, p.197):
+Supponiamo di avere un oggetto TextView che mostra del testo in una finestra. Di default, la TextView non ha scroll bar, perchè non sempre ne abbiamo bisogno. Quando necessario possiamo ``decorare'' la TextView con una scroll bar. Supponiamo di volere anche un bordo più spesso attorno alla finestra. Possiamo ``decorare'' l'oggetto TextView anche con quello e con tutte le altre caratteristiche aggiuntive fino a ottenere il risultato voluto.
+
+Con riferimento invece al caso d'uso dell'acquisto di un abito sull'applicazione, si pensi ad un modello di oggetti che rappresenti i dipendenti dell'Atelier Splendor. Un impiegato può essere un cliente interessato a comprare un abito sulla piattaforma. Nasce così l'esigenza di modellare la figura dell'\textbf{dipendente-cliente}, il quale in aggiunta alle operazioni definite per i dipendenti, definisce anche quelle relative ai clienti.
+
+
+
 
 \lstinputlisting[label={list:esempio}, caption={\small ClienteDipendente.java -- Implementazione del pattern Decorator nel caso d'uso dell'acquisto online.}]
 {code/ClienteDipendente.java}
