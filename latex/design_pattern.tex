@@ -21,8 +21,10 @@
     urlcolor=blue
 }
 
-\usepackage{tikz}
-\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
 
 %bibliography
 \usepackage[sorting=none, isbn=false, eprint=false]{biblatex}
@@ -147,37 +149,74 @@ I problemi comuni da evitare in questa fase iniziale, per uno sviluppo florido d
 
 \davide{\textbf{[TODO]} Ampliare la parte sugli strumenti utilizzati per fare la requirement elicitation.}
 
-Si rende quindi necessaria una stretta comunicazione con il cliente, rappresentato dalla Professoressa Bono, per giungere ad un insieme di conoscenze che permetta di superare i problemi esposti poco sopra. \\
-La strategia adottata \'e quella dell'\textbf{intervista}, alla quale siamo giunti dopo un \textit{brainstorming} che ci ha visto partecipi in un'iniziale definizione delle caratteristiche che, a nostro parere, dovrebbero appartenere ad un \textit{e-shop innovativo}.
+Si rende quindi necessaria una stretta comunicazione con il cliente, rappresentato dalla Professoressa Bono, per giungere ad un insieme di conoscenze che permetta di superare i problemi esposti poco sopra.
 
+La strategia adottata \'e quella dell'\textbf{intervista}, alla quale siamo giunti dopo un \textit{brainstorming} che ci ha visto partecipi in un'iniziale definizione delle caratteristiche che, a nostro parere, dovrebbero appartenere ad un \textit{e-shop innovativo}.
 Le nostre riflessioni sono sintetizzate nella sezione successiva. 
 
+
 \subsection{Analisi di mercato e idee di prodotto} 
+
 In questa fase abbiamo tratteggiato i contorni, ancora sfumati, dell'applicazione. Servono più informazioni possibili per avere una \textbf{visione ampia del mercato} in cui il prodotto richiesto si collocherà, ma anche idee originali a cui ispirarsi, che non devono necessariamente venire dal mondo dell'abbigliamento. Bisogna guardare al di là del {\em main stream}, l'applicazione dovrebbe creare l'effetto wow!
+
 Un'analisi di mercato approfondita ci ha permesso di individuare e confrontare le caratteristiche dei competitors e di pensare a possibili \textbf{soluzioni innovative} non ancora presenti sul mercato da proporre al committente.
-\\
-\davide{[TODO] Da ampliare e aggiungere TABELLA della comparativa con i competitors trovati cercando su internet. Ampliando, fare riferimento alla tabella.}
+
+Le aziende di cui abbiamo analizzato i servizi offerti sono YOOX, Net a Porter, Patagonia, SSENSE e Garment Workshop.
+Abbiamo innanzitutto preso in considerazione la possibilità di fare leva sulle capacità sartoriali del committente, per offrire vestiti su misura e la possibilità di mandarli in riparazione o ancora di effettuare un reso in cambio di voucher da poter utilizzare per nuovi acquisti. Ad eccezione della riparazione post vendita di Patagonia, nessuno di questi servizi è offerto dai competitors analizzati, come mostrato in tabella \ref{table:analisi_mercato_sartoria_interna}.
 
 \begin{table}[h!]
 \centering
-\begin{tabular}{|c c c c c c|} 
+\begin{tabular}{| c | c | c | c |} 
  \hline
-  & Sost. Ambientale & Sost. Sociale & Eco. Circolare & Linea Green & ... \rule[-2ex]{0pt}{6ex} \\
- \hline\hline
- YOOX & & & & & ... \rule[1ex]{0pt}{3ex}\\ 
- Net a Porter & & & & & ... \rule[1ex]{0pt}{3ex}\\
- Patagonia & \checkmark & \checkmark & & & \rule[1ex]{0pt}{3ex}\\
- SSENSE & & & & & \rule[1ex]{0pt}{3ex}\\
- Garment Workshop & \checkmark & & & & ... \rule[1ex]{0pt}{3ex}\\
- ... & & & & & ... \rule[-2ex]{0pt}{6ex}\\
+  & Capi Su Misura & Riparazione Usato & Resi Per Voucher \rule[-2ex]{0pt}{6ex} \\
+  \hline
+ YOOX & × & × & × \rule[1ex]{0pt}{3ex}\\ 
+
+ Net a Porter & × & × & × \rule[1ex]{0pt}{3ex}\\
+
+ Patagonia & × & \checkmark & × \rule[1ex]{0pt}{3ex}\\
+
+ SSENSE & × & × & × \rule[1ex]{0pt}{3ex}\\
+
+ Garment Workshop & × & × & × \rule[-2ex]{0pt}{6ex}\\
  \hline
 \end{tabular}
-\caption{Tabella comparativa risultato dell'analisi di mercato. \davide{[TODO] Completare la tabella con i dati presenti sul file world ed editarla stilisticamente.}}
+\caption{Tabella comparativa sulla capacità sartoriale.}
+\label{table:analisi_mercato_sartoria_interna}
+\end{table}
+
+Superando gli aspetti non prettamente sartoriali, abbiamo notato un interesse da parte di ciascuno dei competitors ai temi etici e della sostenibilità, sebbene nessuno di questi abbia abbracciato definitivamente la causa, limitandosi solo ad alcuni (vedi il packaging) e tralasciandone altri (vedi l'economia circolare), come si può notare dalla tabella \ref{table:analisi_mercato}.
+
+Risulta comune a tutti la presenza di una linea green nella propria offerta, ma considerando ad esempio il tema della sostenibilità ambientale, sociale e dell'economia circolare, solo Patagonia può dirsi promossa. Per quanto riguarda il tema della trasparenza finanziaria, solo Garment Workshop si distingue dagli altri.
+
+Passando invece ad aspetti più legati alla tecnologia, si nota un utilizzo di algoritmi per la profilazione dei clienti online da parte della maggioranza delle aziende (mentre solo due utilizzano metodologie human driven).
+
+Infine, è ancora abbastanza limitato l'utilizzo di strumenti innovativi, quali algoritmi di realtà aumentata che consentano di vedersi i vestiti digitali addosso dal proprio smartphone, l'invio di capi di abbigliamento senza che questi siano stati scelti dal cliente, o ancora l'abbandono del concetto di negozio fisso,  spostandosi ad un approccio più delocalizzato come gli spot stores di Garment Workshop.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c |c | c | c | c | c | c | c | c | c | c | c | c|} 
+ \hline
+  & \parbox[t]{5mm}{{\rotatebox[origin=c]{90}{ Packaging }}} & \parbox[t]{5mm}{{\rotatebox[origin=c]{90}{ Sost. Ambientale }}} & \parbox[t]{5mm}{{\rotatebox[origin=c]{90}{ Sost. Sociale }}} & \parbox[t]{5mm}{{\rotatebox[origin=c]{90}{ Economia Circolare }}}  & 
+  \parbox[t]{5mm}{{\rotatebox[origin=c]{90}{ Linea Green }}} &  \parbox[t]{5mm}{{\rotatebox[origin=c]{90}{ Test Di Invio Capi}}} & \parbox[t]{5mm}{{\rotatebox[origin=c]{90}{ Realtà Aumentata }}} &\parbox[t]{5mm}{{\rotatebox[origin=c]{90}{ Consigli Human Driven }}} &\parbox[t]{5mm}{{\rotatebox[origin=c]{90}{ Consigli Data Driven }}} &\parbox[t]{5mm}{{\rotatebox[origin=c]{90}{ Trasparenza Finanziaria }}} &\parbox[t]{5mm}{{\rotatebox[origin=c]{90}{ Spot Stores Temporanei }}}  \\
+ \hline
+ YOOX & \checkmark & × & × & × & \checkmark & × & × & × & \checkmark & × &  ×  \rule[1ex]{0pt}{3ex}\\ 
+
+ Net a Porter & \checkmark & × & × & × & \checkmark & × & × & × & \checkmark & × &  ×  \rule[1ex]{0pt}{3ex}\\
+
+ Patagonia & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & × & × & \checkmark & \checkmark & × &  × \rule[1ex]{0pt}{3ex}\\
+
+ SSENSE & \checkmark & × & × & × & \checkmark & × & × & \checkmark & × & × &  ×  \rule[1ex]{0pt}{3ex}\\
+
+ Garment Workshop & \checkmark & × & × & × & \checkmark & \checkmark & × & × & × & \checkmark &  \checkmark  \rule[1ex]{0pt}{3ex}\\[1.5ex]
+ \hline
+\end{tabular}
+\caption{Tabella comparativa risultato dell'analisi di mercato.}
 \label{table:analisi_mercato}
 \end{table}
 
  
- 
+
 \subsection{Intervista}
 
 L'intervista al committente dell'applicazione segue l'iniziale fase di analisi di mercato e di individualizzazione di possibili sviluppi innovativi, la quale è stata essenziale per \textbf{strutturare l'intervista} e raccogliere le idee innovative da proporre al committente. Le informazione raccolte nell'intervista serviranno a definire chiaramente i contorni dell'applicazione e a selezionare i moduli innovativi da sviluppare. L'intervista è stata strutturata nella seguente forma a macro blocchi:
