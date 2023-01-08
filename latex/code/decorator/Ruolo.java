@@ -2,7 +2,7 @@
 La classe astratta Ruolo corrisponde al Decorator del pattern. Contiene il codice necessario per immagazzinare al suo interno l’oggetto decorato (Component), e mappa verso di lui le operazioni richieste. Si noti che questa classe implementa la intrerfaccia User, e al suo interno utilizza questa stessa interfaccia per comunicare con il Component.
  */
 
-abstract class Ruolo implements User {
+public abstract class Ruolo implements User {
 
    protected User appUser;
 
@@ -33,17 +33,18 @@ abstract class Ruolo implements User {
    }
 
    public boolean addToChart(Magazzino m, String n, int q) {
-      return false;
+      return appUser.addToChart(m, n, q);
    }
 
    public boolean removeFromChart(String n) {
-      return false;
+      return appUser.removeFromChart(n);
    }
 
    public boolean pay(Magazzino m) {
-      return false;
+      return appUser.pay(m);
    }
 
    public void checkOrders(Magazzino m) {
+      appUser.checkOrders(m);
    }
 }

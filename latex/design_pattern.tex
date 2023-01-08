@@ -464,6 +464,8 @@ l’oggetto decorato {\tt User}, e mappa verso di lui le operazioni richieste. S
 
 Notare l'importanza della conformità delle interfacce: l'interfaccia di un oggetto decorato deve essere conforme all'interfaccia del {\em Component} che decora. Di conseguenza, la classe {\em ConcreteDecorator} deve ereditare da una classe comune \cite{gof_riferimento}.
 
+Nella classe {\tt Ruolo}, notare come il \textbf{Binding Dinamico} che si ottiene ridefinendo i metodi applicati all'oggetto {\tt appUser} sia la chiave per il funzionamento corretto del pattern Decorator.
+
 \lstinputlisting[label={list:dipendente}, caption={\small Dipendente.java -- Primo ConcreteDecorator del pattern Decorator \cite{gof_sunt}.}]
 {code/decorator/Dipendente.java}
 

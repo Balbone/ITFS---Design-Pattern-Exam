@@ -57,6 +57,5 @@ public class UtenteBase implements User {
       return false;
    }
 
-   public void checkOrders(Magazzino m) {
-   }
+   public void checkOrders(Magazzino m) {};
 }
