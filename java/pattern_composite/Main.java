@@ -25,13 +25,13 @@ public class Main {
 		SaleableItem pantalone = new SaleableItem("pantalone","vestito",0.5,12.00,"42");
 		SaleableItem maglia = new SaleableItem("maglia","vestito",0.3,14.00,"XS");
 		SaleableItem cintura = new SaleableItem("cintura","accessories",0.1,5.00,"1m");
-		SaleableItem giubotto = new SaleableItem("giubotto","vestito",2,75.00,"S");
+		SaleableItem giubbotto = new SaleableItem("giubbotto","vestito",2,75.00,"S");
 		
 		try {
 			splendorCreation.addItem(pantalone);
 			splendorCreation.addItem(maglia);
 			
-			otherCreation.addItem(giubotto);
+			otherCreation.addItem(giubbotto);
 			accessories.addItem(cintura);
 			
 			
