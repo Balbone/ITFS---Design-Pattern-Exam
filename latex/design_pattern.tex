@@ -447,7 +447,7 @@ La relazione tra le componenti del decorator implementato per l'applicazione del
 
 Con riferimento a list. \ref{list:user} e a fig. \ref{fig:uml_diagram_decorator}, Tutti le componenti di questo pattern implementano l’interfaccia
 {\tt User}, che specifica soltanto una serie di metodi pubblici.
-Notare come sia importante mantenere l'interfaccia {\tt User} ({\em Component}) ``leggiera'', ossia: il suo scopo è la definizione di un'interfaccia conforme, non deve contenere altri dati. La definizione dei dati rappresentativi è competenza delle sottoclassi, altrimenti la complessità della classe {\em Component} rende i {\em decorators} troppo pesanti per essere applicati ricorsivamente. Inoltre, Mettere troppe funzionalità nella classe {\em Component} aumenta la possibilità che le sottoclassi {\em concrete} ``paghino'' per caratteristiche di cui non hanno un bisogno effettivo \cite{gof_riferimento}.
+Notare come sia importante mantenere l'interfaccia {\tt User} ({\em Component}) ``leggiera'', ossia: \textbf{il suo scopo è la definizione di un'interfaccia conforme, non deve contenere altri dati}. La definizione dei dati rappresentativi è competenza delle sottoclassi, altrimenti la complessità della classe {\em Component} rende i {\em decorators} troppo pesanti per essere applicati ricorsivamente. Inoltre, Mettere troppe funzionalità nella classe {\em Component} aumenta la possibilità che le sottoclassi {\em concrete} ``paghino'' per caratteristiche di cui non hanno un bisogno effettivo \cite{gof_riferimento}.
 
 \lstinputlisting[label={list:utenteBase}, caption={\small UtenteBase.java -- ConcreteComponent del pattern Decorator \cite{gof_sunt}.}]
 {code/decorator/UtenteBase.java}
