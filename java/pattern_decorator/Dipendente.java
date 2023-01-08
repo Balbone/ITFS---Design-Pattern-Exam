@@ -39,7 +39,6 @@ public class Dipendente extends Ruolo {
    */
    public void checkOrders(Magazzino m) {
       if (m.hasOrders()) {
-         System.out.println("Ordini presenti:\n");
          System.out.println(m.getOrders());
       } else {
          System.out.println("Nessun ordine presente.");

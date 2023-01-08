@@ -30,16 +30,21 @@ public class Cliente extends Ruolo {
 
    // Ridefinizione del metodo toString() come visto nel corso di Java base
    public String toString() {
-      String s = "Carrello:\n";
+      String s = "Carrello: ";
 
-      int i = 0;
-      int items_counter = 0;
-      while (i < numItems) {
-         items_counter += cart[i].getQuantity();
-         s = s + cart[i].toString();
-         ++i;
+      if (numItems > 0) {
+         s += "\n";
+         int i = 0;
+         int items_counter = 0;
+         while (i < numItems) {
+            items_counter += cart[i].getQuantity();
+            s = s + cart[i].toString();
+            ++i;
+         }
+         s += "Numero totale di items: " + items_counter + "\n";
+      } else {
+         s += "vuoto\n";
       }
-      s += "Numero totale di items: " + items_counter + "\n";
 
       return s;
    }
@@ -105,7 +110,9 @@ public class Cliente extends Ruolo {
             ++i;
          }
 
-         System.out.println("Prodotti acquistati:\n" + this + "Saldo totale pagato: " + bill + "$");
+         //System.out.println("Prodotti acquistati:\n" + this + "Saldo totale pagato: " + bill + "$");
+         System.out.println("Saldo totale pagato: " + bill + "$");
+
          this.numItems = 0;
          this.cart = new Item[10];
          return true;
