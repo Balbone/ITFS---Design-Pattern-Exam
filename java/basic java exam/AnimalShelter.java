@@ -72,6 +72,24 @@ class Cat extends Animal {
     }
 }
 
+class Sheep extends Animal {
+    public Sheep(String name, String breed, int age) {
+        super(name, breed, age); 
+    }
+}
+
+class Donkey extends Animal {
+    public Donkey(String name, String breed, int age) {
+        super(name, breed, age); 
+    }
+}
+
+class Piglet extends Animal {
+    public Piglet(String name, String breed, int age) {
+        super(name, breed, age); 
+    }
+}
+
 /*
 This code defines an AnimalShelter class that manages a list of Animal objects. 
 
