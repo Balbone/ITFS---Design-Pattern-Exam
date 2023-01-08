@@ -178,7 +178,7 @@ Un'analisi di mercato approfondita ci ha permesso di individuare e confrontare l
 
  
  
-\subsection{L'intervista}
+\subsection{Intervista}
 
 L'intervista al committente dell'applicazione segue l'iniziale fase di analisi di mercato e di individualizzazione di possibili sviluppi innovativi, la quale è stata essenziale per \textbf{strutturare l'intervista} e raccogliere le idee innovative da proporre al committente. Le informazione raccolte nell'intervista serviranno a definire chiaramente i contorni dell'applicazione e a selezionare i moduli innovativi da sviluppare. L'intervista è stata strutturata nella seguente forma a macro blocchi:
 
@@ -218,7 +218,7 @@ L'intervista al committente dell'applicazione segue l'iniziale fase di analisi d
 \textbf{Brainstorming}: in questa fase, sulla base di tutte le informazioni raccolte attraverso le precedenti domande durante l'intervista, abbiamo proposto al cliente tutte le nostre idee innovative relative a diversi possibili sviluppi del progetto. Le idee proposte sono state avvalorate da una precedente analisi di mercato e dalle conoscenze in merito del nostro esperto di dominio. L'insieme delle idee così raccolte, è poi stato ridiscusso con il cliente e suddiviso in gruppi, come presentato nella successiva sezione sui risultati.
 \\
 
-\subsection{I risultati}
+\subsection{Risultati}
 
 I risultati dell'intervista possono essere suddivisi in tre macro gruppi.
 Le idee che per motivi strategici o di tempo non vengono ulteriormente sviluppate sono finite nel gruppo dei moduli attualmente non presi in considerazione, e di seguito non presentati.
@@ -340,7 +340,7 @@ Viene fornito al lettore un glossario dei termini tecnici utilizzati nelle sezio
 \end{itemize}
 
 
-\section{Il documento di vision}
+\section{Documento di vision}
 
 \subsection{Visione}
 
@@ -399,7 +399,7 @@ In questa sezione riportiamo sotto forma di micro prototipi le implementazioni d
 
 \subsection{Pattern Decorator}
 
-Il {\em pattern Decorator}, noto anche come {\em Wrapper}, è un design pattern \textbf{strutturale} che permette di aggiungere dinamicamente responsabilità addizionali ad un oggetto individuale. In questo modo si possono estendere le funzionalità di oggetti particolari senza coinvolgere intere classi (cfr.\cite{gof_sunt}, p.65).
+Il pattern {\em Decorator}, noto anche come {\em Wrapper}, è un design pattern \textbf{strutturale} che permette di aggiungere dinamicamente responsabilità addizionali ad un oggetto individuale. In questo modo si possono estendere le funzionalità di oggetti particolari senza coinvolgere intere classi (cfr.\cite{gof_sunt}, p.65).
 \\
 \\
 Un modo per aggiungere responsabilità ad un oggetto potrebbe essere tramite la semplice {\em ereditarietà}. Ciò consente una certa flessibilità, tuttavia rimane una certa staticità dovuta al fatto che il client non può controllare quanto e come aggiungere tale proprietà all'oggetto.
@@ -447,7 +447,7 @@ La relazione tra le componenti del decorator implementato per l'applicazione del
 
 Con riferimento a list. \ref{list:user} e a fig. \ref{fig:uml_diagram_decorator}, Tutti le componenti di questo pattern implementano l’interfaccia
 {\tt User}, che specifica soltanto una serie di metodi pubblici.
-Notare come sia importante mantenere l'interfaccia {\tt User} ({\em Component}) ``leggiera'', ossia: il suo scopo è la definizione di un'interfaccia conforme, non deve contenere altri dati. La definizione dei dati rappresentativi è competenza delle sottoclassi, altrimenti la complessità della classe {\em Component} rende i {\em decorators} troppo pesanti per essere applicati ricorsivamente. Inoltre, Mettere troppe funzionalità nella classe {\em Component} aumenta la possibilità che le sottoclassi {\em concrete} ``paghino'' per caratteristiche di cui non hanno un bisogno effettivo \cite{gof_riferimento}.
+Notare come sia importante mantenere l'interfaccia {\tt User} ({\em Component}) ``leggiera'', ossia: \textbf{il suo scopo è la definizione di un'interfaccia conforme, non deve contenere altri dati}. La definizione dei dati rappresentativi è competenza delle sottoclassi, altrimenti la complessità della classe {\em Component} rende i {\em decorators} troppo pesanti per essere applicati ricorsivamente. Inoltre, Mettere troppe funzionalità nella classe {\em Component} aumenta la possibilità che le sottoclassi {\em concrete} ``paghino'' per caratteristiche di cui non hanno un bisogno effettivo \cite{gof_riferimento}.
 
 \lstinputlisting[label={list:utenteBase}, caption={\small UtenteBase.java -- ConcreteComponent del pattern Decorator \cite{gof_sunt}.}]
 {code/decorator/UtenteBase.java}
