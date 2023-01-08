@@ -385,7 +385,12 @@ Mentre gli \textbf{svantaggi} più evidenti sono:
     \item Questo pattern genera tanti ``piccoli'' oggetti simili tra di loro. Tali oggetti differiscono solo dal modo in cui sono interconnessi, non dalla classe o dal valore delle loro variabili. Seppur semplici da customizzare per chi li ha creati, risultano \textbf{difficili da comprendere e debuggare} da terzi \cite{gof_riferimento}.
 \end{itemize}
 
-\davide{[todo] Aggiungere il diagramma UML + commentare i files di codice prendendo spunto dagli accorgimenti.}
+\begin{figure}[!h]
+    \makebox[\textwidth][c]{\includegraphics[width=1.4\linewidth]{images/uml_decorator.png}}
+  \caption{\small Rappresentazione in UML (Unified Modeling Language) del pattern Decorator impiegato per modellare la figure del dipendente-cliente \cite{uml_riferimento}.}
+  \label{fig:uml_diagram_decorator}
+\end{figure}
+
 
 Per implementare il patter Decorator abbiamo bisogno delle seguenti componenti (cfr.\cite{gof_sunt}, p.65):
 \begin{itemize}
@@ -394,6 +399,7 @@ Per implementare il patter Decorator abbiamo bisogno delle seguenti componenti (
     \item Un {\em Decorator} ({\tt Ruolo}): mantine una referenza al {\em Component} e definisce un'interfaccia conforme a quella del {\em Component}.
     \item Uno o più {\em ConcreteDecorator} ({\tt Dipendente, Cliente}): aggiunce le responsabilità al {\em Component}.
 \end{itemize}
+La relazione tra le componenti del decorator è illustrata sotto forma di UML diagram in fig. \ref{fig:uml_diagram_decorator}.
 
 Nell'implementazione del decorator devo tenere conto di alcuni accorgimenti:
 \begin{itemize}
@@ -438,12 +444,12 @@ particolare algoritmo, in apposite classi, dette {\em ConcreteStrategy}, le qual
 
 
 \subsection{Pattern Composite}
-Questo pattern ci consente di construire una gerarchie di oggetti composti. Gli oggetti composti possono essere formati da oggetti singoli, oppure da altri oggetti composti. è utile nei casi in cui si vuole rappresentare gerarchie di oggetti tutto-parte, essere in grado di ignorare le differenze tra oggetti singoli e oggetti composti. Il fatto che Splendor mostra il desiderio di vendere articoli di altri brand abbiamo visto molto opportuno propore il composite perche nell'architectura potra aggiungere gli articoli suoi e altri brand il modo facile e molto sepatato
+Questo pattern ci consente di costruire una gerarchie di oggetti composti. Gli oggetti composti possono essere formati da oggetti singoli, oppure da altri oggetti composti. è utile nei casi in cui si vuole rappresentare gerarchie di oggetti tutto-parte, essere in grado di ignorare le differenze tra oggetti singoli e oggetti composti. Il fatto che Splendor mostra il desiderio di vendere articoli di altri brand abbiamo visto molto opportuno propore il composite perche nell'architectura potra aggiungere gli articoli suoi e altri brand il modo facile e molto sepatato
 Il pattern viene usato nel nostro caso perché si può rappresentare il nostro magazzino come segue:
 
-\begin{figure}
+\begin{figure}[!h]
     \centering
-    \includegraphics[width=1.1\linewidth]{images/Composite.jpg}
+    \makebox[\textwidth][c]{\includegraphics[width=1.1\linewidth]{images/Composite.jpg}}
   \caption{\small ...}
   \label{fig:diagram_composite}
 \end{figure}
