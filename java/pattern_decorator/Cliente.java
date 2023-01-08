@@ -1,11 +1,9 @@
 /*
-La responsabilità particolare di un utente con il ruolo di cliente sono codificate nell’obj Cliente.
-Questa classe estende le funzioni del Decorator, particolarmente aggiungendo...
+La caratteristica particolare di un utente con il ruolo di cliente sono codificate nell obj Cliente. Questa classe estende le funzioni del Decorator, particolarmente aggiungendo...
 */
 
 /*
-Il cliente deve poter scegliere i propri vestiti, aggiungerli ad un carrello e
-acquistarli tramite pagamento online.
+Il cliente deve poter scegliere i propri vestiti, aggiungerli ad un carrello e acquistarli tramite pagamento online.
  */
 
 
@@ -65,8 +63,7 @@ public class Cliente extends Ruolo {
    }
 
    /*
-  La responsabilità aggiuntiva principale assegnata a un cliente è quella
-  dipoter aggiungere o o togliere vestiti dal carrello.
+  La responsabilità aggiuntiva principale assegnata a un cliente è quella di poter aggiungere o togliere vestiti dal carrello.
   */
    public boolean addToChart(Magazzino m, String n, int q) {
       if (chartIsFull()) return false;
@@ -92,7 +89,7 @@ public class Cliente extends Ruolo {
    }
 
    /*
-  Un utente decorato con il ruolo di cliente può anche ordinare la merce scelta pagando
+  Un utente decorato con il ruolo di cliente puo anche ordinare la merce scelta pagando.
   */
    public boolean pay(Magazzino m) {
       if (numItems == 0) {

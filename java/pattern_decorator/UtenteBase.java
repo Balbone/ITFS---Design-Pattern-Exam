@@ -1,6 +1,5 @@
 /*
-Definisce l’obj UtenteBase implementando l'interfaccia User, a cui si possono aggiungere nuove funzionalità.
-Questa componente del pattern Decorator è detta "ConcreteComponent".
+Definisce un obj UtenteBase implementando la interfaccia User, a cui si possono aggiungere nuove caratteristiche. Questa componente del pattern Decorator viene detta "ConcreteComponent".
  */
 
 import java.util.Scanner;

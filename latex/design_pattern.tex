@@ -226,7 +226,7 @@ Le idee che per motivi strategici o di tempo non vengono ulteriormente sviluppat
 La progettazione e lo sviluppo completo dei \textbf{moduli ``core"}, strategici per raggiungere gli obiettivi del cliente e contribuire al tasso di innovazione dell'applicazione. L'investimento del cliente e le forze in gioco del team rendono questi obiettivi realistici e realizzabili.
 
 \begin{itemize}
-    \item {\em ``Popup Stores"}: non molti negozi fisici, ma spot stores temporanei, localizzati dove sono concentrati la maggior parte dei clienti. La creazione di una rete di aziende amiche che condividono gli stessi ideali di sostenibilità permette numerosi vantaggi. {\em Atelier Splendor} ospiterà virtualmente i capi di queste aziende nel suo futuro negozio virtuale, queste aziende ospiteranno mostre temporanee dei nostri capi nei loro negozi fisici. La scelta delle città in cui organizzare le mostre verrà suggerita dai dati raccolti.
+    \item {\em ``Pop-Up Stores"}: non molti negozi fisici, ma spot stores temporanei, localizzati dove sono concentrati la maggior parte dei clienti. La creazione di una rete di aziende amiche che condividono gli stessi ideali di sostenibilità permette numerosi vantaggi. {\em Atelier Splendor} ospiterà virtualmente i capi di queste aziende nel suo futuro negozio virtuale, queste aziende ospiteranno mostre temporanee dei nostri capi nei loro negozi fisici. La scelta delle città in cui organizzare le mostre verrà suggerita dai dati raccolti.
     \item {\em ``Vestirsi con la realtà aumentata"}: Algoritmo di realtà aumentata stile Ikea che consente di vestirsi virtualmente per provare i vestiti e trovare la propria taglia. Ciò sorride all'ambiente e fa l'occhiolino al consumatore consapevole perché permetterà di ridurre il numero dei resi. Cliente soddisfatto e ambiente pure. 
     \item {\em ``Magazzino Snello"}: rivedere il data model del magazzino da integrare in un data base pinco pallino su cui poggerà la nostra applicazione. Questo consentirà agli impiegati dell'azienda di loggarsi come tali e di monitorare meglio le risorse e i flussi di magazzino, abbattendo i costi generati dalla merce invenduta.
     \item {\em ``Go Circular!"}: sezione dell'applicazione dedicata ai vestiti usati che viene alimentata dai vestiti creati dall'atelier e dati indietro dai clienti in cambio di un vaucher da spendere sui vestiti nuovi confezionati dall'atelier. In questo modo il negozio ospiterà sì brand diversi e sostenibili, ma cerchiamo di favorire l'acquisto di abiti con il nostro brand. Questa politica, che sorride all'ambiente, sorride anche all'espansione della sartoria e all'assunzione di nuovo personale. Inoltre, gli abiti dati indietro spesso necessiteranno una sistemata da parte delle nostre sarte prima di essere caricato online.
@@ -236,7 +236,7 @@ La progettazione e lo sviluppo completo dei \textbf{moduli ``core"}, strategici 
 La progettazione e lo sviluppo almeno parziale dei \textbf{moduli ``pilota"}, strategici ai fine del marketing e strategici in futuro, non appena verranno raggiunti gli obiettivi prefissati più importanti (assunzioni di nuove sarte e aumento del numero di clienti). Le condizioni attuali non consentono lo sviluppo completo di questi moduli. Lo sviluppo futuro di questi moduli consentirà una fruttuosa e duratura collaborazione con l'{\em Atelier Splendor}.
 \begin{itemize}
     \item {\em ``Algoritmo di consiglio all'acquisto human-driven"}: l'output dell'algoritmo non viene direttamente fornito al cliente, ma è mediato dall'essere umano, nello specifico un esperto di moda, che spiega il perché di questo consiglio di acquisto.
-    \item {\em ``Marketing"}: Nell'ambito del marketing, prodotti mirati saranno associati a un link di un contento Tiktok di un influencer che starà indossando quel vestito. Questo per ampliare il target verso una fascia più giovane.
+    \item {\em ``Marketing"}: Nell'ambito del marketing, prodotti mirati saranno associati a un link di un contento TikTok di un influencer che starà indossando quel vestito. Questo per ampliare il target verso una fascia più giovane.
     \item {\em ``Sartoria dedicata e confezionamento su misura"}: la sartoria interna potrà essere ulteriormente allargata introducendo due nuovi servizi al cliente. Primo, i vestiti che necessiteranno di manutenzione (orli, pence, sostituzione cerniere, rattoppi, ...) potranno essere spediti alla sede centrale per essere aggiustati. Due, la sartoria offrirà la possibilità di avere abiti confezionati su misura.
 \end{itemize}
 
@@ -252,8 +252,8 @@ In questa sezione riportiamo i requisiti che la nostra applicazione dovrà rispe
 
 L'applicazione e tutto il sistema che traduce deve essere pensata per essere sfruttata da una serie di attori, umani o meno, che, con le loro attivit\'a, determinano come essa sar\'a sviluppata. Possiamo classificare gli attori nella tassonomia seguente:
 \begin{itemize}
-    \item Gli \textbf{attori principali} sono quelli che utilizzano direttamente l’applicazione per uno specifico use case (sono i fruitori dell’app, e.g. un cliente, un impiegato).
-    \item Gli \textbf{attori secondari} sono sistemi esterni (tipicamente software) che integriamo all’interno dell’app (sono API che inseriamo per implementare il tutto e su cui non abbiamo controllo).
+    \item Gli \textbf{attori principali} sono quelli che utilizzano direttamente l’applicazione per uno specifico use case (sono i fruitori dell’applicazione, e.g. un cliente, un impiegato).
+    \item Gli \textbf{attori secondari} sono sistemi esterni (tipicamente software) che integriamo all’interno dell’applicazione (sono API che inseriamo per implementare il tutto e su cui non abbiamo controllo).
     \item Gli \textbf{attori fuori scena} sono entità che non usano direttamente l’app, ma che ne possono trarre benefici o ci danno dei vincoli da rispettare (l’università è l’attore fuori scena che beneficia di Moodle, la legge con il GDPR).
 \end{itemize}
 
@@ -311,7 +311,7 @@ Descriviamo quindi i requisiti che abbiamo intercettato relativamente agli UC in
 		\end{itemize}
 	\item UC3
 		\begin{itemize}
-		\item funzionali: voglio permettere ai miei "iscritti" di ricevere info riguardanti i prossimi eventi pop-up store nella zona geografica di competenza 
+		\item funzionali: voglio permettere ai miei "iscritti" di ricevere informazioni riguardanti i prossimi eventi pop-up store nella zona geografica di competenza 
 		\item non funzionali: Oracle, Java (pattern Observer), client mail, API di geolocalizzazione
 		\end{itemize}
 \end{itemize}
@@ -330,7 +330,7 @@ Descriviamo quindi i requisiti che abbiamo intercettato relativamente agli UC in
 
 Viene fornito al lettore un glossario dei termini tecnici utilizzati nelle sezioni precedenti:
 \begin{itemize}
-	\item API: \textit{``le API sono meccanismi che consentono a due componenti software di comunicare tra loro usando una serie di definizioni e protocolli. Ad esempio, il sistema software dell'ufficio metereologico contiene dati metereologici giornalieri. L'app del meteo sul cellulare ``parla'' con questo sistema tramite API e mostra gli aggiornamenti metereologici quotidiani sul telefono''} (cfr. \cite{bworld})
+	\item API: \textit{``le API sono meccanismi che consentono a due componenti software di comunicare tra loro usando una serie di definizioni e protocolli. Ad esempio, il sistema software dell'ufficio meteorologico contiene dati meteorologici giornalieri. L'applicazione del meteo sul cellulare ``parla'' con questo sistema tramite API e mostra gli aggiornamenti meteorologici quotidiani sul telefono''} (cfr. \cite{bworld})
 	\item Client mail: un programma che permette di gestire il servizio di posta elettronica 
 	\item Database: \textit{un database \'e una collezione organizzata e strutturata di dati. Il database \'e controllato da un Database Management System (DMBS), che funge da interfaccia tra l'utente che vuole avere accesso ai dati e il pc su cui questi dati sono salvati} (cfr. \cite{database}); un celebre esempio di DBMS e' Oracle. 
 	\item Libreria: insieme di funzioni e strutture dati che permette allo sviluppatore di avere a propria disposizione codice gi\'a pronto alle proprie necessit\'a
@@ -371,29 +371,27 @@ L'intero progetto mira dunque a creare uno sviluppo sociale ed economico, come d
 Nel progetto è centrale il rispetto dei valori sempre più all'attenzione del grande pubblico. Risultano perciò imprescindibili in tutte le fasi di sviluppo del progetto:
 
 \begin{itemize}
-    \item Trasparenza nella raccolta di dati degli utenti online
-    \item Condizione dell'ambiente di lavoro e dei lavoratori
-    \item Provenienza delle materie prime e condizioni degli allevamenti di bestiame per la produzione di lana
-    \item Utilizzo di coloranti conformi a tutte le normative e non dannosi per l'ambiente
+    \item trasparenza nella raccolta di dati degli utenti online,
+    \item condizione dell'ambiente di lavoro e dei lavoratori,
+    \item provenienza delle materie prime e condizioni degli allevamenti di bestiame per la produzione di lana,
+    \item utilizzo di coloranti conformi a tutte le normative e non dannosi per l'ambiente.
 \end{itemize}
 
 
 \section{Design Patterns utilizzati}
 
 Un {\em pattern} è una soluzione generale ad un problema ricorrente, che va opportunamente adattato al problema in esame (cfr.\cite{gof_riferimento}, p.12). Un Pattern può essere riassunto in: problema, soluzione, pro e contro della soluzione ed esempi d’uso. I Design pattern visti a lezione sono i \textbf{GoF Design Pattern} e permettono di sfruttare al massimo le caratteristiche object oriented di Java. Essi costituiscono di fatto una mappa per scrivere codice Java \cite{gof_sunt}.
-
-In questa sezione riportiamo sottoforma di micro-prototipi le implementazioni dei design pattern applicati ai casi d'uso della nostra applicazione.
+\\
+\\
+In questa sezione riportiamo sotto forma di micro prototipi le implementazioni dei design pattern applicati ai casi d'uso della nostra applicazione.
 
 \begin{itemize}
     \item Con riferimento al caso d'uso dell'acquisto di capi di vestiario online, un dipendente dell'atelier può anche essere un cliente e utilizzare l'applicazione con due scopi differenti: per controllare gli ordini da evadere o per acquistare capi sullo store online.
-    Abbiamo quindi pensato di modellare la figura del {\em dipendente-cliente} tramite due pattern alternativi: il \textbf{pattern Decorator} (cfr.\cite{gof_riferimento}, p.196) e il \textbf{pattern Strategy} (cfr.\cite{gof_riferimento}, p.349). Ciò ci ha permesso di confrontare e discutere i vantaggi/svantaggi di questi due patterns.
+    Abbiamo quindi pensato di modellare la figura del {\em dipendente-cliente} tramite due pattern alternativi: il \textbf{pattern Decorator} (cfr.\cite{gof_riferimento}, p.196) e il \textbf{pattern Strategy} (cfr.\cite{gof_riferimento}, p.349). Ciò ci ha permesso di confrontare e discutere i vantaggi/svantaggi di questi due pattern.
     \item Con riferimento al caso d'uso dell'accesso al magazzino snello, possiamo ricollegarci al modulo sull'approccio human-driven per implementare il \textbf{pattern Composite} (cfr.\cite{gof_riferimento}, p.183). Lato tecnico usiamo il pattern composite. Lato umano, i sottoinsiemi generati dal composite verranno filtrati dall'umano esperto.
     Alternativamente, il pattern composite potrebbe essere applicato semplicemente al caso d'uso dell'accedere al magazzino snello con riferimento al modulo del {\em magazzino snello}.
     \item Con riferimento al caso d'uso dell'aggiornare i clienti rispetto all'installazione di Pop-Up stores temporanei, l’idea di allestire una newsletter ci ha indirizzati nell'implementazione del \textbf{pattern Observer} (cfr.\cite{gof_riferimento}, p.326).
 \end{itemize}
-
-
-\andrea{\textbf{[NOTA]} Obbligatorio il design pattern {\em Composite} con almeno tre livelli che restituisca, e.g. le componenti di abbigliamento che formano l'outfit. Più siamo fantasiosi nel trovare un'applicazione tra le nostre idee, meglio verrà valutato.}
 
 
 \davide{Materiale da citare: \cite{gof_riferimento}, \cite{up-riferimento}, \cite{uml_riferimento}, \cite{elicitation_tools}, \cite{gof_sunt}, \cite{github}.}
@@ -410,7 +408,7 @@ La proprietà di trasparenza permette inoltre ai decorators di apparire ovunque 
 \\
 \\
 Un esempio illuminante di possibile utilizzo ci è proposto dalla {\em Gang of Four} (cfr.\cite{gof_riferimento}, p.197):
-Supponiamo di avere un oggetto TextView che mostra del testo in una finestra. Di default, la TextView non ha scroll bar, perchè non sempre ne abbiamo bisogno. Quando necessario possiamo ``decorare'' la TextView con una scroll bar. Supponiamo di volere anche un bordo più spesso attorno alla finestra. Possiamo ``decorare'' l'oggetto TextView anche con quello e con tutte le altre caratteristiche aggiuntive fino a ottenere il risultato voluto.
+Supponiamo di avere un oggetto TextView che mostra del testo in una finestra. Di default, la TextView non ha scroll bar, perch\'e non sempre ne abbiamo bisogno. Quando necessario possiamo ``decorare'' la TextView con una scroll bar. Supponiamo di volere anche un bordo più spesso attorno alla finestra. Possiamo ``decorare'' l'oggetto TextView anche con quello e con tutte le altre caratteristiche aggiuntive fino a ottenere il risultato voluto.
 
 Con riferimento invece al caso d'uso dell'acquisto di un abito sull'applicazione, si pensi ad un modello di oggetti che rappresenti i dipendenti dell'Atelier Splendor. Un impiegato può essere un cliente interessato a comprare un abito sulla piattaforma. Nasce così l'esigenza di modellare la figura dell'\textbf{dipendente-cliente}, il quale in aggiunta alle operazioni definite per i dipendenti, definisce anche quelle relative ai clienti.
 \\
@@ -434,48 +432,71 @@ Mentre gli \textbf{svantaggi} più evidenti sono:
   \label{fig:uml_diagram_decorator}
 \end{figure}
 
-
-Per implementare il patter Decorator abbiamo bisogno delle seguenti componenti (cfr.\cite{gof_sunt}, p.65):
+Per implementare il pattern Decorator contestualmente al caso d'uso dell'acquisto di abiti online, abbiamo bisogno delle seguenti componenti minimali (cfr.\cite{gof_sunt}, p.65):
 \begin{itemize}
     \item Un {\em Component} ({\tt User}): definisce l'interfaccia per gli oggetti a cui verranno aggiunte proprietà in modo dinamico.
-    \item Un {\em ConcreteComponent} ({\tt UtenteBase}): definisce l'oggeto su cui verranno dinamicamente aggiunte le proprietà.
-    \item Un {\em Decorator} ({\tt Ruolo}): mantine una referenza al {\em Component} e definisce un'interfaccia conforme a quella del {\em Component}.
-    \item Uno o più {\em ConcreteDecorator} ({\tt Dipendente, Cliente}): aggiunce le responsabilità al {\em Component}.
+    \item Un {\em ConcreteComponent} ({\tt UtenteBase}): definisce l'oggetto su cui verranno dinamicamente aggiunte le proprietà.
+    \item Un {\em Decorator} ({\tt Ruolo}): mantiene una referenza al {\em Component} e definisce un'interfaccia conforme a quella del {\em Component}.
+    \item Uno o più {\em ConcreteDecorator} ({\tt Dipendente, Cliente}): aggiunge le responsabilità al {\em Component}.
 \end{itemize}
-La relazione tra le componenti del decorator è illustrata sotto forma di UML diagram in fig. \ref{fig:uml_diagram_decorator}.
+La relazione tra le componenti del decorator implementato per l'applicazione dell'Atelier Splendor è illustrata sotto forma di UML diagram in fig. \ref{fig:uml_diagram_decorator}.
 
-Nell'implementazione del decorator devo tenere conto di alcuni accorgimenti:
-\begin{itemize}
-    \item La conformità delle interfacce: l'interfaccia di un oggetto decorato deve essere conforme all'interfaccia del {\em Component} che decora. Di conseguenza, la classe {\em ConcreteDecorator} deve ereditare da una classe comune.
-    \item Posso non definere la classe \textbf{astratta} {\em Decorator} se devo aggiungere una sola responsabilità, ma basta includere le responsabilità aggiuntive del {\em Decorator} nel {\em ConcreteDecorator}. Questa situazione è tipica di quando ho a che fare con una gerarchia di classi già definita, piuttosto che una nuova da definire.
-    \item è importante mantenere la classe {\em Component} ``leggera'', ossia: il suo scopo è la definizione di una interfaccia conforme, non deve contenere altri dati. La definizione dei dati rappresentativi è competenza delle sottoclassi, altrimenti la complessità della classe {\em Component} rende i {\em decorators} troppo pesanti per essere applicati ricorsivamente. Mettere troppe funzionalità nella classe {\em Component} aumenta la possibilità che le sottoclassi {\em concrete} paghino per caratteristiche di cui non hanno bisogno.
-    \item Cambiare la pelle di un oggetto, non le viscere. Possiamo pensare al Decorator come a una pelle che ricopre l'oggetto e che ne cambia il comportamento. Se desideriamo un cambiamento più viscerale, la scelta giusta è il \textbf{pattern Strategy}.
-\end{itemize}
-
-
+\newpage
 \lstinputlisting[label={list:user}, caption={\small User.java -- Component del pattern Decorator \cite{gof_sunt}.}]
 {code/decorator/User.java}
+
+Con riferimento a list. \ref{list:user} e a fig. \ref{fig:uml_diagram_decorator}, Tutti le componenti di questo pattern implementano l’interfaccia
+{\tt User}, che specifica soltanto una serie di metodi pubblici.
+Notare come sia importante mantenere l'interfaccia {\tt User} ({\em Component}) ``leggiera'', ossia: il suo scopo è la definizione di un'interfaccia conforme, non deve contenere altri dati. La definizione dei dati rappresentativi è competenza delle sottoclassi, altrimenti la complessità della classe {\em Component} rende i {\em decorators} troppo pesanti per essere applicati ricorsivamente. Inoltre, Mettere troppe funzionalità nella classe {\em Component} aumenta la possibilità che le sottoclassi {\em concrete} ``paghino'' per caratteristiche di cui non hanno un bisogno effettivo \cite{gof_riferimento}.
 
 \lstinputlisting[label={list:utenteBase}, caption={\small UtenteBase.java -- ConcreteComponent del pattern Decorator \cite{gof_sunt}.}]
 {code/decorator/UtenteBase.java}
 
+Con riferimento a list. \ref{list:utenteBase} e a fig. \ref{fig:uml_diagram_decorator}, la classe {\tt UtenteBase} implementa l'interfaccia {\tt User}.
+
 \lstinputlisting[label={list:ruolo}, caption={\small Ruolo.java -- Decorator del pattern Decorator \cite{gof_sunt}.}]
 {code/decorator/Ruolo.java}
+
+Con riferimento a list. \ref{list:ruolo} e a fig. \ref{fig:uml_diagram_decorator}, 
+La classe astratta {\tt Ruolo} corrisponde al {\em Decorator} del
+modello. Contiene il codice necessario per immagazzinare al suo interno
+l’oggetto decorato {\tt User}, e mappa verso di lui le operazioni richieste. Si noti che questa classe implementa l’interfaccia {\tt User}, e al suo interno utilizza questa stessa interfaccia per comunicare col {\em Component} \cite{gof_sunt}.
+
+Notare l'importanza della conformità delle interfacce: l'interfaccia di un oggetto decorato deve essere conforme all'interfaccia del {\em Component} che decora. Di conseguenza, la classe {\em ConcreteDecorator} deve ereditare da una classe comune \cite{gof_riferimento}.
 
 \lstinputlisting[label={list:dipendente}, caption={\small Dipendente.java -- Primo ConcreteDecorator del pattern Decorator \cite{gof_sunt}.}]
 {code/decorator/Dipendente.java}
 
+Con riferimento a list. \ref{list:dipendente} e a fig. \ref{fig:uml_diagram_decorator},
+Le responsabilità specifiche riguardo la figura dell'utente dipendente
+sono codificate nella classe {\tt Dipendente} \cite{gof_riferimento}. Questa classe estende le funzioni del {\em Decorator}, particolarmente aggiungendo la possibilità di controllare gli ordini presenti nel magazzino tramite il metodo {\tt checkOrders}.
+
 \lstinputlisting[label={list:cliente}, caption={\small Cliente.java -- Secondo ConcreteDecorator del pattern Decorator \cite{gof_sunt}.}]
 {code/decorator/Cliente.java}
+
+Con riferimento a list. \ref{list:cliente} e a fig. \ref{fig:uml_diagram_decorator}, la classe {\tt Cliente} codifica la figure dell'utente cliente, dando la possibilit\'a all'utente cliente di aggiungere vestiti al carrello ({\tt  addToChart}), di rimuoverne ({\tt removeFromChart}) e di pagare effettuando l'ordine ({\tt pay}).
+\\
+\\
+Si noti che i {\em ConcreteDecorators} definiti in questo microprototipo:
+\begin{itemize}
+    \item estendono operazioni esistenti del {\em Component} ({\em e.g.} il metodo {\tt  userInfo}),
+    \item estendono lo stato del Component ({\em e.g.} i campi {\tt numItem}, {\tt numItems}),
+    \item definiscono nuove operazioni non condivise tra i {\em ConcreteDecorators} ({\em e.g.} i metodi {\tt addToChart}, {\tt removeFromChart}, {\tt checkOrders})
+\end{itemize}
 
 
 \subsubsection{Comparativa Decorator vs Strategy}
 Il pattern Decorator e il pattern Strategy costuiscono due modi alternativi per cambiare il comportamento di un oggetto.
 
-Rispetto al Decorator, il patter Strategy è la scelta giusta quando la classe {\em Component} è contenutisticamente ``pesante'' (vedi commetti sopra), e quindi rende il patter Decorator troppo costoso da applicare.
-Nel patter Strategy il {\em component} passa alcune delle sue caratteristiche a un oggetto {\em Strategy} separato \cite{3}.
+
+\textbf{Cambiare la pelle di un oggetto, non le viscere.} Possiamo pensare al {\em Decorator} come a una pelle che ricopre l'oggetto e che ne cambia il comportamento. Se desideriamo un cambiamento più viscerale, la scelta giusta è il \textbf{pattern Strategy}.
+\\
+\\
+Rispetto al Decorator, il pattern Strategy è la scelta giusta quando la classe {\em Component} è contenutisticamente ``pesante'' (vedi commetti sopra), e quindi rende il pattern Decorator troppo costoso da applicare.
+Nel patter Strategy il {\em component} passa alcune delle sue caratteristiche a un oggetto {\em Strategy} separato \cite{gof_sunt}.
 La differenza principale rispetto il decorator è che ci permette di alterare/estendere le responsabilità andando a sostituire l'oggetto {\em strategy} (cfr.\cite{gof_riferimento}, p.201).
 Proseguire con riferimento al libro.
+
 
 \subsection{Pattern Strategy}
 
@@ -487,7 +508,7 @@ particolare algoritmo, in apposite classi, dette {\em ConcreteStrategy}, le qual
 
 
 \subsection{Pattern Composite}
-Questo pattern ci consente di costruire una gerarchie di oggetti composti. Gli oggetti composti possono essere formati da oggetti singoli, oppure da altri oggetti composti. è utile nei casi in cui si vuole rappresentare gerarchie di oggetti tutto-parte, essere in grado di ignorare le differenze tra oggetti singoli e oggetti composti. Il fatto che Splendor mostra il desiderio di vendere articoli di altri brand abbiamo visto molto opportuno propore il composite perche nell'architectura potra aggiungere gli articoli suoi e altri brand il modo facile e molto sepatato
+Questo pattern ci consente di costruire una gerarchie di oggetti composti. Gli oggetti composti possono essere formati da oggetti singoli, oppure da altri oggetti composti. è utile nei casi in cui si vuole rappresentare gerarchie di oggetti tutto-parte, essere in grado di ignorare le differenze tra oggetti singoli e oggetti composti. Il fatto che l'Atelier Splendor mostra il desiderio di vendere articoli di altri brand abbiamo visto molto opportuno proporre il composite perch\'e nell'architectura potr\'a aggiungere gli articoli suoi e altri brand in modo facile e molto separato.
 Il pattern viene usato nel nostro caso perché si può rappresentare il nostro magazzino come segue:
 
 \begin{figure}[!h]

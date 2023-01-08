@@ -1,6 +1,5 @@
 /*
-Specifica l’interfaccia degli obj User, che possono essere decorati dinamicamente con nuove funzionalità.
-Tutti le componenti del pattern Decorator implementano l’interfaccia User, detta "Component".
+Specifica la interfaccia degli objs User, che possono essere decorati dinamicamente con nuove caratteristiche. Tutti le componenti del pattern Decorator implementano la interfaccia User, viene detta "Component".
 */
 
 public interface User {

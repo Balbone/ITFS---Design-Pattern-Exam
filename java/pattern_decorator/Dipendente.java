@@ -1,11 +1,9 @@
 /*
-La classe Dipendente, invece estende le variabili di stato
-dell’oggetto decorato, e modifica il comportamento dell’oggetto ...
+La classe Dipendente, invece estende le variabili di stato dell’oggetto decorato, e ne modifica il comportamento.
 */
 
 /*
-Il dipendente deve poter controllare gli ordini effettuati dai clienti e
-avere accesso alla gestione del magazzino.
+Il dipendente deve poter controllare gli ordini effettuati dai clienti e avere accesso alla gestione del magazzino.
  */
 
 import java.util.Scanner;
