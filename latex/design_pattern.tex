@@ -465,7 +465,7 @@ Mentre gli \textbf{svantaggi} più evidenti sono:
     \item Questo pattern genera tanti ``piccoli'' oggetti simili tra di loro. Tali oggetti differiscono solo dal modo in cui sono interconnessi, non dalla classe o dal valore delle loro variabili. Seppur semplici da customizzare per chi li ha creati, risultano \textbf{difficili da comprendere e debuggare} da terzi \cite{gof_riferimento}.
 \end{itemize}
 
-\begin{figure}[!h]
+\begin{figure}[!t]
     \makebox[\textwidth][c]{\includegraphics[width=1.4\linewidth]{images/uml_decorator.png}}
   \caption{\small Rappresentazione in UML (Unified Modeling Language) del pattern Decorator impiegato per modellare la figure del dipendente-cliente \cite{uml_riferimento}.}
   \label{fig:uml_diagram_decorator}
@@ -480,7 +480,6 @@ Per implementare il pattern Decorator contestualmente al caso d'uso dell'acquist
 \end{itemize}
 La relazione tra le componenti del decorator implementato per l'applicazione dell'Atelier Splendor è illustrata sotto forma di UML diagram in fig. \ref{fig:uml_diagram_decorator}.
 
-\newpage
 \lstinputlisting[label={list:user}, caption={\small User.java -- Component del pattern Decorator \cite{gof_sunt}.}]
 {code/decorator/User.java}
 
@@ -525,6 +524,7 @@ Si noti che i {\em ConcreteDecorators} definiti in questo microprototipo:
     \item definiscono nuove operazioni non condivise tra i {\em ConcreteDecorators} ({\em e.g.} i metodi {\tt addToChart}, {\tt removeFromChart}, {\tt checkOrders})
 \end{itemize}
 
+Per vedere il funzionamento del micro prototipo che utilizza il Decorator ho sviluppato altre tre classi, rispettivamente {\tt Magazzino}, {\tt Item}, {\tt Ordine}, che integrate con le classi sopra presentate, simulano nel client ({\tt DecoratorExample}) un esempio di scenario del caso d'uso preso in esame. Tale codice viene riportato per comodità in appendice.
 
 \subsubsection{Comparativa Decorator vs Strategy}
 Il pattern Decorator e il pattern Strategy costuiscono due modi alternativi per cambiare il comportamento di un oggetto.
@@ -552,7 +552,7 @@ particolare algoritmo, in apposite classi, dette {\em ConcreteStrategy}, le qual
 Questo pattern ci consente di costruire una gerarchie di oggetti composti. Gli oggetti composti possono essere formati da oggetti singoli, oppure da altri oggetti composti. è utile nei casi in cui si vuole rappresentare gerarchie di oggetti tutto-parte, essere in grado di ignorare le differenze tra oggetti singoli e oggetti composti. Il fatto che l'Atelier Splendor mostra il desiderio di vendere articoli di altri brand abbiamo visto molto opportuno proporre il composite perch\'e nell'architectura potr\'a aggiungere gli articoli suoi e altri brand in modo facile e molto separato.
 Il pattern viene usato nel nostro caso perché si può rappresentare il nostro magazzino come segue:
 
-\begin{figure}[!h]
+\begin{figure}[!t]
     \centering
     \makebox[\textwidth][c]{\includegraphics[width=1.1\linewidth]{images/Composite.jpg}}
   \caption{\small ...}
