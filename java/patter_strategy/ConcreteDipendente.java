@@ -11,12 +11,16 @@ public class ConcreteDipendente implements Dipendente {
       this.job = job;
    }
 
+   public String toString() {
+      return cliente.toString();
+   }
+
    public String getJob() {
       return job;
    }
 
 
-   public void assegnaRuoloCliente( Cliente c ) {
+   public void assegnaRuoloCliente(Cliente c) {
       cliente = c;
    }
 
@@ -26,7 +30,7 @@ public class ConcreteDipendente implements Dipendente {
    }
 
    private void sayIamEmployee() {
-      System.out.print("Sono un utente dipendente con la mansione di " + job +".\n");
+      System.out.print("Sono un utente dipendente con la mansione di " + job + ".\n");
    }
 
    public void display(User u) {
@@ -40,5 +44,13 @@ public class ConcreteDipendente implements Dipendente {
       } else {
          System.out.println("Nessun ordine presente.");
       }
+   }
+
+   public boolean addToChart(Magazzino m, String n, int q) {
+      return cliente.addToChart(m, n, q);
+   }
+
+   public boolean pay(User u, Magazzino m) {
+      return cliente.pay(u, m);
    }
 }

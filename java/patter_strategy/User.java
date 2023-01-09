@@ -26,11 +26,11 @@ public class User {
       return pwd;
    }
 
-   public String toString(){
-      return "\nusername: " + this.username + ", email: " + this.email + ", pwd: " + pwd + "\n";
+   public String toString() {
+      return "username: " + this.username + ", email: " + this.email + ", pwd: " + pwd + "\n";
    }
 
-   public void assegnaRuoloDipendente( Dipendente d ) {
+   public void assegnaRuoloDipendente(Dipendente d) {
       dipendente = d;
    }
 
@@ -38,7 +38,7 @@ public class User {
       dipendente.userInfo(this);
    }
 
-   public void checkOrders(Magazzino m){
+   public void checkOrders(Magazzino m) {
       dipendente.checkOrders(m);
    }
 }
