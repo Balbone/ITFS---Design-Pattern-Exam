@@ -923,6 +923,7 @@ In appendice l'output in console del client ({\tt Main}) è presentato in figura
 import java.util.ArrayList; 
 import java.util.Date;
 import java.util.List;
+import java.text.ParseException;
 
 
 // The Subject interface 
@@ -1000,9 +1001,7 @@ class CurrentConditionsDisplay implements Observer, DisplayElement {
     private double closingtime;
     private Subject PopUpStore;
 
-    SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-    String formattedOpeningDate = sdf.format(openingdate);
-    String formattedClosingDate = sdf.format(closingdate);
+    
     
     public CurrentConditionsDisplay(Subject PopUpStore) { 
         this.PopUpStore = PopUpStore; 
@@ -1020,8 +1019,13 @@ class CurrentConditionsDisplay implements Observer, DisplayElement {
     }
 
     public void display() {
-    System.out.println("We look forward to seeing you at our new Pop-Up store in " + location + ", kindly hosted by  " + store + 
-    ", on the following dates: " + formattedOpeningDate + " - " + formattedClosingDate + ", at the following times:" + openingtime + " - " + closingtime);
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+        String formattedOpeningDate = sdf.format(openingdate);
+        String formattedClosingDate = sdf.format(closingdate);
+
+        System.out.println("We look forward to seeing you at our new Pop-Up store in " + location + ", kindly hosted by  " + store + 
+        ", on the following dates: " + formattedOpeningDate + " - " + formattedClosingDate + ", at the following times:" + openingtime + " - " + closingtime);
     } 
 }
 
@@ -1032,17 +1036,27 @@ public class Newsletter {
     public static void main(String[] args) {
         PopUpStore PopUpStore = new PopUpStore();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-        // Not yet corrected parsing error - Will be ready by Thursday 
-        Date openingDate = sdf.parse("2023/01/12");
-        Date closingDate = sdf.parse("2023/01/19");
-        CurrentConditionsDisplay currentDisplay = new CurrentConditionsDisplay(PopUpStore);
+        try {
+            Date openingDate = sdf.parse("2023/01/12");
+            Date closingDate = sdf.parse("2023/01/19");
+            CurrentConditionsDisplay currentDisplay = new CurrentConditionsDisplay(PopUpStore);
 
-        PopUpStore.setMeasurements("Turin", "Hannibal", openingDate, closingDate, 9.00, 19.00); 
-    } 
+            PopUpStore.setMeasurements("Turin", "Hannibal", openingDate, closingDate, 9.00, 19.00); 
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
 }
 
 \end{lstlisting}
 
+Viene allegato l'output in console: 
+
+\begin{figure}[!h]
+    \makebox[\textwidth][c]{\includegraphics[width=0.95\linewidth]{images/pattern_observer_compiled.png}}
+  \caption{\small Output della console relativo all'implementazione del Pattern Observer}
+  \label{fig:pattern_observer_compiled}
+\end{figure}
 
 
 
