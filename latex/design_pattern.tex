@@ -129,55 +129,53 @@ Master IT Full Stack Design and Development, a.a. 2022/2023
 \newpage
 
 \abstract{}
-In questo documento \'e proposto il lavoro relativo alla realizzazione di un \textit{e-shop} di abbigliamento \textit{innovativo}. Una definizione pi\'u precisa di questo aggettivo ha richiesto una fase convergente, legata alla presa di coscienza delle caratteristiche proprie di quelli che sarebbero diventati i nostri \textit{competitors}, nonch\'e una fase divergente, attraverso la quale ci siamo soffermati sulle caratteristiche in linea con quella che iniziava a delinearsi con la nostra definizione di \textit{innovativo} mutuate da domini non appartenenti al mondo dell'\textit{e-shop} e dell'abbigliamento. 
-\\
-\davide{[TODO] Da AMPLIARE completandolo.}
+In questo documento \'e proposto il lavoro relativo alla realizzazione di un \textit{e-shop} di abbigliamento \textit{innovativo} per conto dell'{\em Atelier Splendor}. Una definizione pi\'u precisa di questo aggettivo ha richiesto una fase convergente, legata alla presa di coscienza delle caratteristiche proprie di quelli che sarebbero diventati i nostri \textit{competitors}, nonch\'e una fase divergente, attraverso la quale ci siamo soffermati sulle caratteristiche in linea con quella che iniziava a delinearsi con la nostra definizione di \textit{innovativo} mutuate da domini non appartenenti al mondo dell'\textit{e-shop} e dell'abbigliamento.
+
+Lo sviluppo di questo progetto si divide in fasi distinte: si parte dall'elicitazione dei requisiti \cite{elicitation_tools} e da un'analisi di mercato, proponendo idee innovative sul prodotto e analizzando alcuni competitors. Si procede con l'intervista al cliente, da cui abbiamo ottenuto i risultati in base ai quali \'e stata successivamente prodotta l'analisi dei requisiti. A questo punto vengono definiti attori, obiettivi e casi d'uso. Si passa dunque alla stesura di un documento di vision \cite{up-riferimento}.
+
+Una volta conclusa la parte di progettazione, passiamo all'implementazione vera e propria in linguaggio Java, concentrandoci sull'utilizzo di quattro design patterns: il pattern Decorator, il pattern Strategy, il pattern Composite ed il pattern Observer \cite{gof_sunt}.
 
 \newpage
 
 % capitoli 
 \section{Elicitazione dei requisiti}
 Questo capitolo raccoglie i requisiti che andranno poi analizzati, modellati e specificati nella fase di \textbf{Analisi dei Requisiti}. 
-\\
-\\
-I problemi comuni da evitare in questa fase iniziale, per uno sviluppo florido del progetto, si riferiscono a 3 domini principali:
+
+I problemi comuni da evitare in questa fase iniziale, per uno sviluppo florido del progetto, si riferiscono a 3 domini principali \cite{up-riferimento}:
 \begin{enumerate}
-    \item \textbf{Scopo}: i requisiti devono riflettere i bisogni del cliente
-    \item \textbf{Comprensione}: \'e necessaria una buona comunicazione tra clienti, sviluppatori ed utenti per portare sul pratico i bisogni del cliente, che rifletteranno quelli degli utenti a cui vuole rivolgersi
-    \item \textbf{Volatilit\'a}: i requisiti possono cambiare, non essere completi all'inizio dello sviluppo ed evolvere nel tempo; \'e quindi necessario definirli con quanta pi\'u perizia possibile in questa fase del processo
+    \item \textbf{Scopo}: i requisiti devono riflettere i bisogni del cliente,
+    \item \textbf{Comprensione}: \'e necessaria una buona comunicazione tra clienti, sviluppatori ed utenti per portare sul pratico i bisogni del cliente, che rifletteranno quelli degli utenti a cui vuole rivolgersi,
+    \item \textbf{Volatilit\'a}: i requisiti possono cambiare, non essere completi all'inizio dello sviluppo ed evolvere nel tempo; \'e quindi necessario definirli con quanta pi\'u perizia possibile in questa fase del processo.
 \end{enumerate}
 
-Si rende quindi necessaria una stretta comunicazione con il cliente, rappresentato dalla Professoressa Bono, per giungere ad un insieme di conoscenze che permetta di superare i problemi esposti poco sopra.
+Si rende quindi necessaria una stretta comunicazione con il cliente, rappresentato dalla Professoressa Bono in qualit\'a di proprietario dell'{\em Atelier Splendor}, per giungere ad un insieme di conoscenze che permetta di superare i problemi esposti poco sopra.
 
-La strategia adottata \'e quella dell'\textbf{intervista}, alla quale siamo giunti dopo un \textit{brainstorming} che ci ha visto partecipi in un'iniziale definizione delle caratteristiche che, a nostro parere, dovrebbero appartenere ad un \textit{e-shop innovativo}.\\
-
+La strategia adottata \'e quella dell'\textbf{intervista}, alla quale siamo giunti dopo un \textbf{brainstorming} che ci ha visto partecipi in un'iniziale definizione delle caratteristiche che, a nostro parere, dovrebbero appartenere ad un \textit{e-shop innovativo}.
 
 Abbiamo optato per questo strumento poiché il committente è un singolo imprenditore a capo di un'azienda priva di una struttura di gestione complessa.
-Inoltre nessuno nel team di sviluppatori aveva esperienza pregressa nel campo della moda, né informazioni abbastanza precise sul committente, dunque risultava fondamentale un incontro conoscitivo diretto.\\
+Inoltre nessuno nel team di sviluppatori aveva esperienza pregressa nel campo della moda, né informazioni abbastanza precise sul committente, dunque risultava fondamentale un incontro conoscitivo diretto.
 
-In una prima fase abbiamo posto numerose domande aperte al fine di ottenere più informazioni generali possibili sul passato, sul presente e sui suoi obiettivi per il futuro.\\
-In base alle risposte ottenute abbiamo iniziato la seconda fase dell'intervista, dove, delle tante idee elaborate come team nel brainstorming precedente, abbiamo proposto noi a risposta chiusa solo quelle da noi ritenute più adatte.\\
+In una prima fase abbiamo posto numerose domande aperte al fine di ottenere più informazioni generali possibili sul passato, sul presente e sui suoi obiettivi per il futuro.
+In base alle risposte ottenute abbiamo iniziato la seconda fase dell'intervista, dove, delle tante idee elaborate come team nel brainstorming precedente, abbiamo proposto noi a risposta chiusa solo quelle che abbiamo ritenuto più adatte.
 
-Dopo questa fase propositiva, che ha visto selezionate dal committente solo le migliori, abbiamo discusso sui loro possibili sviluppi futuri, sulle priorità e preso nota delle successive proposte del cliente, lasciando aperta la possibilità di un successivo incontro.\\
-
+Dopo questa fase propositiva, che ha visto selezionate dal committente solo le proposte migliori, abbiamo discusso sui loro possibili sviluppi futuri, sulle priorità e preso nota delle successive proposte del cliente, lasciando aperta la possibilità di un successivo incontro.
 Le nostre riflessioni sono sintetizzate nella sezione successiva. 
-
 
 
 \subsection{Analisi di mercato e idee di prodotto} 
 
-In questa fase abbiamo tratteggiato i contorni, ancora sfumati, dell'applicazione. Servono più informazioni possibili per avere una \textbf{visione ampia del mercato} in cui il prodotto richiesto si collocherà, ma anche idee originali a cui ispirarsi, che non devono necessariamente venire dal mondo dell'abbigliamento. Bisogna guardare al di là del {\em main stream}, l'applicazione dovrebbe creare l'effetto wow!
+In questa fase abbiamo tratteggiato i contorni, ancora sfumati, dell'applicazione. Servono più informazioni possibili per avere una \textbf{visione ampia del mercato} in cui il prodotto richiesto si collocherà, ma anche idee originali a cui ispirarsi, che non devono necessariamente venire dal mondo dell'abbigliamento. Bisogna guardare al di là del {\em main stream}, l'applicazione dovrebbe creare l'\textbf{effetto wow!}
 
-Un'analisi di mercato approfondita ci ha permesso di individuare e confrontare le caratteristiche dei competitors e di pensare a possibili \textbf{soluzioni innovative} non ancora presenti sul mercato da proporre al committente.
+Un'analisi di mercato approfondita ci ha permesso di individuare e confrontare le caratteristiche dei competitors e di pensare a possibili \textbf{soluzioni innovative} non ancora presenti sul mercato, da poter proporre al committente.
 
-Le aziende di cui abbiamo analizzato i servizi offerti sono YOOX, Net a Porter, Patagonia, SSENSE e Garment Workshop.
-Abbiamo innanzitutto preso in considerazione la possibilità di fare leva sulle capacità sartoriali del committente, per offrire vestiti su misura e la possibilità di mandarli in riparazione o ancora di effettuare un reso in cambio di voucher da poter utilizzare per nuovi acquisti. Ad eccezione della riparazione post vendita di Patagonia, nessuno di questi servizi è offerto dai competitors analizzati, come mostrato in tabella \ref{table:analisi_mercato_sartoria_interna}.
+Le aziende di cui abbiamo analizzato i servizi offerti sono YOOX, Net a Porter, Patagonia, SSENSE e Garment Workshop, per citarne alcune.
+Abbiamo innanzitutto preso in considerazione la possibilità di fare leva sulle capacità sartoriali del committente, per offrire vestiti su misura e la possibilità di mandarli in riparazione, o ancora, di effettuare un reso in cambio di voucher da poter utilizzare per nuovi acquisti. Ad eccezione della riparazione post vendita di Patagonia, nessuno di questi servizi è offerto dai competitors analizzati, come mostrato in tabella \ref{table:analisi_mercato_sartoria_interna}.
 
-\begin{table}[h!]
+\begin{table}[t!]
 \centering
 \begin{tabular}{| c | c | c | c |} 
  \hline
-  & Capi Su Misura & Riparazione Usato & Resi Per Voucher \rule[-2ex]{0pt}{6ex} \\
+  & Capi su misura & Riparazione usato & Resi per voucher \rule[-2ex]{0pt}{6ex} \\
   \hline
  YOOX & × & × & × \rule[1ex]{0pt}{3ex}\\ 
 
@@ -190,19 +188,19 @@ Abbiamo innanzitutto preso in considerazione la possibilità di fare leva sulle 
  Garment Workshop & × & × & × \rule[-2ex]{0pt}{6ex}\\
  \hline
 \end{tabular}
-\caption{Tabella comparativa sulla capacità sartoriale.}
+\caption{Tabella comparativa sulla capacità sartoriale dei competitors.}
 \label{table:analisi_mercato_sartoria_interna}
 \end{table}
 
 Superando gli aspetti non prettamente sartoriali, abbiamo notato un interesse da parte di ciascuno dei competitors ai temi etici e della sostenibilità, sebbene nessuno di questi abbia abbracciato definitivamente la causa, limitandosi solo ad alcuni (vedi il packaging) e tralasciandone altri (vedi l'economia circolare), come si può notare dalla tabella \ref{table:analisi_mercato}.
 
-Risulta comune a tutti la presenza di una linea green nella propria offerta, ma considerando ad esempio il tema della sostenibilità ambientale, sociale e dell'economia circolare, solo Patagonia può dirsi promossa. Per quanto riguarda il tema della trasparenza finanziaria, solo Garment Workshop si distingue dagli altri.
+Risulta comune a tutti la presenza di una \textbf{linea green} nella propria offerta, ma considerando ad esempio il tema della sostenibilità ambientale, sociale e dell'economia circolare, solo Patagonia può dirsi promossa. Per quanto riguarda il tema della trasparenza finanziaria, solo Garment Workshop si distingue dagli altri.
 
-Passando invece ad aspetti più legati alla tecnologia, si nota un utilizzo di algoritmi per la profilazione dei clienti online da parte della maggioranza delle aziende (mentre solo due utilizzano metodologie human driven).
+Passando invece ad aspetti più legati alla tecnologia, si nota un utilizzo di algoritmi data driven per la profilazione dei clienti online da parte della maggioranza delle aziende (mentre solo due utilizzano metodologie \textbf{human driven}).
 
-Infine, è ancora abbastanza limitato l'utilizzo di strumenti innovativi, quali algoritmi di realtà aumentata che consentano di vedersi i vestiti digitali addosso dal proprio smartphone, l'invio di capi di abbigliamento senza che questi siano stati scelti dal cliente, o ancora l'abbandono del concetto di negozio fisso,  spostandosi ad un approccio più delocalizzato come gli spot stores di Garment Workshop.
+Infine, è ancora abbastanza limitato l'utilizzo di strumenti innovativi, quali algoritmi di \textbf{realtà aumentata} che consentano di vedersi i vestiti digitali addosso dal proprio smartphone, l'invio di capi di abbigliamento senza che questi siano stati scelti dal cliente, o ancora l'abbandono del concetto di negozio fisso, spostandosi ad un approccio più delocalizzato come gli \textbf{spot stores} di Garment Workshop.
 
-\begin{table}[h!]
+\begin{table}[t!]
 \centering
 \begin{tabular}{|c |c | c | c | c | c | c | c | c | c | c | c | c|} 
  \hline
@@ -220,7 +218,7 @@ Infine, è ancora abbastanza limitato l'utilizzo di strumenti innovativi, quali 
  Garment Workshop & \checkmark & × & × & × & \checkmark & \checkmark & × & × & × & \checkmark &  \checkmark  \rule[1ex]{0pt}{3ex}\\[1.5ex]
  \hline
 \end{tabular}
-\caption{Tabella comparativa risultato dell'analisi di mercato.}
+\caption{Tabella comparativa risultato dell'analisi di mercato fatta sui competitors dell'{\em Atelier Splendor}.}
 \label{table:analisi_mercato}
 \end{table}
 
@@ -228,8 +226,7 @@ Infine, è ancora abbastanza limitato l'utilizzo di strumenti innovativi, quali 
 
 \subsection{Intervista}
 
-L'intervista al committente dell'applicazione segue l'iniziale fase di analisi di mercato e di individualizzazione di possibili sviluppi innovativi, la quale è stata essenziale per \textbf{strutturare l'intervista} e raccogliere le idee innovative da proporre al committente. Le informazione raccolte nell'intervista serviranno a definire chiaramente i contorni dell'applicazione e a selezionare i moduli innovativi da sviluppare. L'intervista è stata strutturata nella seguente forma a macro blocchi:
-
+L'intervista al committente dell'applicazione segue l'iniziale fase di analisi di mercato e di individualizzazione di possibili sviluppi innovativi, la quale è stata essenziale per \textbf{strutturare l'intervista} e raccogliere le idee innovative da proporre al committente. Le informazione raccolte nell'intervista serviranno a definire chiaramente i contorni dell'applicazione e a selezionare i moduli innovativi da sviluppare. L'intervista è stata strutturata nella seguente forma a macro blocchi \cite{up-riferimento}:
 
 \textbf{Chi:} in questa prima fase conoscitiva abbiamo voluto inquadrare meglio la figura del committente. Abbiamo chiesto:
 \begin{itemize}
@@ -263,13 +260,13 @@ L'intervista al committente dell'applicazione segue l'iniziale fase di analisi d
 
 \subsection{Brainstorming}
 
-In questa fase, sulla base di tutte le informazioni raccolte attraverso le precedenti domande durante l'intervista, abbiamo proposto al cliente tutte le nostre idee innovative relative a diversi possibili sviluppi del progetto. Le idee proposte sono state avvalorate da una precedente analisi di mercato e dalle conoscenze in merito del nostro esperto di dominio. L'insieme delle idee così raccolte, è poi stato ridiscusso con il cliente e suddiviso in gruppi, come presentato nella successiva sezione sui risultati.
+In questa fase, sulla base di tutte le informazioni raccolte attraverso le precedenti domande durante l'intervista, abbiamo proposto al cliente tutte le nostre \textbf{idee innovative} relative a diversi possibili sviluppi del progetto. Le idee proposte sono state avvalorate da una precedente analisi di mercato e dalle conoscenze in merito del nostro esperto di dominio. L'insieme delle idee così raccolte, è poi stato ridiscusso con il cliente e suddiviso in gruppi (moduli core, moduli pilota e moduli attualmente non presi in considerazione), come presentato nella successiva sezione sui risultati.
 
 
 \subsection{Risultati}
 
 I risultati dell'intervista possono essere suddivisi in tre macro gruppi.
-Le idee che per motivi strategici o di tempo non vengono ulteriormente sviluppate sono finite nel gruppo dei moduli attualmente non presi in considerazione, e di seguito non presentati.
+Le idee che per motivi strategici o di tempo non vengono ulteriormente sviluppate sono finite nel gruppo dei \textbf{moduli attualmente non presi in considerazione}, e di seguito non presentati.
 
 La progettazione e lo sviluppo completo dei \textbf{moduli ``core"}, strategici per raggiungere gli obiettivi del cliente e contribuire al tasso di innovazione dell'applicazione. L'investimento del cliente e le forze in gioco del team rendono questi obiettivi realistici e realizzabili.
 
@@ -291,28 +288,27 @@ La progettazione e lo sviluppo almeno parziale dei \textbf{moduli ``pilota"}, st
 
 \section{Analisi dei requisiti}
 
-Proseguiamo riportando i requisiti che la nostra applicazione dovrà rispettare e seguire nella sua implementazione.\\
+Proseguiamo riportando i requisiti che la nostra applicazione dovrà rispettare e seguire nella sua implementazione.
 
-L’analisi dei requisiti infatti è un’attività preliminare allo sviluppo di un prodotto, dove si definiscono le funzionalità che questo dovrà offrire, nel nostro caso i requisiti che devono essere soddisfatti dal software per rispondere alle esigenze del committente, e si conclude con la stesura di una dettagliata specifica dei requisiti, che guideranno le fasi di sviluppo successive.\\
+L’analisi dei requisiti infatti è un’attività preliminare allo sviluppo di un prodotto, dove si definiscono le \textbf{funzionalità che questo dovrà offrire}, nel nostro caso i requisiti che devono essere soddisfatti dal software per rispondere alle esigenze del committente, e si conclude con la stesura di una dettagliata specifica dei requisiti, che guideranno le fasi di sviluppo successive \cite{up-riferimento}.
 
 Da una buona analisi dei requisiti si ottiene una maggiore qualità del prodotto finale, soprattutto per quanto riguarda caratteristiche non visibili all’utente, come ad esempio la modularità: suddividendo da subito un progetto in diversi sottosistemi, ciascuno dei quali svolge un compito ben definito e dipende dagli altri in modo semplice, lo si rende nel complesso più comprensibile, e la comprensibilità, a sua volta, insieme alla semplicità delle interdipendenze tra questi sottosistemi, rende il sistema più facile da verificare e quindi più affidabile.
-Infine, mantenere ciascun sottosistema il più indipendente possibile dagli altri, ne rende più facili la modifica e il riuso, efficientando tutto il processo di sviluppo.
-
+Infine, mantenere ciascun sottosistema il più indipendente possibile dagli altri, ne rende più facili la modifica e il riuso, rendendo efficiente tutto il processo di sviluppo \cite{up-riferimento}.
 
 
 \subsection{Attori, Obiettivi e Casi d'Uso}
 \label{subsec:UC}
 
-L'applicazione e tutto il sistema che traduce deve essere pensata per essere sfruttata da una serie di attori, umani o meno, che, con le loro attivit\'a, determinano come essa sar\'a sviluppata. Possiamo classificare gli attori nella tassonomia seguente:
+L'applicazione e tutto il sistema che traduce deve essere pensata per essere sfruttata da una serie di attori, umani o meno, che, con le loro attivit\'a, determinano come essa sar\'a sviluppata. Possiamo classificare gli attori nella tassonomia seguente \cite{elicitation_tools}:
 \begin{itemize}
-    \item Gli \textbf{attori principali} sono quelli che utilizzano direttamente l’applicazione per uno specifico use case (sono i fruitori dell’applicazione, e.g. un cliente, un impiegato).
-    \item Gli \textbf{attori secondari} sono sistemi esterni (tipicamente software) che integriamo all’interno dell’applicazione (sono API che inseriamo per implementare il tutto e su cui non abbiamo controllo).
-    \item Gli \textbf{attori fuori scena} sono entità che non usano direttamente l’app, ma che ne possono trarre benefici o ci danno dei vincoli da rispettare (l’università è l’attore fuori scena che beneficia di Moodle, la legge con il GDPR).
+    \item gli \textbf{attori principali} sono quelli che utilizzano direttamente l’applicazione per uno specifico use case (sono i fruitori dell’applicazione, e.g. un cliente, un impiegato),
+    \item gli \textbf{attori secondari} sono sistemi esterni (tipicamente software) che integriamo all’interno dell’applicazione (sono API che inseriamo per implementare il tutto e su cui non abbiamo controllo),
+    \item gli \textbf{attori fuori scena} sono entità che non usano direttamente l’app, ma che ne possono trarre benefici o ci danno dei vincoli da rispettare (l’università è l’attore fuori scena che beneficia di Moodle, la legge con il GDPR).
 \end{itemize}
 
-I Casi d'Uso, invece, descrivono i possibili scenari di utilizzo dell'applicazione, il macro-contesto all'interno del quale si muovono gli attori di cui sopra. Una comune rappresentazione grafica di un Caso d'Uso (o \textbf{UC}) \'e ravvisabile nell'{\em UC diagram}, ovvero un'\textit{interfaccia} astratta della nostra applicazione (cfr. fig. \ref{fig:UC_diagram}, p.\pageref{fig:UC_diagram}).
-\\
-\\
+I Casi d'Uso, invece, descrivono i possibili scenari di utilizzo dell'applicazione, il macro-contesto all'interno del quale si muovono gli attori di cui sopra. Una comune rappresentazione grafica di un Caso d'Uso (o \textbf{UC}) \'e ravvisabile nell'{\em UC diagram}, ovvero un'\textit{interfaccia} astratta della nostra applicazione (vedi figura \ref{fig:UC_diagram}).
+
+
 La definizione degli attori deriva da quella degli UC, pertanto procediamo elencando quelli che saranno di nostro interesse progettuale:
 \begin{itemize}
     \item Acquisto di capi di vestiario online (\textit{UC1}),
@@ -344,7 +340,7 @@ A questo punto possiamo enunciare gli attori, a pi\'u livelli, che entreranno in
 
 \subsection{Requisiti}
 
-Con \textit{requisiti} intendiamo caratteristiche del sistema, da un punto di vista puramente logico o da un punto di vista tecnico. Pi\'u nello specifico, distinguiamo: 
+Con \textit{requisiti} intendiamo caratteristiche del sistema, da un punto di vista puramente logico o da un punto di vista tecnico \cite{elicitation_tools}. Pi\'u nello specifico, distinguiamo: 
 \begin{itemize}
     \item \textbf{requisiti funzionali}, che riguardano ciò che il sistema fa e sono i moduli da implementare o integrare per lo sviluppo dell’applicazione,
     \item \textbf{requisiti non funzionali}, che riguardano come \'e fatto il sistema (specificano ad esempio quali sono i tools che vengono utilizzati per la sua realizzazione, il linguaggio di programmazione con cui \'e scritto, il database a cui si appoggia, ...).
@@ -381,11 +377,11 @@ Descriviamo quindi i requisiti che abbiamo determinato relativamente agli UC ind
 
 \subsection{Glossario degli attori}
 
-Viene fornito al lettore un glossario dei termini tecnici utilizzati nelle sezioni precedenti:
+Viene fornito al lettore un glossario dei termini tecnici utilizzati nelle sezioni precedenti \cite{elicitation_tools}:
 \begin{itemize}
-    \item API: \textit{``le API sono meccanismi che consentono a due componenti software di comunicare tra loro usando una serie di definizioni e protocolli. Ad esempio, il sistema software dell'ufficio meteorologico contiene dati meteorologici giornalieri. L'applicazione del meteo sul cellulare ``parla'' con questo sistema tramite API e mostra gli aggiornamenti meteorologici quotidiani sul telefono''} (cfr. \cite{bworld}).
+    \item API: \textit{``le API sono meccanismi che consentono a due componenti software di comunicare tra loro usando una serie di definizioni e protocolli. Ad esempio, il sistema software dell'ufficio meteorologico contiene dati meteorologici giornalieri. L'applicazione del meteo sul cellulare ``parla'' con questo sistema tramite API e mostra gli aggiornamenti meteorologici quotidiani sul telefono''} \cite{bworld}.
     \item Client mail: un programma che permette di gestire il servizio di posta elettronica.
-    \item Database: \textit{un database \'e una collezione organizzata e strutturata di dati. Il database \'e controllato da un Database Management System (DMBS), che funge da interfaccia tra l'utente che vuole avere accesso ai dati e il pc su cui questi dati sono salvati} (cfr. \cite{database}); un celebre esempio di DBMS e' Oracle. 
+    \item Database: \textit{un database \'e una collezione organizzata e strutturata di dati. Il database \'e controllato da un Database Management System (DMBS), che funge da interfaccia tra l'utente che vuole avere accesso ai dati e il pc su cui questi dati sono salvati} \cite{database}; un celebre esempio di DBMS e' Oracle. 
     \item Libreria: insieme di funzioni e strutture dati che permette allo sviluppatore di avere a propria disposizione codice gi\'a pronto alle proprie necessit\'a.
     \item Linguaggio di marcatura: insieme di regole che definiscono e strutturano l'impaginazione di un testo. Faremo in particolare ricorso ad \textit{HTML} e \textit{CSS}. La stesura di codice in questi linguaggi definir\'a ci\'o che gli utenti vedranno tramite interfaccia.
     \item Linguaggio di programmazione: linguaggio formale che specifica un insieme di istruzioni che vorranno interpretate e/o compilate dal computer, restituendo dei dati in uscita. Ci avvaliamo di \textit{Javascript} e \textit{Java}.
@@ -398,24 +394,18 @@ Viene fornito al lettore un glossario dei termini tecnici utilizzati nelle sezio
 \subsection{Vision}
 
 Il progetto nasce dal desiderio di una piccola sartoria di Torino, fortemente legata al territorio, di investire a lungo termine sul proprio sviluppo commerciale.
-\\
-\\
+
 L'azienda in questione esiste per soddisfare il bisogno di una clientela selezionata di vestire alla moda, con classe e stile. Possiede infatti il know-how necessario per la produzione di capi di alta qualità e per la riparazione sartoriale degli stessi. Risulta inoltre presente da anni sul mercato, di cui conosce le dinamiche e i bisogni, con risultati che hanno rispettato le aspettative.
-
-
 Vengono ricercate soluzioni ad un obiettivo di crescita economica e di brand, facendo leva sui nuovi strumenti che l'attuale tecnologia consente, in maniera sostenibile.
-\\
-\\
-Il contatto con il cliente nasce a seguito di un piano a lungo termine di sviluppo di soluzioni innovative totalmente slegate dal mercato del fashion.
 
+Il contatto con il cliente nasce a seguito di un piano a lungo termine di sviluppo di soluzioni innovative totalmente slegate dal mercato del fashion.
 Una delle principali ambizioni è quella di diffondere oltre i confini urbani di Torino il brand ed il business, entrando in modo innovativo nel mondo della vendita online, cogliendo tutte le opportunità che questa può offrire a chi investe nel proprio mercato.
 Tutto nasce dal bisogno di allargare il bacino di clienti ad un pubblico più variegato, slegandosi dal solo mercato tradizionale di over 35, facendo breccia sul mercato dei giovani over 25.
 La sartoria sogna infatti di sviluppare una rete commerciale internazionale, che metta al centro i propri prodotti e servizi, ma che allo stesso tempo commercializzi prodotti di comprovata qualità per conto di terzi.
 
 Alla base di ogni aspetto del progetto vi è l'uso della tecnologia, attraverso l'utilizzo di un'applicazione sviluppata ad hoc che raccolga dati che possano guidare anche geograficamente l'espansione commerciale, o il sito internet per coinvolgere gli utenti online con un'esperienza nuova di acquisto di capi di abbigliamento rispetto al resto del mercato della moda.
 Viene presa infatti ispirazione da mercati completamente slegati da quello di riferimento, per creare un nuovo approccio degli utenti all'acquisto online di vestiti e accessori, con l'obiettivo di creare un rapporto forte e duraturo sia con i nuovi clienti che con quelli di lungo corso.
-\\
-\\
+
 L'intero progetto mira dunque a creare uno sviluppo sociale ed economico, come diretta conseguenza della nuova posizione dell'azienda sul mercato online, offrendo una valida alternativa ai modelli di crescita insostenibili che caratterizzano ormai l'intero settore della moda.
 
 
@@ -434,9 +424,8 @@ Nel progetto è centrale il rispetto dei valori sempre più all'attenzione del g
 \section{Design Patterns utilizzati}
 
 Un {\em pattern} è una soluzione generale ad un problema ricorrente, che va opportunamente adattato al problema in esame (cfr.\cite{gof_riferimento}, p.12). Un Pattern può essere riassunto in: problema, soluzione, pro e contro della soluzione ed esempi d’uso. I Design pattern visti a lezione sono i \textbf{GoF Design Pattern} e permettono di sfruttare al massimo le caratteristiche object oriented di Java. Essi costituiscono di fatto una mappa per scrivere codice Java \cite{gof_sunt}.
-\\
-\\
-In questa sezione riportiamo sotto forma di micro prototipi le implementazioni dei design pattern applicati ai casi d'uso della nostra applicazione.
+
+In questa sezione riportiamo sotto forma di micro prototipi le implementazioni dei design pattern applicati ai casi d'uso della nostra applicazione innovativa.
 
 \begin{itemize}
     \item Con riferimento al caso d'uso dell'acquisto di capi di vestiario online, un dipendente dell'atelier può anche essere un cliente e utilizzare l'applicazione con due scopi differenti: per controllare gli ordini da evadere o per acquistare capi sullo store online.
@@ -445,9 +434,6 @@ In questa sezione riportiamo sotto forma di micro prototipi le implementazioni d
     Alternativamente, il pattern composite potrebbe essere applicato semplicemente al caso d'uso dell'accedere al magazzino snello con riferimento al modulo del {\em magazzino snello}.
     \item Con riferimento al caso d'uso dell'aggiornare i clienti rispetto all'installazione di Pop-Up stores temporanei, l’idea di allestire una newsletter ci ha indirizzati nell'implementazione del \textbf{pattern Observer} (cfr.\cite{gof_riferimento}, p.326).
 \end{itemize}
-
-
-\davide{Materiale da citare: \cite{gof_riferimento}, \cite{up-riferimento}, \cite{uml_riferimento}, \cite{elicitation_tools}, \cite{gof_sunt}, \cite{github}.}
 
 
 \subsection{Pattern Decorator}
@@ -463,7 +449,7 @@ La proprietà di trasparenza permette inoltre ai decorators di apparire ovunque 
 Un esempio illuminante di possibile utilizzo ci è proposto dalla {\em Gang of Four} (cfr.\cite{gof_riferimento}, p.197):
 Supponiamo di avere un oggetto TextView che mostra del testo in una finestra. Di default, la TextView non ha scroll bar, perch\'e non sempre ne abbiamo bisogno. Quando necessario possiamo ``decorare'' la TextView con una scroll bar. Supponiamo di volere anche un bordo più spesso attorno alla finestra. Possiamo ``decorare'' l'oggetto TextView anche con quello e con tutte le altre caratteristiche aggiuntive fino a ottenere il risultato voluto.
 
-Con riferimento invece al caso d'uso dell'acquisto di un abito sull'applicazione, si pensi ad un modello di oggetti che rappresenti i dipendenti dell'Atelier Splendor. Un impiegato può essere un cliente interessato a comprare un abito sulla piattaforma. Nasce così l'esigenza di modellare la figura dell'\textbf{dipendente-cliente}, il quale in aggiunta alle operazioni definite per i dipendenti, definisce anche quelle relative ai clienti.
+Con riferimento invece al caso d'uso dell'acquisto di un abito sull'applicazione, si pensi ad un modello di oggetti che rappresenti i dipendenti dell'{\em Atelier Splendor}. Un impiegato può essere un cliente interessato a comprare un abito sulla piattaforma. Nasce così l'esigenza di modellare la figura dell'\textbf{dipendente-cliente}, il quale in aggiunta alle operazioni definite per i dipendenti, definisce anche quelle relative ai clienti.
 \\
 \\
 Il pattern Decorator ha i seguenti \textbf{vantaggi} evidenti:
@@ -492,24 +478,24 @@ Per implementare il pattern Decorator contestualmente al caso d'uso dell'acquist
     \item Un {\em Decorator} ({\tt Ruolo}): mantiene una referenza al {\em Component} e definisce un'interfaccia conforme a quella del {\em Component}.
     \item Uno o più {\em ConcreteDecorator} ({\tt Dipendente, Cliente}): aggiunge le responsabilità al {\em Component}.
 \end{itemize}
-La relazione tra le componenti del decorator implementato per l'applicazione dell'Atelier Splendor è illustrata sotto forma di UML diagram in fig. \ref{fig:uml_diagram_decorator}.
+La relazione tra le componenti del decorator implementato per l'applicazione dell'{\em Atelier Splendor} è illustrata sotto forma di UML diagram in figura \ref{fig:uml_diagram_decorator}.
 
 \lstinputlisting[label={list:user}, caption={\small User.java -- Component del pattern Decorator \cite{gof_sunt}.}]
 {code/decorator/User.java}
 
-Con riferimento a list. \ref{list:user} e a fig. \ref{fig:uml_diagram_decorator}, Tutti le componenti di questo pattern implementano l’interfaccia
+Con riferimento a list.\ref{list:user} e a figura \ref{fig:uml_diagram_decorator}, tutti le componenti di questo pattern implementano l’interfaccia
 {\tt User}, che specifica soltanto una serie di metodi pubblici.
 Notare come sia importante mantenere l'interfaccia {\tt User} ({\em Component}) ``leggiera'', ossia: \textbf{il suo scopo è la definizione di un'interfaccia conforme, non deve contenere altri dati}. La definizione dei dati rappresentativi è competenza delle sottoclassi, altrimenti la complessità della classe {\em Component} rende i {\em decorators} troppo pesanti per essere applicati ricorsivamente. Inoltre, Mettere troppe funzionalità nella classe {\em Component} aumenta la possibilità che le sottoclassi {\em concrete} ``paghino'' per caratteristiche di cui non hanno un bisogno effettivo \cite{gof_riferimento}.
 
 \lstinputlisting[label={list:utenteBase}, caption={\small UtenteBase.java -- ConcreteComponent del pattern Decorator \cite{gof_sunt}.}]
 {code/decorator/UtenteBase.java}
 
-Con riferimento a list. \ref{list:utenteBase} e a fig. \ref{fig:uml_diagram_decorator}, la classe {\tt UtenteBase} implementa l'interfaccia {\tt User}.
+Con riferimento a list.\ref{list:utenteBase} e a figura \ref{fig:uml_diagram_decorator}, la classe {\tt UtenteBase} implementa l'interfaccia {\tt User}.
 
 \lstinputlisting[label={list:ruolo}, caption={\small Ruolo.java -- Decorator del pattern Decorator \cite{gof_sunt}.}]
 {code/decorator/Ruolo.java}
 
-Con riferimento a list. \ref{list:ruolo} e a fig. \ref{fig:uml_diagram_decorator}, 
+Con riferimento a list.\ref{list:ruolo} e a figura \ref{fig:uml_diagram_decorator}, 
 La classe astratta {\tt Ruolo} corrisponde al {\em Decorator} del
 modello. Contiene il codice necessario per immagazzinare al suo interno
 l’oggetto decorato {\tt User}, e mappa verso di lui le operazioni richieste. Si noti che questa classe implementa l’interfaccia {\tt User}, e al suo interno utilizza questa stessa interfaccia per comunicare col {\em Component} \cite{gof_sunt}.
@@ -521,14 +507,14 @@ Nella classe {\tt Ruolo}, notare come il \textbf{Binding Dinamico} che si ottien
 \lstinputlisting[label={list:dipendente}, caption={\small Dipendente.java -- Primo ConcreteDecorator del pattern Decorator \cite{gof_sunt}.}]
 {code/decorator/Dipendente.java}
 
-Con riferimento a list. \ref{list:dipendente} e a fig. \ref{fig:uml_diagram_decorator},
+Con riferimento a list.\ref{list:dipendente} e a figura \ref{fig:uml_diagram_decorator},
 Le responsabilità specifiche riguardo la figura dell'utente dipendente
 sono codificate nella classe {\tt Dipendente} \cite{gof_riferimento}. Questa classe estende le funzioni del {\em Decorator}, particolarmente aggiungendo la possibilità di controllare gli ordini presenti nel magazzino tramite il metodo {\tt checkOrders}.
 
 \lstinputlisting[label={list:cliente}, caption={\small Cliente.java -- Secondo ConcreteDecorator del pattern Decorator \cite{gof_sunt}.}]
 {code/decorator/Cliente.java}
 
-Con riferimento a list. \ref{list:cliente} e a fig. \ref{fig:uml_diagram_decorator}, la classe {\tt Cliente} codifica la figure dell'utente cliente, dando la possibilit\'a all'utente cliente di aggiungere vestiti al carrello ({\tt  addToChart}), di rimuoverne ({\tt removeFromChart}) e di pagare effettuando l'ordine ({\tt pay}).
+Con riferimento a list\ref{list:cliente} e a figura \ref{fig:uml_diagram_decorator}, la classe {\tt Cliente} codifica la figure dell'utente cliente, dando la possibilit\'a all'utente cliente di aggiungere vestiti al carrello ({\tt  addToChart}), di rimuoverne ({\tt removeFromChart}) e di pagare effettuando l'ordine ({\tt pay}).
 \\
 \\
 Si noti che i {\em ConcreteDecorators} definiti in questo microprototipo:
@@ -575,25 +561,30 @@ particolare algoritmo, in apposite classi, dette {\em ConcreteStrategy}, le qual
 \lstinputlisting[label={list:str_concreteCli}, caption={\small ConcreteCliente.java -- ConcreteStrategy della seconda componente Strategy \cite{gof_sunt}.}]
 {code/strategy/ConcreteCliente.java}
 
+Il resto del codice \'e disponibile in appendice \ref{appendix:strategy}.
+
 
 \subsection{Pattern Composite}
-Questo pattern ci consente di costruire una gerarchie di oggetti composti. Gli oggetti composti possono essere formati da oggetti singoli, oppure da altri oggetti composti. è utile nei casi in cui si vuole rappresentare gerarchie di oggetti tutto-parte, essere in grado di ignorare le differenze tra oggetti singoli e oggetti composti. Il fatto che l'Atelier Splendor mostra il desiderio di vendere articoli di altri brand abbiamo visto molto opportuno proporre il composite perch\'e nell'architectura potr\'a aggiungere gli articoli suoi e altri brand in modo facile e molto separato.
-Il pattern viene usato nel nostro caso perché si può rappresentare il nostro magazzino come segue:
+
+Questo pattern ci consente di costruire una gerarchie di oggetti composti. Gli oggetti composti possono essere formati da oggetti singoli, oppure da altri oggetti composti. è utile nei casi in cui si vuole rappresentare gerarchie di oggetti tutto-parte, essere in grado di ignorare le differenze tra oggetti singoli e oggetti composti \cite{gof_riferimento}.
+Il fatto che l'{\em Atelier Splendor} mostra il desiderio di vendere articoli di altri brand abbiamo visto molto opportuno proporre il composite perch\'e nell'architettura potr\'a aggiungere gli articoli suoi e altri brand in modo facile e molto separato.
 
 \begin{figure}[!t]
     \centering
     \makebox[\textwidth][c]{\includegraphics[width=1.1\linewidth]{images/Composite.jpg}}
-  \caption{\small In figura è mostrata la struttura gerarchica delle merce in vendita presso lo shop online dell'Atelier Splendor.}
+  \caption{\small In figura è mostrata la struttura gerarchica delle merce in vendita presso lo shop online dell'{\em Atelier Splendor}.}
   \label{fig:diagram_composite}
 \end{figure}
 
-Per implementare il pattern abbiamo bisogno di :
+Il pattern viene usato nel nostro caso perché si può rappresentare il nostro magazzino come segue \cite{gof_sunt}:
 \begin{itemize}
     \item Un \textit{Item} (è una classe astratta che fornisce le operazione base del nostro magazzino/articolo)
     \item Un \textit{CompoundItem} (La classe estende Item e si comporta sia come una parte del magazzino o come il magazzino intero a secondo di come è usato)
     \item Un \textit{SaleableItem} (Questa classe è l'articolo proprio, estende Item e ha un costruttore piu completo di CompoundItem anh )
     \item Un  \textit{SaleableItemException} (Per gestire un' \textit{exception} quando l'utente prova ad aggiungere in un \textit{SaleableItem} un \textit{Item})
 \end{itemize}
+\\
+
 \begin{lstlisting}
 // The Item abstract class 
 public abstract class Item {
@@ -681,27 +672,25 @@ public class SaleableItem extends Item{
     }
 }
 \end{lstlisting}
-Come detto prima, la classe \textit{CompoundItem} può rappresentare l'intero magazzino o semplicemente una parte (categoria) di alcuni articoli. La classe \textit{CompoundItem} è usata per rapprensentare tutti gli articoli di Splenldor e quelli di altri brand che il loro insieme forma tutto il magazzino che è sempre rapprensatato da la classe \textit{CompoundItem}.
-\\
-La classe \textit{SaleableItem} rappresenta l'articolo venduto con tutto le caratterische possibile, ogni volta che si vuole aggiungere un articolo (\textit{SaleableItem}) si chiama la \textit{addItem} sul Magazzino (\textit{CompoundItem})
-\\
-\textbf{NB}: Chiamando la addItem o removeItem su \textit{SaleableItem} lancierà la \textit{SaleableItemException}
+Come detto prima, la classe \textit{CompoundItem} può rappresentare l'intero magazzino o semplicemente una parte (categoria) di alcuni articoli. La classe \textit{CompoundItem} è usata per rappresentare tutti gli articoli dell'{\em Atelier Splenldor} e quelli di altri brand che il loro insieme forma tutto il magazzino che è sempre rappresenatato dalla classe \textit{CompoundItem} \cite{gof_sunt}.
+
+La classe \textit{SaleableItem} rappresenta l'articolo venduto con tutto le caratteristiche possibile, ogni volta che si vuole aggiungere un articolo (\textit{SaleableItem}) si chiama la {\tt addItem} sul Magazzino (\textit{CompoundItem}).
+
+\textbf{Nota bene}: chiamando la {\tt addItem} o {\tt removeItem} su \textit{SaleableItem} lancerà la \textit{SaleableItemException} \cite{gof_riferimento}.
+
+Il resto del codice \'e disponibile in appendice \ref{appendix:composite}.
 
 
 \subsection{Pattern Observer}
 
-Il pattern \textit{Observer} (noto anche come \textit{Publish-Subscribe}) \'e un pattern TIPOPATTERNEDEFINIZIONE, che ``\textit{definisce una relazione uno-a-molti tra oggetti, in modo tale che, quando un oggetto cambia stato, tutti i suoi dipendenti siano notificati e aggiornati automaticamente}'' (\cite{gof_riferimento}, p.326). 
-\\
-\\
-L'adozione di questo pattern trova le sue radici nella necessit\'a di trovare una \textit{consistenza} tra oggetti appartenenti a classi che \textit{cooperano} tra loro; una soluzione che sarebbe possibile adottare sarebbe quella di rendere queste classi strettamente dipendenti le une dalle altre, ma questo ridurrebbe la loro riusabilit\'a. La \textit{Gang of Four} cita come esempio la situazione in cui una diversa rappresentazione grafica (un grafico a barre, un grafico a torta e una rappresentazione tabellare) prendano le informazioni circa i dati da rappresentare dal medesimo \textit{data object}. Queste rappresentazioni grafiche non comunicano direttamente tra loro, ma devono comportarsi come se lo potessero fare. Quindi, nel momento in cui l'utente cambia i dati, questo cambiamento deve riflettersi in tutte le rappresentazioni grafiche di cui sopra. (cfr. \cite{gof_riferimento}, p.327)
-\\
-\\
+Il pattern \textit{Observer} (noto anche come \textit{Publish-Subscribe}) \'e un pattern TIPOPATTERNEDEFINIZIONE, che ``\textit{definisce una relazione uno-a-molti tra oggetti, in modo tale che, quando un oggetto cambia stato, tutti i suoi dipendenti siano notificati e aggiornati automaticamente}'' (cfr.\cite{gof_riferimento}, p.326). 
+
+L'adozione di questo pattern trova le sue radici nella necessit\'a di trovare una \textit{consistenza} tra oggetti appartenenti a classi che \textit{cooperano} tra loro; una soluzione che sarebbe possibile adottare sarebbe quella di rendere queste classi strettamente dipendenti le une dalle altre, ma questo ridurrebbe la loro riusabilit\'a. La \textit{Gang of Four} cita come esempio la situazione in cui una diversa rappresentazione grafica (un grafico a barre, un grafico a torta e una rappresentazione tabellare) prendano le informazioni circa i dati da rappresentare dal medesimo \textit{data object}. Queste rappresentazioni grafiche non comunicano direttamente tra loro, ma devono comportarsi come se lo potessero fare. Quindi, nel momento in cui l'utente cambia i dati, questo cambiamento deve riflettersi in tutte le rappresentazioni grafiche di cui sopra. (cfr.\cite{gof_riferimento}, p.327)
+
 Questo comportamento implica quindi, accettando il fatto di non voler creare dipendenze tra questi tre oggetti, che essi vengano notificati e coerentemente aggiornati rispetto a modifiche ed aggiornamenti che si verificano per il \textit{data object} soggiacente che li popola. Il pattern Observer viene incontro a questa esigenza. 
-\\
-\\
+
 Nel nostro caso specifico, essendoci immaginati, oltre allo store on-line per la vendita dei nostri prodotti, anche l'allestimento di PopUp-Store temporanei in diverse citt\'a, l'idea che gli utenti iscritti al nostro sito per effettuare acquisti potessero essere interessati ad aggiornamenti relativi alla nostra presenza fisica sul territorio, per poter toccare direttamente con mano i capi che forniamo loro, ha portato alla presa di coscienza della necessit\'a di allestire una \textit{newsletter} che li potesse aggiornare in tal senso. Essi saranno aggiornati rispetto ad informazioni chiave quali la citt\'a ed il negozio entro cui il PopUp-Store verr\'a allestito, nonch\'e gli orari. 
-\\
-\\
+
 Procediamo ora con il commento del codice utilizzato. \\
 L'implementazione prevede la creazione di:
 \begin{itemize}
@@ -828,12 +817,10 @@ class CurrentConditionsDisplay implements Observer, DisplayElement {
 \end{lstlisting}
 
 Commentando questa parte di codice, notiamo che il \textit{ConcreteSubject} \'e rappresentato dal PopUp-Store che, come anticipato, pu\'o aggiungere, rimuovere e notificare gli \textit{Observers}, andando ad aggiornare i dati relativi ai campi che definiscono il nostro PopUp-Store (tramite la comunicazione diretta con l'interfaccia \textit{Observer}). Vi \'e poi un metodo per settare questi dati. 
-\\
-\\
+
 Passando invece al \textit{ConcreteObserver}, vediamo che esso ha modo di registrarsi al \textit{Subject} di nostro interesse, di aggiornare le informazioni a sua disposizione relativamente ai campi che definiscono il PopUp-Store, nonch\'e averle a disposizione tramite il suo metodo \textit{display}. 
-\\
-\\
-Il resto del codice \'e disponibile in appendice.
+
+Il resto del codice \'e disponibile in appendice \ref{appendix:observer}.
 
 
 \newpage
@@ -848,13 +835,13 @@ Il resto del codice \'e disponibile in appendice.
 \label{appendix:decorator}
 In appendice presento le altre classi necessarie per far funzionare il micro prototipo del decorator applicato al caso d'uso dell'acquisto di vestiti sullo store online (rispettivamente {\tt Magazzino}, {\tt Item}, {\tt Ordine}). L'output in console del client ({\tt DecoratorExample}) è presentato in figura \ref{fig:client_decorator}.
 
-\lstinputlisting[label={list:magazzino}, caption={\small Magazzino.java -- Classe che astrae il concetto di magazzino dell'Atelier Splendor.}]
+\lstinputlisting[label={list:magazzino}, caption={\small Magazzino.java -- Classe che astrae il concetto di magazzino dell'{\em Atelier Splendor}.}]
 {code/decorator/Magazzino.java}
 
-\lstinputlisting[label={list:cliente}, caption={\small Item.java -- Classe che astrae il concetto di item venduto dall'Atelier Splendor.}]
+\lstinputlisting[label={list:cliente}, caption={\small Item.java -- Classe che astrae il concetto di item venduto dall'{\em Atelier Splendor}.}]
 {code/decorator/Item.java}
 
-\lstinputlisting[label={list:cliente}, caption={\small Ordine.java -- Classe che astrae il concetto di ordine effettuato da un cliente dell'Atelier Splendor.}]
+\lstinputlisting[label={list:cliente}, caption={\small Ordine.java -- Classe che astrae il concetto di ordine effettuato da un cliente dell'{\em Atelier Splendor}.}]
 {code/decorator/Ordine.java}
 
 \lstinputlisting[label={list:client_decorator}, caption={\small DecoratorExample.java -- Classe client che contine il main del microprototipo che utilizza il pattern Decorator.}]
