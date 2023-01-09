@@ -529,7 +529,7 @@ Si noti che i {\em ConcreteDecorators} definiti in questo microprototipo:
     \item definiscono nuove operazioni non condivise tra i {\em ConcreteDecorators} ({\em e.g.} i metodi {\tt addToChart}, {\tt removeFromChart}, {\tt checkOrders})
 \end{itemize}
 
-Per vedere il funzionamento del micro prototipo che utilizza il Decorator ho sviluppato altre tre classi, rispettivamente {\tt Magazzino}, {\tt Item}, {\tt Ordine}, che integrate con le classi sopra presentate, simulano nel client ({\tt DecoratorExample}) un esempio di scenario del caso d'uso preso in esame. Tale codice viene riportato per comodità in appendice.
+Per vedere il funzionamento del micro prototipo che utilizza il Decorator ho sviluppato altre tre classi, rispettivamente {\tt Magazzino}, {\tt Item}, {\tt Ordine}, che integrate con le classi sopra presentate, simulano nel client ({\tt DecoratorExample}) un esempio di scenario del caso d'uso preso in esame. Tale codice viene riportato per comodità in appendice \ref{appendix:decorator}.
 
 \subsubsection{Comparativa Decorator vs Strategy}
 Il pattern Decorator e il pattern Strategy costuiscono due modi alternativi per cambiare il comportamento di un oggetto.
@@ -832,5 +832,82 @@ Il resto del codice \'e disponibile in appendice.
 %Prints the bibliography
 \printbibliography
 
+\newpage
+\appendix
+
+\section{Decorator}
+\label{appendix:decorator}
+In appendice presento le altre classi necessarie per far funzionare il micro prototipo del decorator applicato al caso d'uso dell'acquisto di vestiti sullo store online (rispettivamente {\tt Magazzino}, {\tt Item}, {\tt Ordine}). L'output in console del client ({\tt DecoratorExample}) è presentato in figura \ref{fig:client_decorator}.
+
+\lstinputlisting[label={list:magazzino}, caption={\small Magazzino.java -- Classe che astrae il concetto di magazzino dell'Atelier Splendor.}]
+{code/decorator/Magazzino.java}
+
+\lstinputlisting[label={list:cliente}, caption={\small Item.java -- Classe che astrae il concetto di item venduto dall'Atelier Splendor.}]
+{code/decorator/Item.java}
+
+\lstinputlisting[label={list:cliente}, caption={\small Ordine.java -- Classe che astrae il concetto di ordine effettuato da un cliente dell'Atelier Splendor.}]
+{code/decorator/Ordine.java}
+
+\lstinputlisting[label={list:client_decorator}, caption={\small DecoratorExample.java -- Classe client che contine il main del microprototipo che utilizza il pattern Decorator.}]
+{code/decorator/DecoratorExample.java}
+
+\begin{figure}[h!]
+    \makebox[\textwidth][c]{
+    \includegraphics[width=0.94\linewidth]{images/client_decorator1.png}}
+    \makebox[\textwidth][c]{
+    \includegraphics[width=0.94\linewidth]{images/client_decorator2.png}
+    }
+  \caption{\small Output del micro prototipo che utilizza il pattern Decorator.}
+  \label{fig:client_decorator}
+\end{figure}
+
+
+\newpage
+\section{Strategy}
+\label{appendix:strategy}
+
+In appendice l'output in console del client ({\tt StartegyExample}) è presentato in figura \ref{fig:client_strategy}. Ho scelto di utilizzare le stesse classi di test sviluppate per il decorator (le classi {\tt Magazzino}, {\tt Item}, {\tt Ordine} riportate in appendice \ref{appendix:decorator}) proprio per evidenziare al massimo le differenze tra i due diversi approcci allo stesso caso d'uso.
+
+\lstinputlisting[label={list:client_strategy}, caption={\small StrategyExample.java -- Classe client che contine il main del micro prototipo che utilizza il pattern Strategy.}]
+{code/strategy/StrategyExample.java}
+
+\begin{figure}[!h]
+    \makebox[\textwidth][c]{\includegraphics[width=0.95\linewidth]{images/client_strategy.png}}
+  \caption{\small Output del micro prototipo che utilizza il pattern Strategy.}
+  \label{fig:client_strategy}
+\end{figure}
+
+
+\newpage
+\section{Composite}
+\label{appendix:composite}
+
+In appendice l'output in console del client ({\tt Main}) è presentato in figura \ref{fig:client_composite}.
+
+\lstinputlisting[label={list:composite_CompoundItem}, caption={\small CompoundItem.java}]
+{code/composite/CompoundItem.java}
+
+\lstinputlisting[label={list:composite_Item}, caption={\small Item.java}]
+{code/composite/Item.java}
+
+\lstinputlisting[label={list:composite_SaleableItem}, caption={\small SaleableItem.java}]
+{code/composite/SaleableItem.java}
+
+\lstinputlisting[label={list:composite_SaleableItemException}, caption={\small SaleableItemException.java}]
+{code/composite/SaleableItemException.java}
+
+\lstinputlisting[label={list:composite_client}, caption={\small Main.java}]
+{code/composite/Main.java}
+
+\begin{figure}[!h]
+    \makebox[\textwidth][c]{\includegraphics[width=0.95\linewidth]{images/client_composite.png}}
+  \caption{\small Output del micro prototipo che utilizza il pattern Composite.}
+  \label{fig:client_composite}
+\end{figure}
+
+
+\newpage
+\section{Observer}
+\label{appendix:observer}
 
 \end{document}
