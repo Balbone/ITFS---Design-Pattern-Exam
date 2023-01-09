@@ -142,9 +142,9 @@ Questo capitolo raccoglie i requisiti che andranno poi analizzati, modellati e s
 \\
 I problemi comuni da evitare in questa fase iniziale, per uno sviluppo florido del progetto, riferiscono a 3 domini principali:
 \begin{enumerate}
-	\item \textbf{Scopo}: i requisiti devono riflettere i bisogni del cliente
-	\item \textbf{Comprensione}: \'e necessaria una buona comunicazione tra clienti, sviluppatori ed utenti per portare sul pratico i bisogni del cliente, che rifletteranno quelli degli utenti a cui vuole rivolgersi
-	\item \textbf{Volatilit\'a}: i requisiti possono cambiare, non essere completi all'inizio dello sviluppo ed evolvere nel tempo; \'e quindi necessario definirli con quanta pi\'u perizia possibile in questa fase del processo
+    \item \textbf{Scopo}: i requisiti devono riflettere i bisogni del cliente
+    \item \textbf{Comprensione}: \'e necessaria una buona comunicazione tra clienti, sviluppatori ed utenti per portare sul pratico i bisogni del cliente, che rifletteranno quelli degli utenti a cui vuole rivolgersi
+    \item \textbf{Volatilit\'a}: i requisiti possono cambiare, non essere completi all'inizio dello sviluppo ed evolvere nel tempo; \'e quindi necessario definirli con quanta pi\'u perizia possibile in questa fase del processo
 \end{enumerate}
 
 \davide{\textbf{[TODO]} Ampliare la parte sugli strumenti utilizzati per fare la requirement elicitation.}
@@ -313,51 +313,51 @@ La definizione degli attori deriva da quella degli UC, pertanto procediamo elenc
 
 A questo punto possiamo enunciare gli attori, a pi\'u livelli, che entreranno in contatto con gli UC che abbiamo appena definito. In particolare:
 \begin{itemize}
-	\item \textbf{UC1}
-		\begin{itemize}
-		\item Principali: Cliente che vuole acquistare - Dipendente che monitora acquisti,
-		\item Secondari: Metodi di pagamento,
-		\item Fuori scena: Compagnia di trasporti .
-		\end{itemize}
-	\item \textbf{UC2}
-		\begin{itemize}
-		\item Principali: Cliente nella sua forma di avatar - Dipendente sarto che gestisce il proprio lavoro rispetto al traffico degli avatar,
-		\item Secondari: Algoritmo che coadiuva i dipendenti nella gestione del magazzino,
-		\item Fuori scena: Fornitori di materie prime.
-		\end{itemize}
-	\item \textbf{UC3}
-		\begin{itemize}
-		\item Principali: Cliente che vuole essere aggiornato rispetto alle attivit\'a della Compagnia, 
-		\item Secondari: Database collegato a software tramite API per gestire informazioni di contatto dei clienti interessati alla newsletter,
-		\item Fuori scena: GDPR.
-		\end{itemize}
+    \item \textbf{UC1}
+        \begin{itemize}
+        \item Principali: Cliente che vuole acquistare - Dipendente che monitora acquisti,
+        \item Secondari: Metodi di pagamento,
+        \item Fuori scena: Compagnia di trasporti .
+        \end{itemize}
+    \item \textbf{UC2}
+        \begin{itemize}
+        \item Principali: Cliente nella sua forma di avatar - Dipendente sarto che gestisce il proprio lavoro rispetto al traffico degli avatar,
+        \item Secondari: Algoritmo che coadiuva i dipendenti nella gestione del magazzino,
+        \item Fuori scena: Fornitori di materie prime.
+        \end{itemize}
+    \item \textbf{UC3}
+        \begin{itemize}
+        \item Principali: Cliente che vuole essere aggiornato rispetto alle attivit\'a della Compagnia, 
+        \item Secondari: Database collegato a software tramite API per gestire informazioni di contatto dei clienti interessati alla newsletter,
+        \item Fuori scena: GDPR.
+        \end{itemize}
 \end{itemize}
 
 \subsection{Requisiti}
 
 Con \textit{requisiti} intendiamo caratteristiche del sistema, da un punto di vista puramente logico o da un punto di vista tecnico. Pi\'u nello specifico, distinguiamo: 
 \begin{itemize}
-	\item \textbf{requisiti funzionali}, che riguardano ciò che il sistema fa e sono i moduli da implementare o integrare per lo sviluppo dell’applicazione,
-	\item \textbf{requisiti non funzionali}, che riguardano come \'e fatto il sistema (specificano ad esempio quali sono i tools che vengono utilizzati per la sua realizzazione, il linguaggio di programmazione con cui \'e scritto, il database a cui si appoggia, ...).
+    \item \textbf{requisiti funzionali}, che riguardano ciò che il sistema fa e sono i moduli da implementare o integrare per lo sviluppo dell’applicazione,
+    \item \textbf{requisiti non funzionali}, che riguardano come \'e fatto il sistema (specificano ad esempio quali sono i tools che vengono utilizzati per la sua realizzazione, il linguaggio di programmazione con cui \'e scritto, il database a cui si appoggia, ...).
 \end{itemize}
 
 Descriviamo quindi i requisiti che abbiamo determinato relativamente agli UC individuati nella sezione precedente: 
 \begin{itemize}
-	\item UC1
-		\begin{itemize}
-		\item funzionali: voglio permettere all'utente di accedere al mio sito web e alla mia applicazione, visualizzare l'elenco degli articoli a mia disposizione, fargli scegliere quelli che pi\'u lo aggradano, inserirli nel carrello, pagare e completare l'ordine. Voglio permettere al dipendente di visualizzare gli ordini, 
-		\item non funzionali: tools Java (pattern decorator + strategy), html + javascript + css (front-end), Oracle. 
-		\end{itemize}
-	\item UC2
-		\begin{itemize}
-		\item funzionali: voglio permettere all'utente di gestirsi (eventualmente) l'avatar, tramite cui provera' le diverse combinazioni di capi. I dati immagazzinati serviranno al sarto per una gestione pi\'u lean del magazzino (vedi anche ordini con i fornitori di materie prime),
-		\item non funzionali: Oracle, Java (pattern Composite), Three-js (libreria js sul browser per realt\'a aumentata) / webGL (grafica 3D).
-		\end{itemize}
-	\item UC3
-		\begin{itemize}
-		\item funzionali: voglio permettere ai miei ``iscritti" di ricevere informazioni riguardanti i prossimi eventi pop-up store nella zona geografica di competenza,
-		\item non funzionali: Oracle, Java (pattern Observer), client mail, API di geolocalizzazione.
-		\end{itemize}
+    \item UC1
+        \begin{itemize}
+        \item funzionali: voglio permettere all'utente di accedere al mio sito web e alla mia applicazione, visualizzare l'elenco degli articoli a mia disposizione, fargli scegliere quelli che pi\'u lo aggradano, inserirli nel carrello, pagare e completare l'ordine. Voglio permettere al dipendente di visualizzare gli ordini, 
+        \item non funzionali: tools Java (pattern decorator + strategy), html + javascript + css (front-end), Oracle. 
+        \end{itemize}
+    \item UC2
+        \begin{itemize}
+        \item funzionali: voglio permettere all'utente di gestirsi (eventualmente) l'avatar, tramite cui provera' le diverse combinazioni di capi. I dati immagazzinati serviranno al sarto per una gestione pi\'u lean del magazzino (vedi anche ordini con i fornitori di materie prime),
+        \item non funzionali: Oracle, Java (pattern Composite), Three-js (libreria js sul browser per realt\'a aumentata) / webGL (grafica 3D).
+        \end{itemize}
+    \item UC3
+        \begin{itemize}
+        \item funzionali: voglio permettere ai miei ``iscritti" di ricevere informazioni riguardanti i prossimi eventi pop-up store nella zona geografica di competenza,
+        \item non funzionali: Oracle, Java (pattern Observer), client mail, API di geolocalizzazione.
+        \end{itemize}
 \end{itemize}
 
 \vspace{0.5cm}
@@ -374,13 +374,13 @@ Descriviamo quindi i requisiti che abbiamo determinato relativamente agli UC ind
 
 Viene fornito al lettore un glossario dei termini tecnici utilizzati nelle sezioni precedenti:
 \begin{itemize}
-	\item API: \textit{``le API sono meccanismi che consentono a due componenti software di comunicare tra loro usando una serie di definizioni e protocolli. Ad esempio, il sistema software dell'ufficio meteorologico contiene dati meteorologici giornalieri. L'applicazione del meteo sul cellulare ``parla'' con questo sistema tramite API e mostra gli aggiornamenti meteorologici quotidiani sul telefono''} (cfr. \cite{bworld}).
-	\item Client mail: un programma che permette di gestire il servizio di posta elettronica.
-	\item Database: \textit{un database \'e una collezione organizzata e strutturata di dati. Il database \'e controllato da un Database Management System (DMBS), che funge da interfaccia tra l'utente che vuole avere accesso ai dati e il pc su cui questi dati sono salvati} (cfr. \cite{database}); un celebre esempio di DBMS e' Oracle. 
-	\item Libreria: insieme di funzioni e strutture dati che permette allo sviluppatore di avere a propria disposizione codice gi\'a pronto alle proprie necessit\'a.
-	\item Linguaggio di marcatura: insieme di regole che definiscono e strutturano l'impaginazione di un testo. Faremo in particolare ricorso ad \textit{HTML} e \textit{CSS}. La stesura di codice in questi linguaggi definir\'a ci\'o che gli utenti vedranno tramite interfaccia.
-	\item Linguaggio di programmazione: linguaggio formale che specifica un insieme di istruzioni che vorranno interpretate e/o compilate dal computer, restituendo dei dati in uscita. Ci avvaliamo di \textit{Javascript} e \textit{Java}.
-	\item Pattern (\textit{Design Pattern}): modello logico a cui si ricorre per proporre una soluzione ad un problema che riguarda l'architettura e la progettazione del programma. 
+    \item API: \textit{``le API sono meccanismi che consentono a due componenti software di comunicare tra loro usando una serie di definizioni e protocolli. Ad esempio, il sistema software dell'ufficio meteorologico contiene dati meteorologici giornalieri. L'applicazione del meteo sul cellulare ``parla'' con questo sistema tramite API e mostra gli aggiornamenti meteorologici quotidiani sul telefono''} (cfr. \cite{bworld}).
+    \item Client mail: un programma che permette di gestire il servizio di posta elettronica.
+    \item Database: \textit{un database \'e una collezione organizzata e strutturata di dati. Il database \'e controllato da un Database Management System (DMBS), che funge da interfaccia tra l'utente che vuole avere accesso ai dati e il pc su cui questi dati sono salvati} (cfr. \cite{database}); un celebre esempio di DBMS e' Oracle. 
+    \item Libreria: insieme di funzioni e strutture dati che permette allo sviluppatore di avere a propria disposizione codice gi\'a pronto alle proprie necessit\'a.
+    \item Linguaggio di marcatura: insieme di regole che definiscono e strutturano l'impaginazione di un testo. Faremo in particolare ricorso ad \textit{HTML} e \textit{CSS}. La stesura di codice in questi linguaggi definir\'a ci\'o che gli utenti vedranno tramite interfaccia.
+    \item Linguaggio di programmazione: linguaggio formale che specifica un insieme di istruzioni che vorranno interpretate e/o compilate dal computer, restituendo dei dati in uscita. Ci avvaliamo di \textit{Javascript} e \textit{Java}.
+    \item Pattern (\textit{Design Pattern}): modello logico a cui si ricorre per proporre una soluzione ad un problema che riguarda l'architettura e la progettazione del programma. 
 \end{itemize}
 
 
@@ -551,6 +551,20 @@ Il {\em pattern Strategy} serve a definire una famiglia di algoritmi simili tra 
 Questo pattern suggerisce l’incapsulamento della logica di ogni
 particolare algoritmo, in apposite classi, dette {\em ConcreteStrategy}, le quali implementano l’interfaccia che consente agli oggetti di interagire con loro. Questa interfaccia deve fornire un accesso efficiente ai dati del Context, richiesti da ogni ConcreteStrategy, e viceversa \cite{gof_sunt}.
 
+\lstinputlisting[label={list:str_user}, caption={\small User.java -- Componente Context del pattern Strategy \cite{gof_sunt}.}]
+{code/strategy/User.java}
+
+\lstinputlisting[label={list:str_dipendente}, caption={\small Dipendente.java -- Prima componente Strategy del pattern Strategy \cite{gof_sunt}.}]
+{code/strategy/Dipendente.java}
+
+\lstinputlisting[label={list:str_concreteDip}, caption={\small ConcreteDipendente.java -- ConcreteStrategy della prima componente Strategy \cite{gof_sunt}.}]
+{code/strategy/ConcreteDipendente.java}
+
+\lstinputlisting[label={list:str_cliente}, caption={\small Cliente.java -- Seconda componente Strategy del pattern Strategy \cite{gof_sunt}.}]
+{code/strategy/Cliente.java}
+
+\lstinputlisting[label={list:str_concreteCli}, caption={\small ConcreteCliente.java -- ConcreteStrategy della seconda componente Strategy \cite{gof_sunt}.}]
+{code/strategy/ConcreteCliente.java}
 
 
 \subsection{Pattern Composite}
@@ -566,96 +580,96 @@ Il pattern viene usato nel nostro caso perché si può rappresentare il nostro m
 
 Per implementare il pattern abbiamo bisogno di :
 \begin{itemize}
-	\item Un \textit{Item} (è una classe astratta che fornisce le operazione base del nostro magazzino/articolo)
-	\item Un \textit{CompoundItem} (La classe estende Item e si comporta sia come una parte del magazzino o come il magazzino intero a secondo di come è usato)
-	\item Un \textit{SaleableItem} (Questa classe è l'articolo proprio, estende Item e ha un costruttore piu completo di CompoundItem anh )
-	\item Un  \textit{SaleableItemException} (Per gestire un' \textit{exception} quando l'utente prova ad aggiungere in un \textit{SaleableItem} un \textit{Item})
+    \item Un \textit{Item} (è una classe astratta che fornisce le operazione base del nostro magazzino/articolo)
+    \item Un \textit{CompoundItem} (La classe estende Item e si comporta sia come una parte del magazzino o come il magazzino intero a secondo di come è usato)
+    \item Un \textit{SaleableItem} (Questa classe è l'articolo proprio, estende Item e ha un costruttore piu completo di CompoundItem anh )
+    \item Un  \textit{SaleableItemException} (Per gestire un' \textit{exception} quando l'utente prova ad aggiungere in un \textit{SaleableItem} un \textit{Item})
 \end{itemize}
 \begin{lstlisting}
 // The Item abstract class 
 public abstract class Item {
-	protected String name;
+    protected String name;
 
-	public Item(String name) {
-		this.name = name;
-	}
+    public Item(String name) {
+        this.name = name;
+    }
 
-	public abstract void describe();
+    public abstract void describe();
 
-	public void addItem(Item c) throws SaleableItemException {
-		if (this instanceof SaleableItem)
-			throw new SaleableItemException();
-	}
+    public void addItem(Item c) throws SaleableItemException {
+        if (this instanceof SaleableItem)
+            throw new SaleableItemException();
+    }
 
-	public void removeItem(Item c) throws SaleableItemException {
-		if (this instanceof SaleableItem)
-			throw new SaleableItemException();
-	}
+    public void removeItem(Item c) throws SaleableItemException {
+        if (this instanceof SaleableItem)
+            throw new SaleableItemException();
+    }
 
-	public Item getItem(int n) {
-		return null;
-	}
+    public Item getItem(int n) {
+        return null;
+    }
 }
 
 //CompoundItem class
 public class CompoundItem extends Item {
-	private ArrayList<Item> items;
+    private ArrayList<Item> items;
 
-	public CompoundItem(String name) {
-		super(name);
-		items = new ArrayList<Item>();
-	}
+    public CompoundItem(String name) {
+        super(name);
+        items = new ArrayList<Item>();
+    }
 
-	@Override
-	public void describe() {
-		System.out.println(name);
-		System.out.println("\tComposed by:");
-		System.out.println("\t\t{");
-		items.forEach(Item::describe);
-		System.out.println("}");
-	}
+    @Override
+    public void describe() {
+        System.out.println(name);
+        System.out.println("\tComposed by:");
+        System.out.println("\t\t{");
+        items.forEach(Item::describe);
+        System.out.println("}");
+    }
 
-	public void addItem(Item c) throws SaleableItemException {
-		items.add(c);
-	}
+    public void addItem(Item c) throws SaleableItemException {
+        items.add(c);
+    }
 
-	public void removeItem(Item c) throws SaleableItemException {
-		items.remove(c);
-	}
+    public void removeItem(Item c) throws SaleableItemException {
+        items.remove(c);
+    }
 
-	public Item getItem(int n) {
-		if (n<0 || n>items.size()) return null;
-		return (Item) items.get(n);
-	}
+    public Item getItem(int n) {
+        if (n<0 || n>items.size()) return null;
+        return (Item) items.get(n);
+    }
 }
 
 // SaleableItem class
 public class SaleableItem extends Item{
-	private double weight;
-	private String type;
-	private double price;
-	private String size;
-	
-	public SaleableItem(String name,String type, double weight, double price,String size) {
-		super(name);
-		this.weight = weight;
-		this.price = price;
-		this.type = type;
-		this.size = size;
-	}
+    private double weight;
+    private String type;
+    private double price;
+    private String size;
+    
+    public SaleableItem(String name,String type, double weight, double price,String size) {
+        super(name);
+        this.weight = weight;
+        this.price = price;
+        this.type = type;
+        this.size = size;
+    }
 
-	@Override
-	public void describe() {
-		 System.out.println( "SaleableItem: " + name  +", type: "+type +", weight: "+weight +"kg"+", price: "+price +"€" +", size:" + size); 
-		
-	}
+    @Override
+    public void describe() {
+         System.out.println( "SaleableItem: " + name  +", type: "+type +", weight: "+weight +"kg"+", price: "+price +"€" +", size:" + size); 
+        
+    }
  }
 
  // SaleableItemException class
  public class SaleableItemException extends Exception {
-	public SaleableItemException() {
-		super("Not supported method, you cant add Item on SaleableItem");
-	}
+    public SaleableItemException() {
+        super("Not supported method, you cant add Item on SaleableItem");
+    }
 }
 \end{lstlisting}
 Come detto prima, la classe \textit{CompoundItem} può rappresentare l'intero magazzino o semplicemente una parte (categoria) di alcuni articoli. La classe \textit{CompoundItem} è usata per rapprensentare tutti gli articoli di Splenldor e quelli di altri brand che il loro insieme forma tutto il magazzino che è sempre rapprensatato da la classe \textit{CompoundItem}.
@@ -682,10 +696,10 @@ Nel nostro caso specifico, essendoci immaginati, oltre allo store on-line per la
 Procediamo ora con il commento del codice utilizzato. \\
 L'implementazione prevede la creazione di:
 \begin{itemize}
-	\item Un \textit{subject} (fornisce un'interfaccia che permette di aggiungere, rimuovere e notificare gli osservatori)
-	\item Un \textit{concreteSubject} (notifica gli osservatori circa i cambiamenti del proprio stato e modifica quest'ultimo all'occorrenza)
-	\item Un (...n) \textit{observer} (fornisce un'interfaccia per aggiornare gli osservatori rispetto ai cambi di stato del soggetto)
-	\item Un (...n) \textit{concreteObserver} (viene informato dei cambi di stato avvenuti sul concreteSubject e usa le informazioni ottenute per aggiornarsi appropriatamente rispetto ad esso)
+    \item Un \textit{subject} (fornisce un'interfaccia che permette di aggiungere, rimuovere e notificare gli osservatori)
+    \item Un \textit{concreteSubject} (notifica gli osservatori circa i cambiamenti del proprio stato e modifica quest'ultimo all'occorrenza)
+    \item Un (...n) \textit{observer} (fornisce un'interfaccia per aggiornare gli osservatori rispetto ai cambi di stato del soggetto)
+    \item Un (...n) \textit{concreteObserver} (viene informato dei cambi di stato avvenuti sul concreteSubject e usa le informazioni ottenute per aggiornarsi appropriatamente rispetto ad esso)
 \end{itemize}
 
 \begin{lstlisting}
@@ -704,24 +718,24 @@ interface Observer {
 
 Come abbiamo detto precedentemente, queste due interfacce permettono, rispettivamente:
 \begin{itemize}
-	\item SI:
-		\begin{itemize}
-		\item aggiungere un osservatore 
-		\item rimuovere un osservatore 
-		\item notificare agli osservatori i cambi di stato
-		\end{itemize}
-	\item OI:
-		\begin{itemize}
-		\item essere aggiornati rispetto ai cambi di stato del soggetto
-		\end{itemize}
+    \item SI:
+        \begin{itemize}
+        \item aggiungere un osservatore 
+        \item rimuovere un osservatore 
+        \item notificare agli osservatori i cambi di stato
+        \end{itemize}
+    \item OI:
+        \begin{itemize}
+        \item essere aggiornati rispetto ai cambi di stato del soggetto
+        \end{itemize}
 \end{itemize}
 
 Ribadiamo che abbiamo definito i seguenti cambi rispetto ai quali i clienti dovranno essere aggiornati:
 \begin{itemize}
-	\item citt\'a entro cui si svolger\'a il PopUp-Store 
-	\item il negozio che lo ospiter\'a
-	\item la data di apertura e quella di chiusura
-	\item l'orario entro cui esso si potr\'a trovare all'interno del negozio sopracitato
+    \item citt\'a entro cui si svolger\'a il PopUp-Store 
+    \item il negozio che lo ospiter\'a
+    \item la data di apertura e quella di chiusura
+    \item l'orario entro cui esso si potr\'a trovare all'interno del negozio sopracitato
 \end{itemize}
 
 Possiamo ora passare al \textit{ConcreteSubject} e al \textit{ConcreteObserver}:
