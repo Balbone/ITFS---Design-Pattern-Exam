@@ -1,7 +1,7 @@
+import java.text.SimpleDateFormat;
 import java.util.ArrayList; 
-import java.util.List;
-// cfr. https://stackoverflow.com/questions/6516320/datetime-datatype-in-java
 import java.util.Date;
+import java.util.List;
 
 
 // The Subject interface 
@@ -13,7 +13,7 @@ interface Subject {
 
 // The Observer interface 
 interface Observer {
-    void update(String location, String store, Date openingdate, Date closingdate, float openingtime, float closingtime); 
+    void update(String location, String store, Date openingdate, Date closingdate, double openingtime, double closingtime); 
 }
 
 // The DisplayElement interface just has one method, display, that we will call when the display element 
@@ -30,8 +30,8 @@ class PopUpStore implements Subject {
     private String store;
     private Date openingdate;
     private Date closingdate;
-    private float openingtime;
-    private float closingtime;
+    private double openingtime;
+    private double closingtime;
 
     public PopUpStore() {
     observers = new ArrayList<Observer>();
@@ -58,7 +58,7 @@ class PopUpStore implements Subject {
         notifyObservers();
     }
 
-    public void setMeasurements(String location, String store, Date openingdate, Date closingdate, float openingtime, float closingtime) { 
+    public void setMeasurements(String location, String store, Date openingdate, Date closingdate, double openingtime, double closingtime) { 
         this.location = location;
         this.store = store;
         this.openingdate = openingdate;
@@ -71,16 +71,22 @@ class PopUpStore implements Subject {
 
 // The Observer class
 class CurrentConditionsDisplay implements Observer, DisplayElement {
-    private float temperature; 
-    private float humidity; 
+    private String location;
+    private String store;   
+    private Date openingdate;
+    private Date closingdate;
+    private double openingtime;
+    private double closingtime;
     private Subject PopUpStore;
+
+    
     
     public CurrentConditionsDisplay(Subject PopUpStore) { 
         this.PopUpStore = PopUpStore; 
         PopUpStore.registerObserver(this);
     }
     
-    public void update(String location, String store, Date openingdate, Date closingdate, float openingtime, float closingtime) { 
+    public void update(String location, String store, Date openingdate, Date closingdate, double openingtime, double closingtime) { 
         this.location = location;
         this.store = store;
         this.openingdate = openingdate;
@@ -89,9 +95,15 @@ class CurrentConditionsDisplay implements Observer, DisplayElement {
         this.closingtime = closingtime;
         display();
     }
+
     public void display() {
-    System.out.println("We look forward to seeing you at our new Pop-Up store in " + location + ", kindly hosted by  " + store + 
-    ", on the following dates: " + openingdate + " - " + closingdate + ", at the following times:" + openingtime + " - " + closingtime);
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+        String formattedOpeningDate = sdf.format(openingdate);
+        String formattedClosingDate = sdf.format(closingdate);
+
+        System.out.println("We look forward to seeing you at our new Pop-Up store in " + location + ", kindly hosted by  " + store + 
+        ", on the following dates: " + formattedOpeningDate + " - " + formattedClosingDate + ", at the following times:" + openingtime + " - " + closingtime);
     } 
 }
 
@@ -101,8 +113,11 @@ class CurrentConditionsDisplay implements Observer, DisplayElement {
 public class Newsletter {
     public static void main(String[] args) {
         PopUpStore PopUpStore = new PopUpStore();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+        Date openingDate = sdf.parse("2023/01/12");
+        Date closingDate = sdf.parse("2023/01/19");
         CurrentConditionsDisplay currentDisplay = new CurrentConditionsDisplay(PopUpStore);
 
-        PopUpStore.setMeasurements("Turin", "Hannibal", "2023/01/12", "2023/01/19", 9.00, 19.00); 
+        PopUpStore.setMeasurements("Turin", "Hannibal", openingDate, closingDate, 9.00, 19.00); 
     } 
 }

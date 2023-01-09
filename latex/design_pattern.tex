@@ -687,7 +687,7 @@ Il resto del codice \'e disponibile in appendice \ref{appendix:composite}.
 
 \subsection{Pattern Observer}
 
-Il pattern \textit{Observer} (noto anche come \textit{Publish-Subscribe}) \'e un pattern TIPOPATTERNEDEFINIZIONE, che ``\textit{definisce una relazione uno-a-molti tra oggetti, in modo tale che, quando un oggetto cambia stato, tutti i suoi dipendenti siano notificati e aggiornati automaticamente}'' (cfr.\cite{gof_riferimento}, p.326). 
+Il pattern \textit{Observer} (noto anche come \textit{Publish-Subscribe}) \'e un pattern che ``\textit{definisce una relazione uno-a-molti tra oggetti, in modo tale che, quando un oggetto cambia stato, tutti i suoi dipendenti siano notificati e aggiornati automaticamente}'' (cfr.\cite{gof_riferimento}, p.326). 
 
 L'adozione di questo pattern trova le sue radici nella necessit\'a di trovare una \textit{consistenza} tra oggetti appartenenti a classi che \textit{cooperano} tra loro; una soluzione che sarebbe possibile adottare sarebbe quella di rendere queste classi strettamente dipendenti le une dalle altre, ma questo ridurrebbe la loro riusabilit\'a. La \textit{Gang of Four} cita come esempio la situazione in cui una diversa rappresentazione grafica (un grafico a barre, un grafico a torta e una rappresentazione tabellare) prendano le informazioni circa i dati da rappresentare dal medesimo \textit{data object}. Queste rappresentazioni grafiche non comunicano direttamente tra loro, ma devono comportarsi come se lo potessero fare. Quindi, nel momento in cui l'utente cambia i dati, questo cambiamento deve riflettersi in tutte le rappresentazioni grafiche di cui sopra. (cfr.\cite{gof_riferimento}, p.327)
 
@@ -714,7 +714,7 @@ interface Subject {
 
 // The Observer interface 
 interface Observer {
-    void update(String location, String store, Date openingdate, Date closingdate, float openingtime, float closingtime); 
+    void update(String location, String store, Date openingdate, Date closingdate, double openingtime, double closingtime); 
 }
 \end{lstlisting}
 
@@ -744,7 +744,7 @@ Possiamo ora passare al \textit{ConcreteSubject} e al \textit{ConcreteObserver}:
 
 \begin{lstlisting}
 
-// The PopUpStore class is the ConcreteSubject 
+// The PopUpStore class is the Subject 
 class PopUpStore implements Subject {
 
     private List<Observer> observers; 
@@ -752,8 +752,8 @@ class PopUpStore implements Subject {
     private String store;
     private Date openingdate;
     private Date closingdate;
-    private float openingtime;
-    private float closingtime;
+    private double openingtime;
+    private double closingtime;
 
     public PopUpStore() {
     observers = new ArrayList<Observer>();
@@ -780,7 +780,7 @@ class PopUpStore implements Subject {
         notifyObservers();
     }
 
-    public void setMeasurements(String location, String store, Date openingdate, Date closingdate, float openingtime, float closingtime) { 
+    public void setMeasurements(String location, String store, Date openingdate, Date closingdate, double openingtime, double closingtime) { 
         this.location = location;
         this.store = store;
         this.openingdate = openingdate;
@@ -792,18 +792,26 @@ class PopUpStore implements Subject {
 }
 
 
-// The ConcreteObserver class
+// The Observer class
 class CurrentConditionsDisplay implements Observer, DisplayElement {
-    private float temperature; 
-    private float humidity; 
+    private String location;
+    private String store;   
+    private Date openingdate;
+    private Date closingdate;
+    private double openingtime;
+    private double closingtime;
     private Subject PopUpStore;
+
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+    String formattedOpeningDate = sdf.format(openingdate);
+    String formattedClosingDate = sdf.format(closingdate);
     
     public CurrentConditionsDisplay(Subject PopUpStore) { 
         this.PopUpStore = PopUpStore; 
         PopUpStore.registerObserver(this);
     }
     
-    public void update(String location, String store, Date openingdate, Date closingdate, float openingtime, float closingtime) { 
+    public void update(String location, String store, Date openingdate, Date closingdate, double openingtime, double closingtime) { 
         this.location = location;
         this.store = store;
         this.openingdate = openingdate;
@@ -812,9 +820,10 @@ class CurrentConditionsDisplay implements Observer, DisplayElement {
         this.closingtime = closingtime;
         display();
     }
+
     public void display() {
     System.out.println("We look forward to seeing you at our new Pop-Up store in " + location + ", kindly hosted by  " + store + 
-    ", on the following dates: " + openingdate + " - " + closingdate + ", at the following times:" + openingtime + " - " + closingtime);
+    ", on the following dates: " + formattedOpeningDate + " - " + formattedClosingDate + ", at the following times:" + openingtime + " - " + closingtime);
     } 
 }
 
@@ -909,6 +918,132 @@ In appendice l'output in console del client ({\tt Main}) è presentato in figura
 \newpage
 \section{Observer}
 \label{appendix:observer}
+\begin{lstlisting}
+	import java.text.SimpleDateFormat;
+import java.util.ArrayList; 
+import java.util.Date;
+import java.util.List;
+
+
+// The Subject interface 
+interface Subject {
+    void registerObserver(Observer o); 
+    void removeObserver(Observer o); 
+    void notifyObservers();
+}
+
+// The Observer interface 
+interface Observer {
+    void update(String location, String store, Date openingdate, Date closingdate, double openingtime, double closingtime); 
+}
+
+// The DisplayElement interface just has one method, display, that we will call when the display element 
+// needs to be displayed.
+interface DisplayElement {
+    void display(); 
+}
+
+// The PopUpStore class is the Subject 
+class PopUpStore implements Subject {
+
+    private List<Observer> observers; 
+    private String location;
+    private String store;
+    private Date openingdate;
+    private Date closingdate;
+    private double openingtime;
+    private double closingtime;
+
+    public PopUpStore() {
+    observers = new ArrayList<Observer>();
+    }
+
+    public void registerObserver(Observer o) { 
+        observers.add(o);
+    }
+
+    public void removeObserver(Observer o) { 
+        int i = observers.indexOf(o);
+        if (i >= 0) {
+            observers.remove(i); 
+        }
+    }
+
+    public void notifyObservers() {
+        for (Observer observer : observers) {
+            observer.update(location, store, openingdate, closingdate, openingtime, closingtime); 
+        }
+    }
+
+    public void measurementsChanged() { 
+        notifyObservers();
+    }
+
+    public void setMeasurements(String location, String store, Date openingdate, Date closingdate, double openingtime, double closingtime) { 
+        this.location = location;
+        this.store = store;
+        this.openingdate = openingdate;
+        this.closingdate = closingdate;
+        this.openingtime = openingtime;
+        this.closingtime = closingtime;
+        measurementsChanged(); 
+    }
+}
+
+// The Observer class
+class CurrentConditionsDisplay implements Observer, DisplayElement {
+    private String location;
+    private String store;   
+    private Date openingdate;
+    private Date closingdate;
+    private double openingtime;
+    private double closingtime;
+    private Subject PopUpStore;
+
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+    String formattedOpeningDate = sdf.format(openingdate);
+    String formattedClosingDate = sdf.format(closingdate);
+    
+    public CurrentConditionsDisplay(Subject PopUpStore) { 
+        this.PopUpStore = PopUpStore; 
+        PopUpStore.registerObserver(this);
+    }
+    
+    public void update(String location, String store, Date openingdate, Date closingdate, double openingtime, double closingtime) { 
+        this.location = location;
+        this.store = store;
+        this.openingdate = openingdate;
+        this.closingdate = closingdate;
+        this.openingtime = openingtime;
+        this.closingtime = closingtime;
+        display();
+    }
+
+    public void display() {
+    System.out.println("We look forward to seeing you at our new Pop-Up store in " + location + ", kindly hosted by  " + store + 
+    ", on the following dates: " + formattedOpeningDate + " - " + formattedClosingDate + ", at the following times:" + openingtime + " - " + closingtime);
+    } 
+}
+
+
+
+// The main method
+public class Newsletter {
+    public static void main(String[] args) {
+        PopUpStore PopUpStore = new PopUpStore();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+        // Not yet corrected parsing error - Will be ready by Thursday 
+        Date openingDate = sdf.parse("2023/01/12");
+        Date closingDate = sdf.parse("2023/01/19");
+        CurrentConditionsDisplay currentDisplay = new CurrentConditionsDisplay(PopUpStore);
+
+        PopUpStore.setMeasurements("Turin", "Hannibal", openingDate, closingDate, 9.00, 19.00); 
+    } 
+}
+
+\end{lstlisting}
+
+
 
 
 \end{document}
