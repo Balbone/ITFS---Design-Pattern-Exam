@@ -1,5 +1,3 @@
-package designpattern.composite;
-
 public abstract class Item {
 	protected String name;
 

@@ -1,22 +1,22 @@
-package designpattern.composite;
-
 public class SaleableItem extends Item{
 	private double weight;
 	private String type;
 	private double price;
 	private String size;
+	private int quantity;
 	
-	public SaleableItem(String name,String type, double weight, double price,String size) {
+	public SaleableItem(String name,String type, double weight, double price,String size,int quantity) {
 		super(name);
 		this.weight = weight;
 		this.price = price;
 		this.type = type;
 		this.size = size;
+		this.quantity=quantity;
 	}
 
 	@Override
 	public void describe() {
-		 System.out.println( "SaleableItem: " + name  +", type: "+type +", weight: "+weight +"kg"+", price: "+price +"�" +", size:" + size); 
+		 System.out.println( "SaleableItem: " + name  +", type: "+type +", weight: "+weight +"kg"+", price: "+price +"€" +", size:" + size); 
 		
 	}
 
@@ -47,9 +47,21 @@ public class SaleableItem extends Item{
 	public String getSize() {
 		return size;
 	}
+	
+	public String getName() {
+		return super.name;
+	}
 
 	public void setSize(String size) {
 		this.size = size;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 
 }
