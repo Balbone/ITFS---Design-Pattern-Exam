@@ -79,9 +79,7 @@ class CurrentConditionsDisplay implements Observer, DisplayElement {
     private double closingtime;
     private Subject PopUpStore;
 
-    SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-    String formattedOpeningDate = sdf.format(openingdate);
-    String formattedClosingDate = sdf.format(closingdate);
+    
     
     public CurrentConditionsDisplay(Subject PopUpStore) { 
         this.PopUpStore = PopUpStore; 
@@ -99,8 +97,13 @@ class CurrentConditionsDisplay implements Observer, DisplayElement {
     }
 
     public void display() {
-    System.out.println("We look forward to seeing you at our new Pop-Up store in " + location + ", kindly hosted by  " + store + 
-    ", on the following dates: " + formattedOpeningDate + " - " + formattedClosingDate + ", at the following times:" + openingtime + " - " + closingtime);
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+        String formattedOpeningDate = sdf.format(openingdate);
+        String formattedClosingDate = sdf.format(closingdate);
+
+        System.out.println("We look forward to seeing you at our new Pop-Up store in " + location + ", kindly hosted by  " + store + 
+        ", on the following dates: " + formattedOpeningDate + " - " + formattedClosingDate + ", at the following times:" + openingtime + " - " + closingtime);
     } 
 }
 
