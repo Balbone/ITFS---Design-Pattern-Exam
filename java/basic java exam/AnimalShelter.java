@@ -1,130 +1,72 @@
-import java.util.ArrayList; 
-import java.util.List;
 
 
 public class AnimalShelter {
-    private List<Animal> animals;
 
-    public AnimalShelter() { 
-        animals = new ArrayList<>();
-    }
+   private int nAnimals = 0; // inizialmente lo shelter non contiene animali
+   private Animal[] hostedAnimals;
 
-    public void addAnimal(Animal animal) { 
-        animals.add(animal);
-    }
+   // Definisco lo shelter come un array di oggetti, quindi avente una capienza limitata a maxNumAnimals
+   public AnimalShelter(int maxNumAnimals) {
+      hostedAnimals = new Animal[maxNumAnimals];
+   }
 
-    public void adoptAnimal(Animal animal) {
-        animals.remove(animal); 
-    }
+   // Converto l'astrazione dell'AnimalShelter in una stringa. Notare la chiamata al metodo toString della classe Animal.
+   public String toString() {
+      String s = "Numero di animali ospitati = " + nAnimals;
 
-    public List<Animal> getAnimals() {
-        return animals; 
-    }
+      int i = 0;
+      while (i < nAnimals) {
+         s = s + hostedAnimals[i].toString();
+         ++i;
+      }
+
+      return s;
+   }
+
+   public int getNumAnimals() {
+      return nAnimals;
+   }
+
+   public int findHostedAnimalIndex(String name) {
+      int i = 0;
+      while (i < nAnimals) {
+         if (hostedAnimals[i].getName().equalsIgnoreCase(name)) return i;
+         ++i;
+      }
+
+      return nAnimals;
+   }
+
+   public boolean checkIfPresent(String name) {
+      return (findHostedAnimalIndex(name) < nAnimals);
+   }
+
+   public boolean checkIfFull() {
+      return (nAnimals == hostedAnimals.length);
+   }
+
+   public boolean hostAnimal(Animal animal, String name) {
+
+      if (checkIfFull()){
+         return false; // Se lo shelter è pieno il motodo fallisce
+      }
+
+      animal.setName(name);
+      hostedAnimals[nAnimals] = animal;
+      ++nAnimals; // aggiorno il numero degli animali presenti
+
+      return true;
+   }
+
+   public boolean animalAdopted(String name) {
+      int i = findHostedAnimalIndex(name);
+      if (i == nAnimals) {
+         return false; // se l'animale non esiste il motodo fallisce
+      }
+
+      --nAnimals;
+      hostedAnimals[i] = hostedAnimals[nAnimals];
+
+      return true;
+   }
 }
-
-
-abstract class Animal { 
-    private String name; 
-    private String breed; 
-    private int age;
-
-    public Animal(String name, String breed, int age) { 
-        this.name = name;
-        this.breed = breed;
-        this.age = age;
-    }
-
-    public String getName() { 
-        return name;
-    }
-
-    public void setName(String name) { 
-        this.name = name;
-    }
-
-    public String getBreed() { 
-        return breed;
-    }
-
-    public void setBreed(String breed) { 
-        this.breed = breed;
-    }
-
-    public int getAge() { 
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age; 
-    }
-}
-
-
-class Dog extends Animal {
-    public Dog(String name, String breed, int age) {
-        super(name, breed, age); 
-    }
-}
-
-class Cat extends Animal {
-    public Cat(String name, String breed, int age) {
-        super(name, breed, age); 
-    }
-}
-
-class Sheep extends Animal {
-    public Sheep(String name, String breed, int age) {
-        super(name, breed, age); 
-    }
-}
-
-class Donkey extends Animal {
-    public Donkey(String name, String breed, int age) {
-        super(name, breed, age); 
-    }
-}
-
-class Piglet extends Animal {
-    public Piglet(String name, String breed, int age) {
-        super(name, breed, age); 
-    }
-}
-
-/*
-This code defines an AnimalShelter class that manages a list of Animal objects. 
-
-The Animal class is an abstract class that represents an animal and has three fields: 
-- name
-- breed
-- age. 
-
-The AnimalShelter class has three methods: 
-- addAnimal: adds an animal to the list of animals
-- adoptAnimal: removes an animal from the list of animals
-- getAnimals: returns the list of animals.
-
-The Dog and Cat classes extend the Animal class and represent specific types of animals.
-
-Example of use: 
- */
-/*
-AnimalShelter shelter = new AnimalShelter();
-
-Animal dog1 = new Dog("Buddy", "Labrador", 6); 
-Animal cat1 = new Cat("Tom", "European", 5); 
-Animal cat2 = new Cat("Dorotea", "Siamese", 2);
-
-shelter.addAnimal(dog1); 
-shelter.addAnimal(cat1); 
-shelter.addAnimal(cat2);
-
-List<Animal> animals = shelter.getAnimals();
-
-for (Animal animal : animals) {
-    System.out.println(animal.getName() + " is a " + animal.getAge() + " year old " + animal.getBreed());
-}
-shelter.adoptAnimal(cat1); 
-
-animals = shelter.getAnimals();
-
- */

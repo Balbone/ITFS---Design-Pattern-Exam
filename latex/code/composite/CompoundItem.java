@@ -1,7 +1,3 @@
-package designpattern.composite;
-
-import java.util.ArrayList;
-
 public class CompoundItem extends Item {
 	private ArrayList<Item> items;
 
@@ -30,5 +26,10 @@ public class CompoundItem extends Item {
 	public Item getItem(int n) {
 		if (n<0 || n>items.size()) return null;
 		return (Item) items.get(n);
+	}
+	
+	public Item getItem(String name) {
+		List<Item> tmp= items.stream().filter(x->x.name.equals(name)).collect(Collectors.toList());
+		return tmp.size() == 0 ? null : tmp.get(0);
 	}
 }
