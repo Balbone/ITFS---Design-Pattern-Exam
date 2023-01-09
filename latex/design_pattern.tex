@@ -140,19 +140,28 @@ In questo documento \'e proposto il lavoro relativo alla realizzazione di un \te
 Questo capitolo raccoglie i requisiti che andranno poi analizzati, modellati e specificati nella fase di \textbf{Analisi dei Requisiti}. 
 \\
 \\
-I problemi comuni da evitare in questa fase iniziale, per uno sviluppo florido del progetto, riferiscono a 3 domini principali:
+I problemi comuni da evitare in questa fase iniziale, per uno sviluppo florido del progetto, si riferiscono a 3 domini principali:
 \begin{enumerate}
     \item \textbf{Scopo}: i requisiti devono riflettere i bisogni del cliente
     \item \textbf{Comprensione}: \'e necessaria una buona comunicazione tra clienti, sviluppatori ed utenti per portare sul pratico i bisogni del cliente, che rifletteranno quelli degli utenti a cui vuole rivolgersi
     \item \textbf{Volatilit\'a}: i requisiti possono cambiare, non essere completi all'inizio dello sviluppo ed evolvere nel tempo; \'e quindi necessario definirli con quanta pi\'u perizia possibile in questa fase del processo
 \end{enumerate}
 
-\davide{\textbf{[TODO]} Ampliare la parte sugli strumenti utilizzati per fare la requirement elicitation.}
-
 Si rende quindi necessaria una stretta comunicazione con il cliente, rappresentato dalla Professoressa Bono, per giungere ad un insieme di conoscenze che permetta di superare i problemi esposti poco sopra.
 
-La strategia adottata \'e quella dell'\textbf{intervista}, alla quale siamo giunti dopo un \textit{brainstorming} che ci ha visto partecipi in un'iniziale definizione delle caratteristiche che, a nostro parere, dovrebbero appartenere ad un \textit{e-shop innovativo}.
+La strategia adottata \'e quella dell'\textbf{intervista}, alla quale siamo giunti dopo un \textit{brainstorming} che ci ha visto partecipi in un'iniziale definizione delle caratteristiche che, a nostro parere, dovrebbero appartenere ad un \textit{e-shop innovativo}.\\
+
+
+Abbiamo optato per questo strumento poiché il committente è un singolo imprenditore a capo di un'azienda priva di una struttura di gestione complessa.
+Inoltre nessuno nel team di sviluppatori aveva esperienza pregressa nel campo della moda, né informazioni abbastanza precise sul committente, dunque risultava fondamentale un incontro conoscitivo diretto.\\
+
+In una prima fase abbiamo posto numerose domande aperte al fine di ottenere più informazioni generali possibili sul passato, sul presente e sui suoi obiettivi per il futuro.\\
+In base alle risposte ottenute abbiamo iniziato la seconda fase dell'intervista, dove, delle tante idee elaborate come team nel brainstorming precedente, abbiamo proposto noi a risposta chiusa solo quelle da noi ritenute più adatte.\\
+
+Dopo questa fase propositiva, che ha visto selezionate dal committente solo le migliori, abbiamo discusso sui loro possibili sviluppi futuri, sulle priorità e preso nota delle successive proposte del cliente, lasciando aperta la possibilità di un successivo incontro.\\
+
 Le nostre riflessioni sono sintetizzate nella sezione successiva. 
+
 
 
 \subsection{Analisi di mercato e idee di prodotto} 
@@ -291,7 +300,7 @@ Infine, mantenere ciascun sottosistema il più indipendente possibile dagli altr
 
 
 
-\subsection{Attori, obiettivi e Casi d'Uso}
+\subsection{Attori, Obiettivi e Casi d'Uso}
 \label{subsec:UC}
 
 L'applicazione e tutto il sistema che traduce deve essere pensata per essere sfruttata da una serie di attori, umani o meno, che, con le loro attivit\'a, determinano come essa sar\'a sviluppata. Possiamo classificare gli attori nella tassonomia seguente:
@@ -574,7 +583,7 @@ Il pattern viene usato nel nostro caso perché si può rappresentare il nostro m
 \begin{figure}[!t]
     \centering
     \makebox[\textwidth][c]{\includegraphics[width=1.1\linewidth]{images/Composite.jpg}}
-  \caption{\small ...}
+  \caption{\small In figura è mostrata la struttura gerarchica delle merce in vendita presso lo shop online dell'Atelier Splendor.}
   \label{fig:diagram_composite}
 \end{figure}
 
@@ -909,5 +918,6 @@ In appendice l'output in console del client ({\tt Main}) è presentato in figura
 \newpage
 \section{Observer}
 \label{appendix:observer}
+
 
 \end{document}
