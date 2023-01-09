@@ -2,6 +2,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList; 
 import java.util.Date;
 import java.util.List;
+import java.text.ParseException;
 
 
 // The Subject interface 
@@ -114,10 +115,14 @@ public class Newsletter {
     public static void main(String[] args) {
         PopUpStore PopUpStore = new PopUpStore();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-        Date openingDate = sdf.parse("2023/01/12");
-        Date closingDate = sdf.parse("2023/01/19");
-        CurrentConditionsDisplay currentDisplay = new CurrentConditionsDisplay(PopUpStore);
+        try {
+            Date openingDate = sdf.parse("2023/01/12");
+            Date closingDate = sdf.parse("2023/01/19");
+            CurrentConditionsDisplay currentDisplay = new CurrentConditionsDisplay(PopUpStore);
 
-        PopUpStore.setMeasurements("Turin", "Hannibal", openingDate, closingDate, 9.00, 19.00); 
-    } 
+            PopUpStore.setMeasurements("Turin", "Hannibal", openingDate, closingDate, 9.00, 19.00); 
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
 }
