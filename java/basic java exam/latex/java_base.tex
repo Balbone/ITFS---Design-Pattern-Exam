@@ -52,7 +52,7 @@
 	
 	Per la realizzazione della consegna siamo partiti dalla traccia fornita dalla Professoressa, con cui venivamo invitati ad implementare uno \textit{Shelter} per animali. 
 	
-	Il primo passo \'e quindi consistito nell'allestimento di una classe \textit{Animale}, 
+	Il primo passo \'e quindi consistito nell'allestimento di una classe \textit{Animale}
 	
 	\begin{lstlisting}[caption={Allestimento della classe Animale}]
 		abstract class Animal {
@@ -69,6 +69,55 @@
 		
 		// some methods here 
 		}
+	\end{lstlisting}
+	
+	nonch\'e la definizione di animali appartenenti a razze specifiche, sfruttando la possibilit\'a di estendere la suddetta classe. In questo modo, le razze di animali che stiamo andando ad implementare erediteranno gli attributi che abbiamo definito poco sopra. Alleghiamo codice esemplificativo:
+	
+	\begin{lstlisting}[caption={Estensione della classe Animale per definire nuove razze}]
+		class Dog extends Animal {
+
+   // Subclasses add more feature alla classe che specializzano
+   private String size;
+
+   public Dog(String breed, int age, String size, int conditions) {
+      super(breed, age, conditions);
+      this.size = size;
+   }
+
+   public Dog(String name, String breed, int age, String size, int conditions) {
+      super(name, breed, age, conditions);
+      this.size = size; // NB: this esplicito
+   }
+
+   // OVERWRTING del metodo toString()
+   public String toString() {
+      String s = super.toString() + ", taglia: " + size + ", animale: cane"; // NB: this implicito
+
+      return s;
+   }
+}
+
+
+class Cat extends Animal {
+   private boolean longFur;
+
+   public Cat(String breed, int age, boolean longFur, int conditions) {
+      super(breed, age, conditions);
+      this.longFur = longFur;
+   }
+
+   public Cat(String name, String breed, int age, boolean longFur, int conditions) {
+      super(name, breed, age, conditions);
+      this.longFur = longFur;
+   }
+
+   public String toString() {
+      String s = super.toString() + ", pelo lungo: " + longFur + ", animale: gatto";;
+
+      return s;
+   }
+}
+
 	\end{lstlisting}
 	
 	
