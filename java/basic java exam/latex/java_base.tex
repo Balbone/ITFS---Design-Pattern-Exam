@@ -44,7 +44,33 @@
 	\tableofcontents
 	\newpage
 	
+	\lstlistoflistings
+	\newpage
+	
+	
 	\section{Descrizione del lavoro}
+	
+	Per la realizzazione della consegna siamo partiti dalla traccia fornita dalla Professoressa, con cui venivamo invitati ad implementare uno \textit{Shelter} per animali. 
+	
+	Il primo passo \'e quindi consistito nell'allestimento di una classe \textit{Animale}, 
+	
+	\begin{lstlisting}[caption={Allestimento della classe Animale}]
+		abstract class Animal {
+		 	private String name, breed;
+   		private int age, conditions; // condizioni di salute dell'animale adottato
+
+			// costruttore
+   		public Animal(String breed, int age, int conditions) {
+      	this.breed = breed;
+      	this.age = age;
+      	this.conditions = conditions;
+   		}
+
+		
+		// some methods here 
+		}
+	\end{lstlisting}
+	
 	
 	\newpage
 	
