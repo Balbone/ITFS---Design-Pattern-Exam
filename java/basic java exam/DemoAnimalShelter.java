@@ -23,11 +23,11 @@ public class DemoAnimalShelter {
       shelter.hostAnimal(cat1, "Tom");
       shelter.hostAnimal(cat2, "Dorotea");
       shelter.hostAnimal(sheep1, "Margarita");
-      shelter.hostAnimal(sheep2, "jimmy");
+      shelter.hostAnimal(sheep2, "Jimmy");
       shelter.hostAnimal(sheep3, "Ed");
       shelter.hostAnimal(donkey1, "Arturo");
 
-      System.out.println("\nSituazione dello shelter a un mese d'allapertura:\n" + shelter);
+      System.out.println("\nSituazione dello shelter a un mese dall'apertura:\n" + shelter);
 
       System.out.println("\nOtto von Bismarck è ospitato nello shelter: " + shelter.checkIfPresent("Otto von Bismarck"));
 

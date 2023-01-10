@@ -1,4 +1,3 @@
-
 // Definendo Animal come astratta posso usare il Binding Dynamico per astrarre lo shalter come un array di tipo
 // apparente Animal, ma di tipo esatto quello specifico della specie che estende la classe astratta Animal.
 abstract class Animal {
