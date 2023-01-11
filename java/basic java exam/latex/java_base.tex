@@ -121,7 +121,7 @@
 
 \section{Descrizione del lavoro}
 
-Per la realizzazione della consegna siamo partiti dalla traccia fornita dalla Professoressa, con cui venivamo invitati ad implementare uno \textit{Shelter} per animali. Questo progetto riguarda il corso di Java base. Pertanto, ci siamo concentrati sullo sviluppo dei concetti base della programmazione ad oggetti vista a lezione, piuttosto che sull'implementazione di funzionalità complesse che utilizzino librerie esterne. Tutte le funzionalità implementate utilizzano esclusivamente oggetti della libreria Standard di Java \cite{java_lib}. Abbiamo cercato di includere nel codice i concetti fondamentali della programmazione ad oggetti in Java, il che ci ha per messo di ragionare sui concetti di \textbf{binding dinamico}, \textbf{classi astratte}, \textbf{sottoclassi}, \textbf{upcasting}, \textbf{sovratipo}, \textbf{array di oggetti}, \textbf{overloading} \textbf{ereditarietà}, \textbf{overwriting}, \textbf{information hiding}, \textbf{security leaking}~\cite{java}\cite{java_book}.
+Per la realizzazione della consegna siamo partiti dalla traccia fornita dalla Professoressa, con cui venivamo invitati ad implementare uno \textit{Shelter} per animali. Questo progetto riguarda il corso di Java base. Pertanto, ci siamo concentrati sullo sviluppo dei concetti base della programmazione ad oggetti vista a lezione, piuttosto che sull'implementazione di funzionalità complesse che utilizzino librerie esterne. Tutte le funzionalità implementate utilizzano esclusivamente oggetti della libreria Standard di Java \cite{java_lib}. Abbiamo cercato di includere nel codice i concetti fondamentali della programmazione ad oggetti in Java, il che ci ha permesso di ragionare sui concetti di \textbf{binding dinamico}, \textbf{classi astratte}, \textbf{sottoclassi}, \textbf{upcasting}, \textbf{sovratipo}, \textbf{array di oggetti}, \textbf{overloading} \textbf{ereditarietà}, \textbf{overwriting}, \textbf{information hiding}, \textbf{security leaking}~\cite{java}\cite{java_book}.
 
 
 \section{Classi implementate}
@@ -134,7 +134,7 @@ Il primo passo \'e quindi consistito nell'allestimento di una classe {\tt Animal
 \begin{itemize}
     \item Non posso definire un oggetto con tipo esatto {\tt Animal}, quindi ciascun animale deve essere definito attraverso una delle sottoclassi \textbf{concrete} di {\tt Animal} \cite{java}.
     \item Avere una sovraclasse comune (e obbligata) per ciascuna specie di animale ci consente di usate l'\textbf{upcasting} per poter definire una array di oggetti di tipo {\tt Animal} che ci permette di astrarre il concetto di shelter \cite{java_book}.
-    \item La definizione del metodo {\tt equals} ci ha permetto di discutere il concetto di {\em uguaglianza} tra oggetti.
+    \item La definizione del metodo {\tt equals} ci ha permesso di discutere il concetto di {\em uguaglianza} tra oggetti.
 \end{itemize}
 
 \begin{lstlisting}[caption={Animal.java -- Allestimento della classe Animale}]
@@ -212,7 +212,7 @@ Notiamo alcuni aspetti interessanti:
     \item L'\textbf{overwriting} del metodo {\tt toString()}, il quale appartiene alla superclasse {\tt Object}, e viene specializzato per ciascuna animale.
 \end{itemize}
 
-L'overloding del costruttore permette di inizializza gli animale già con un nome, oppure, se ``trovatelli'', di dargli un nome al momento del loro insediamento nello shelter.
+L'overloading del costruttore permette di inizializza gli animale già con un nome, oppure, se ``trovatelli'', di dargli un nome al momento del loro insediamento nello shelter.
 
 
 \subsection{Classe AnimalShelter}
@@ -289,10 +289,10 @@ public class AnimalShelter {
 }
 \end{lstlisting}
 
-L'astrazione dello shelter avviene tramite la definizione di un array di animali e dei relativi metodi {\tt hostAnimal(...)} e {\tt animalAdopted(...)}. Come accennato in precedenza, un array in Java deve contenere oggetti aventi lo stesso tipo apparente, per questo sfruttiamo il \textbf{biding dinamico} definendo ciascun animale con tipo apparente {\tt Animal} e con tipo esatto quello specifico della specie.
+L'astrazione dello shelter avviene tramite la definizione di un array di animali e dei relativi metodi {\tt hostAnimal(...)} e {\tt animalAdopted(...)}. Come accennato in precedenza, un array in Java deve contenere oggetti aventi lo stesso tipo apparente, per questo sfruttiamo il \textbf{binding dinamico} definendo ciascun animale con tipo apparente {\tt Animal} e con tipo esatto quello specifico della specie.
 Notare:
 \begin{itemize}
-    \item come l'\textbf{information hiding} sia stato opportunamente implementato per don dare accesso diretto all'array di animali, ma consentendo di interagire con esso tramite gli opportuni metodi pubblici\cite{java},
+    \item come l'\textbf{information hiding} sia stato opportunamente implementato per non dare accesso diretto all'array di animali, ma consentendo di interagire con esso tramite gli opportuni metodi pubblici\cite{java},
     \item come il metodo {\tt toString()} venga anche qui ridefinito tramite overwriting \cite{java},
     \item come il concetto che lo shelter debba avere un numero di posti limitato venga preso in carico dalla variabile privata {\tt nAnimals}, che definisce la lunghezza dell'array di animali \cite{java_book}. Un array in Java ha infatti una lunghezza fissata al momento del suo ``instanziamento'' nella heap.
 \end{itemize}
@@ -300,7 +300,7 @@ Notare:
 
 \subsection{Classe User}
 
-La classe {\tt User} è moto semplice e permette di astrarre la figura dell'utente che interagisce con lo shelter nell'adottare e nel curare gli animali.
+La classe {\tt User} è molto semplice e permette di astrarre la figura dell'utente che interagisce con lo shelter nell'adottare e nel curare gli animali.
 
 \begin{lstlisting}[caption={AnimalShelter.java}]
 public class User {
@@ -328,9 +328,9 @@ public class User {
 
 Notare come lo user non agisce direttamente sull'oggetto {\tt AnimalSherlter}, ma solo tramite i metodi pubblici di {\tt AnimalSherlter}, in questo modo si evitano possibili problemi di \textbf{security leaking}.
 
-Un esempio di utilizzo delle classi sopra citate ci è fornito dal cient {\tt DemoAnimalShelter.java} riportato in appendice \ref{appendice:A}. Sempre in appendice \ref{appendice:A}, in figura \ref{fig:output} si può osservare il semplice e chiaro output del client.
+Un esempio di utilizzo delle classi sopracitate ci è fornito dal client {\tt DemoAnimalShelter.java} riportato in appendice \ref{appendice:A}. Sempre in appendice \ref{appendice:A}, in figura \ref{fig:output} si può osservare il semplice e chiaro output del client.
 
-Una rappresentazione della connessione delle classi brevemente descritte qui sopra e presentata sottoforma di diagramma UML in figura \ref{fig:UML}.
+Una rappresentazione della connessione delle classi brevemente descritte qui sopra e presentata sotto forma di diagramma UML in figura \ref{fig:UML}.
 
 \begin{figure}[!t]
     \makebox[\textwidth][c]{\includegraphics[width=1.2\linewidth]{immagini/uml_base.png}}
