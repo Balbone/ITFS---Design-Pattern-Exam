@@ -1,5 +1,4 @@
 public class AnimalShelter {
-
    private int nAnimals = 0; // inizialmente lo shelter non contiene animali
    private Animal[] hostedAnimals;
 
