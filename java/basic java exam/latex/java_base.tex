@@ -133,8 +133,8 @@ Il codice seppur minimale, nasconde al suo interno spunti interessanti.
 Il primo passo \'e quindi consistito nell'allestimento di una classe {\tt Animale}, che astrae il concetto di animale. La classe è definita \textbf{astratta} per due principali motivi:
 \begin{itemize}
     \item Non posso definire un oggetto con tipo esatto {\tt Animal}, quindi ciascun animale deve essere definito attraverso una delle sottoclassi \textbf{concrete} di {\tt Animal} \cite{java}.
-    \item Avere una sovraclasse comune (e obbligata) per ciascuna specie di animale ci consente di usate l'\textbf{upcasting} per poter definire una array di oggetti di tipo {\tt Animal} che ci permette di astrarre il concetto di shelter \cite{java_book},
-    \item la definizione del metodo {\tt equals} ci ha permetto di discutere il concetto di {\em uguaglianza} tra oggetti.
+    \item Avere una sovraclasse comune (e obbligata) per ciascuna specie di animale ci consente di usate l'\textbf{upcasting} per poter definire una array di oggetti di tipo {\tt Animal} che ci permette di astrarre il concetto di shelter \cite{java_book}.
+    \item La definizione del metodo {\tt equals} ci ha permetto di discutere il concetto di {\em uguaglianza} tra oggetti.
 \end{itemize}
 
 \begin{lstlisting}[caption={Animal.java -- Allestimento della classe Animale}]
@@ -328,7 +328,17 @@ public class User {
 
 Notare come lo user non agisce direttamente sull'oggetto {\tt AnimalSherlter}, ma solo tramite i metodi pubblici di {\tt AnimalSherlter}, in questo modo si evitano possibili problemi di \textbf{security leaking}.
 
-Un esempio di utilizzo delle classi sopra citate ci è fornito dal cient {\tt DemoAnimalShelter.java} riportato in appendice \ref{appendice:A}. Sempre in appendice \ref{appendice:A} si può osservare il semplice e chiaro output del client.
+Un esempio di utilizzo delle classi sopra citate ci è fornito dal cient {\tt DemoAnimalShelter.java} riportato in appendice \ref{appendice:A}. Sempre in appendice \ref{appendice:A}, in figura \ref{fig:output} si può osservare il semplice e chiaro output del client.
+
+Una rappresentazione della connessione delle classi brevemente descritte qui sopra e presentata sottoforma di diagramma UML in figura \ref{fig:UML}.
+
+\begin{figure}[!t]
+    \makebox[\textwidth][c]{\includegraphics[width=1.2\linewidth]{immagini/uml_base.png}}
+  \caption{\small Interconnessione delle classi implementate mostrata come diagrammi UML.}
+  \label{fig:UML}
+\end{figure}
+
+
 \newpage
 \printbibliography
 
@@ -653,7 +663,7 @@ public static void main(String arg[]) {
 \end{lstlisting}
 	
 \begin{figure}[!t]
-    \makebox[\textwidth][c]{\includegraphics[width=1.2\linewidth]{immagini/output_base.png}}
+    \makebox[\textwidth][c]{\includegraphics[width=1.1\linewidth]{immagini/output_base.png}}
   \caption{\small L'output del client.}
   \label{fig:output}
 \end{figure}
